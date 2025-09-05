@@ -11,6 +11,7 @@ import {ExpandMore as ExpandMoreIcon,
         CalendarMonth as CalendarMonthIcon
 } from '@mui/icons-material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js";
 
 
 function CustomTabPanel(props) {
@@ -66,8 +67,9 @@ function StandardEyeExam(){
         <Box>
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        {/* <Stack
+
+                      {/*<Grid item xs={12}>
+                         <Stack
                             direction="row"
                             spacing ={2}
                             sx={{
@@ -108,8 +110,8 @@ function StandardEyeExam(){
 
 
                             </Box>
-                        </Stack> */}
-                    </Grid>
+                        </Stack>
+                    </Grid>*/}
 
                     <Grid item xs={12}>
                         <Box
@@ -189,32 +191,36 @@ function StandardEyeExam(){
                             </CustomTabPanel>
                         </Box>
                     </Grid>
+                </Grid>
 
-                    <Grid item xs={4} md={8}>
-                        <Box
+                <Grid container spacing={1}>
+
+                    <Grid item xs={12} md={8}>
+                      <Box
                             sx={{
                                 width: '100%',
-                                backgroundColor: '#FFF',
-                                boxShadow: 10,
-                                borderRadius: '0 0 10px 10px',
+                                paddingTop: '15px'
                             }}>
-                        </Box>
 
-                        <Typography variant="h4">Standard Eye Examination</Typography>
-                        <Typography>&nbsp;</Typography>
-                        <Typography variant="h6">Our Standard Eye Examination Package is a comprehensive suite of procedures medically curated to ensure a thorough assessment of your eye health. This all-encompassing package is designed to provide a complete understanding of your visual well-being.</Typography>
 
-                        <Typography>&nbsp;</Typography>
-                        <Typography>&nbsp;</Typography>
-                        <Typography>&nbsp;</Typography>
+                        <Stack >
 
-                        <Typography variant="h5">Inclusions of the Standard Eye Examination Package</Typography>
-                        <Typography>&nbsp;</Typography>
+                          <Typography variant="h4">Standard Eye Examination</Typography>
+                          <Typography>&nbsp;</Typography>
+                          <Typography variant="h6">Our Standard Eye Examination Package is a comprehensive suite of procedures medically curated to ensure a thorough assessment of your eye health. This all-encompassing package is designed to provide a complete understanding of your visual well-being.</Typography>
+
+                          <Typography>&nbsp;</Typography>
+                          <Typography>&nbsp;</Typography>
+                          <Typography>&nbsp;</Typography>
+
+                          <Typography variant="h5">Inclusions of the Standard Eye Examination Package</Typography>
+                          <Typography>&nbsp;</Typography>
+                        </Stack>
+                      </Box>
                     </Grid>
 
 
-                    <Grid item xs={4} md={8}>
-
+                    <Grid item xs={12} md={8}>
                         <Container maxWidth={false} sx={{maxWidth: '750px'}}>
                             <Accordion expanded={expanded === 'panel1'} onChange={handleChange2('panel1')}>
                                 <AccordionSummary
@@ -485,9 +491,51 @@ function StandardEyeExam(){
                         </Container>
                     </Grid>
 
+                    <Grid item xs={12} md={4}>
+                        <Box sx={{backgroundColor: '#FFF', borderRadius: '10px', p: 2
+                            , height: '100%'}}>
+                            <Typography variant="h5" sx={{fontWeight: 'bold'}}>Examination Packages</Typography>
+
+                            <Box border={2} borderColor="grey.300" borderRadius={1} sx={{boxShadow: '40px', height: '`10%'}}>
+                                <Stack
+                                    direction="row"
+                                    alignItems="center"
+                                    justifyContent="space-between"
+                                    sx={{ p: 2, height: 100, bgcolor: 'background.paper' }}>
+
+                                    <Stack direction="column" justifyContent="space-between" sx={{ width: '100%' }}>
+                                        {/* Content for box 1 */}
+                                        <Stack direction="row" sx={{justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
+                                            <Typography variant="subtitile2" sx={{color : "black", fontWeight: 'bold'}}>Premium Eye Examination</Typography>
+                                            <Typography variant="subtitile2" sx={{ color: "black", fontWeight: 'bold' }}>Php 1,499.00</Typography>
+                                        </Stack>
+
+                                        <Typography variant="body1" sx={{textAlign: 'right', fontSize:'12px'}}>Inclusive VAT</Typography>
+
+                                        <Stack direction="row" sx={{justifyContent: 'space-between', alignItems: 'center', width: '100%', marginTop: 1}}>
+
+                                            <Typography variant="span" sx={{ }}>Elevate your eye care experience with this all-inclusive package, ensuring a thorough understanding of your visual well-being.</Typography>
+
+                                        </Stack>
+                                        <Stack direction="column" spacing={1}>
+                                            <Typography>&nbsp;</Typography>
+                                            <Typography variant="span" sx={{color : "black", fontWeight: 'bold', marginTop: 1}}>Included Tests</Typography>
+                                            <Typography variant="span" sx={{fontSize : "11", color : "grey"}}>Blood Pressure Test</Typography>
+                                            <Typography variant="span" sx={{fontSize : "11", color : "grey"}}>Visual Acuity Test</Typography>
+                                        </Stack>
+
+                                    </Stack>
+                                </Stack>
+                            </Box>
 
 
+                        </Box>
+                    </Grid>
                 </Grid>
+
+
+
+
             </Container>
 
         </Box>

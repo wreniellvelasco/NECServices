@@ -11,6 +11,8 @@ import ExpandableButton from "./SamplecompNEC/ExpandableButton.jsx"
 import EyeServices from "./SamplecompNEC/EyeServices.jsx";
 import StandardEyeExam from "./NECPages/StandardEyeExam.jsx";
 import ControlledAccordions from "./SamplecompNEC/ControlledAccordions.jsx";
+import TabsSample from "./SamplecompNEC/TabsSample.jsx";
+import ItemsPage from "./NECPages/ItemsPage.jsx";
 
 function App() {
 
@@ -19,8 +21,7 @@ function App() {
     <>
 
 
-        <StandardEyeExam/>
-        <ControlledAccordions/>
+            <StandardEyeExam/>
 
     </>
   )
