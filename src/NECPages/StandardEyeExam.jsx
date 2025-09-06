@@ -1,6 +1,6 @@
 import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography, Card, CardHeader, Chip, CardContent, CardActions, Accordion, AccordionDetails, AccordionSummary
 } from '@mui/material';
-import logo from "../assets/logo.png";
+{/*import logo from "../assets/logo.png";*/}
 
 import * as React from "react";
 import PropTypes from "prop-types";
@@ -12,6 +12,7 @@ import {ExpandMore as ExpandMoreIcon,
 } from '@mui/icons-material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js";
+{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
 
 
 function CustomTabPanel(props) {
@@ -43,6 +44,150 @@ function a11yProps(index) {
     };
 }
 
+const ExpandableButton = ({
+                              title,
+                              description,
+                              price,
+                              tests,
+                              recommended
+                          }) => {
+    const [expanded, setExpanded] = useState(false);
+
+    return (
+        <Card
+            sx={{
+                borderRadius: '10px',
+                width: '100%',
+                bgcolor: 'common.white',
+                boxShadow: 1,
+                '&:hover': { boxShadow: 4 },
+                overflow: 'hidden'
+            }}
+        >
+            {/* Header with title/description and price badge */}
+            <Stack sx={{justifyContent: 'space-between'}}>
+                <CardHeader
+                    sx={{
+                        bgcolor: 'rgba(227,242,253,1)',
+                        pb: 2
+                    }}
+                    title={title}
+                    action={
+                        <Chip
+                            label={price}
+                            variant="outlined"
+                            sx={{
+                                bgcolor: 'rgba(227,242,253,1)',
+                                color: 'primary.dark',
+                                borderColor: 'rgba(187,222,251,1)',
+                                px: 1,
+                                py: 0.5
+                            }}
+                        />
+                    }
+                    subheader={
+                        <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ mt: 1 }}   // space it down from the title row
+                        >
+                            {description}
+                        </Typography>
+                    }
+                />
+            </Stack>
+
+            {/* Content: optionally show tests and recommended lists */}
+            <CardContent sx={{ pt: 1 }}>
+                <Box display="flex" alignItems="center" color="text.secondary" mb={2}>
+                    <CalendarMonthIcon fontSize="small" sx={{ mr: 1 }} />
+                </Box>
+
+
+                    <Box>
+                        <Typography variant="subtitle2" color="primary.dark" gutterBottom>
+                            Included Tests
+                        </Typography>
+                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
+                            {tests?.map((tests, idx) => (
+                                <Box
+                                    component="li"
+                                    key={idx}
+                                    display="flex"
+                                    alignItems="center"
+                                    mb={0.5}
+                                >
+                                    <CheckIcon
+                                        fontSize="small"
+                                        color="success"
+                                        sx={{ mr: 1, mt: '2px' }}
+                                    />
+                                    <Typography variant="body2" color="text.primary">
+                                        {tests}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
+
+                        <Typography
+                            variant="subtitle2"
+                            color="primary.dark"
+                            gutterBottom
+                            mt={2}
+                        >
+                            Recommended For
+                        </Typography>
+                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
+                            {recommended?.map((item, idx) => (
+                                <Box
+                                    component="li"
+                                    key={idx}
+                                    display="flex"
+                                    alignItems="center"
+                                    mb={0.5}
+                                >
+                                    <CheckIcon
+                                        fontSize="small"
+                                        color="success"
+                                        sx={{ mr: 1, mt: '2px' }}
+                                    />
+                                    <Typography variant="body2" color="text.primary">
+                                        {item}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
+                    </Box>
+                
+            </CardContent>
+
+            {/* Actions: expand/collapse and any other buttons */}
+            <CardActions sx={{ flexDirection: 'column', gap: 1, p: 2, pt: 0 }}>
+                <Button
+                    variant="outlined"
+                    fullWidth
+                >
+                    See full details
+                </Button>
+
+                <Button variant="contained" color="primary" fullWidth>
+                    Schedule Appointment
+                </Button>
+            </CardActions>
+        </Card>
+    );
+};
+
+ExpandableButton.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    tests: PropTypes.arrayOf(PropTypes.string).isRequired,
+    recommended: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
+
+
 
 
 
@@ -61,6 +206,60 @@ function StandardEyeExam(){
     const handleChange2 = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
+
+
+    const [serviceList, ] = useState([
+        {
+            title: 'Premium Eye Examination',
+            description:
+                'Elevate your eye care experience with this all-inclusive package, ensuring a thorough understanding of your visual well-being.',
+            price: 'Php 1,499.00',
+            tests: [
+                'Blood Pressure Test',
+                'Visual Acuity Test',
+            ],
+            recommended: [
+                'Patients over 40',
+                'Family history of eye disease',
+                'Existing eye conditions',
+                'Diabetes or hypertension patients'
+            ]
+        },
+        {
+            title: 'Pediatric Eye Examination',
+            description:
+                'The gentle care and precision required for pediatric eye health, providing a thorough understanding of your child\'s visual well-being.',
+            price: 'Php 1,499.00',
+            tests: [
+                'All Comprehensive Exam Tests',
+                'Glaucoma Screening',
+                'Macular Degeneration Assessment',
+                'Diabetic Retinopathy Evaluation',
+                'Dry Eye Analysis' //
+            ],
+            recommended: [
+                'Glaucoma patients or suspects',
+                'Macular degeneration patients',
+                'Chronic dry eye sufferers',
+                'Diabetes or hypertension patients',
+                'Post-surgical follow-ups'
+            ]
+        },
+        {
+            title: 'Follow-Up Eye Examination',
+            description:
+                'Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.',
+            price: 'Php 500.00',
+            tests: [
+                //
+            ],
+            recommended: [
+                'Eye Management',
+                'Treatment Planning'
+
+            ]
+        },
+    ]);
 
 
     return(
@@ -193,7 +392,7 @@ function StandardEyeExam(){
                     </Grid>
                 </Grid>
 
-                <Grid container spacing={1}>
+                <Grid container spacing={2}>
 
                     <Grid item xs={12} md={8}>
                       <Box
@@ -217,10 +416,10 @@ function StandardEyeExam(){
                           <Typography>&nbsp;</Typography>
                         </Stack>
                       </Box>
-                    </Grid>
 
 
-                    <Grid item xs={12} md={8}>
+
+
                         <Container maxWidth={false} sx={{maxWidth: '750px'}}>
                             <Accordion expanded={expanded === 'panel1'} onChange={handleChange2('panel1')}>
                                 <AccordionSummary
@@ -401,136 +600,94 @@ function StandardEyeExam(){
 
                                 </AccordionDetails>
                             </Accordion>
-
-                            <Accordion expanded={expanded === 'panel3'} onChange={handleChange2('panel3')}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel3bh-content"
-                                    id="panel3bh-header"
-                                >
-                                    <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                                        Pediatric Eye Examination
-                                    </Typography>
-                                    <Box sx={{display: 'flex',
-                                        alignItems: 'center',
-                                        ml: 'auto',
-                                        gap: 1}}>
-                                        <Typography sx={{ color: 'text.secondary' }}>Php 1,499.00</Typography>
-                                    </Box>
-                                </AccordionSummary>
-                                <AccordionDetails>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Visual Acuity Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        2. Eye Motility Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        3. Color Vision Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        4. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        5. Standard Dry Eye Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        6. Binocular Vision Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        7. Suppression Test
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        8. Vision Examination & Correction (Objective / Subjective)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        9. Automated Keratometry (As Necessary)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Button variant="contained"
-                                            sx={{backgroundColor: '#2563eb', color: 'white', fontWeight: 'bold'}}>
-                                        View More
-                                    </Button>
-
-                                </AccordionDetails>
-                            </Accordion>
-
-                            <Accordion expanded={expanded === 'panel4'} onChange={handleChange2('panel4')}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel4bh-content"
-                                    id="panel4bh-header"
-                                >
-                                    <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal data</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography>
-                                        Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit
-                                        amet egestas eros, vitae egestas augue. Duis vel est augue.
-                                    </Typography>
-                                </AccordionDetails>
-                            </Accordion>
                         </Container>
+
+                        <Grid item xs={12} sx={{pt: '15px', bgcolor: '#FFF', borderRadius: '10px', p: 2,}}>
+                            <Grid container spacing={2}>
+                                {serviceList?.map((svc, idx) => (
+                                    <Grid item xs={12}  md={6} key={idx}>
+                                        <ExpandableButton {...svc}
+                                                          tests={svc.tests || []}
+                                                          recommended={svc.recommended || []}
+                                        />
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </Grid>
+
                     </Grid>
 
-                    <Grid item xs={12} md={4}>
-                        <Box sx={{backgroundColor: '#FFF', borderRadius: '10px', p: 2
-                            , height: '100%'}}>
-                            <Typography variant="h5" sx={{fontWeight: 'bold'}}>Examination Packages</Typography>
+                    <Grid item xs={12} md={4} sx={{mt: '15px'}}>
+                        <Box
+                            sx={{
+                                backgroundColor: '#FFF',
+                                borderRadius: 2,
+                                p: 2,
+                                height: '98%',
+                                display: 'flex',
+                                flexDirection: 'column' ,
+                            }}
+                        >
+                            <Typography variant="h5" fontWeight="bold" sx={{p: 1}}>
+                                Examination Packages
+                            </Typography>
 
-                            <Box border={2} borderColor="grey.300" borderRadius={1} sx={{boxShadow: '40px', height: '`10%'}}>
+                            {/* inner box grows to fill all remaining space */}
+
+                                <Grid container spacing={2}>
+                                    {serviceList?.map((svc, idx) => (
+                                        <Grid item xs={12}  key={idx}>
+                                            <ExpandableButton {...svc}
+                                                              tests={svc.tests || []}
+                                                              recommended={svc.recommended || []}
+                                            />
+                                        </Grid>
+                                    ))}
+                                </Grid>
+
+
+
+                        </Box>
+                    </Grid>
+
+
+
+                    <Grid item xs={12}>
+                        <Grid
+                            item
+                            xs={12}
+                            sm={6}
+                            md={2}
+                            sx={{
+                                flexBasis: { md: '20%' },
+                                maxWidth: { md: '20%' },
+                            }}>
+
+                            <Box border={2} borderColor="grey.300" borderRadius={1} >
                                 <Stack
                                     direction="row"
                                     alignItems="center"
                                     justifyContent="space-between"
-                                    sx={{ p: 2, height: 100, bgcolor: 'background.paper' }}>
+                                    sx={{ p: 2, height: '100%', }}>
 
                                     <Stack direction="column" justifyContent="space-between" sx={{ width: '100%' }}>
                                         {/* Content for box 1 */}
+                                        <Typography variant="span" sx={{ fontSize : "24px", color : "grey" }}>Follow-Up Eye Examination</Typography>
                                         <Stack direction="row" sx={{justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
-                                            <Typography variant="subtitile2" sx={{color : "black", fontWeight: 'bold'}}>Premium Eye Examination</Typography>
-                                            <Typography variant="subtitile2" sx={{ color: "black", fontWeight: 'bold' }}>Php 1,499.00</Typography>
+                                            <Typography variant="span" sx={{ }}>Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.</Typography>
+                                            <Typography>Php 500.00 </Typography>
                                         </Stack>
-
-                                        <Typography variant="body1" sx={{textAlign: 'right', fontSize:'12px'}}>Inclusive VAT</Typography>
-
-                                        <Stack direction="row" sx={{justifyContent: 'space-between', alignItems: 'center', width: '100%', marginTop: 1}}>
-
-                                            <Typography variant="span" sx={{ }}>Elevate your eye care experience with this all-inclusive package, ensuring a thorough understanding of your visual well-being.</Typography>
-
-                                        </Stack>
-                                        <Stack direction="column" spacing={1}>
-                                            <Typography>&nbsp;</Typography>
-                                            <Typography variant="span" sx={{color : "black", fontWeight: 'bold', marginTop: 1}}>Included Tests</Typography>
-                                            <Typography variant="span" sx={{fontSize : "11", color : "grey"}}>Blood Pressure Test</Typography>
-                                            <Typography variant="span" sx={{fontSize : "11", color : "grey"}}>Visual Acuity Test</Typography>
+                                        <Stack direction="row" spacing={1}>
+                                            <Typography variant="span" sx={{fontSize : "11", color : "green"}}>2%</Typography>
+                                            <Typography variant="span" sx={{fontSize : "11", color : "grey"}}>vs last month</Typography>
                                         </Stack>
 
                                     </Stack>
                                 </Stack>
                             </Box>
-
-
-                        </Box>
+                        </Grid>
                     </Grid>
+
                 </Grid>
 
 
