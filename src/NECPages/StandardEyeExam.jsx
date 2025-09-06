@@ -602,6 +602,33 @@ function StandardEyeExam(){
                             </Accordion>
                         </Container>
 
+
+
+                        <Grid item xs={12} sx={{pt: '15px'}}>
+                            <Box
+                                direction="row"
+                                spacing ={2}
+                                sx={{
+                                    borderRadius: '10px',
+                                    backgroundColor: '#daebfe',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                    mr: 'auto',
+                                    p: 2,
+                                    mb: '15px',
+                                    justifyContent: 'space-between' }}>
+                                <Typography variant="body`" sx={{  marginBottom: '15px' }}>Embark on a journey to optimal eye health with the Standard Eye Examination Package at
+                                    Nakpil Eye Clinic. Let us guide you towards clarity, ensuring your eyes receive the meticulous care they deserve.</Typography>
+
+                                <Stack direction = "row" spacing ={2}  sx={{justifyContent: 'space-between', p: 1, alignItems: 'center', }}>
+                                    <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#312e81' }}>Php 999.00</Typography>
+                                    <Button variant="outlined" color="primary">Book an Appointment</Button>
+                                </Stack>
+                                <Typography variant="body1" sx={{ fontSize: '10px', color: 'gray' }} >Note: Price is subject to change without prior notice.</Typography>
+
+                            </Box>
+                        </Grid>
+
                         <Grid item xs={12} sx={{pt: '15px', bgcolor: '#FFF', borderRadius: '10px', p: 2,}}>
                             <Grid container spacing={2}>
                                 {serviceList?.map((svc, idx) => (
