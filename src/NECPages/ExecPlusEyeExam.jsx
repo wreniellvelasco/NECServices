@@ -6,9 +6,9 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import {useState} from "react";
 import {ExpandMore as ExpandMoreIcon,
-        ExpandLess as ExpandLessIcon,
-        Check as CheckIcon,
-        CalendarMonth as CalendarMonthIcon
+    ExpandLess as ExpandLessIcon,
+    Check as CheckIcon,
+    CalendarMonth as CalendarMonthIcon
 } from '@mui/icons-material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 {/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
@@ -51,7 +51,7 @@ const ExpandableButton = ({
                               tests,
                               recommended
                           }) => {
-    const [expanded, setExpanded] = useState(false);
+
 
     return (
         <Card
@@ -65,32 +65,37 @@ const ExpandableButton = ({
             }}
         >
             {/* Header with title/description and price badge */}
-            <CardHeader
-                sx={{ bgcolor: 'rgba(227,242,253,1)', pb: 2 }}
-                title={
-                    <Box sx={{height: {   lg: 160 }}}>
-                        <Typography variant="h6" color="primary.dark">
-                            {title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" mt={1}>
+            <Stack sx={{justifyContent: 'space-between'}}>
+                <CardHeader
+                    sx={{
+                        bgcolor: 'rgba(227,242,253,1)',
+                        pb: 2
+                    }}
+                    title={title}
+                    action={
+                        <Chip
+                            label={price}
+                            variant="outlined"
+                            sx={{
+                                bgcolor: 'rgba(227,242,253,1)',
+                                color: 'primary.dark',
+                                borderColor: 'rgba(187,222,251,1)',
+                                px: 1,
+                                py: 0.5
+                            }}
+                        />
+                    }
+                    subheader={
+                        <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ mt: 1 }}   // space it down from the title row
+                        >
                             {description}
                         </Typography>
-                    </Box>
-                }
-                action={
-                    <Chip
-                        label={price}
-                        variant="outlined"
-                        sx={{
-                            bgcolor: 'rgba(227,242,253,1)',
-                            color: 'primary.dark',
-                            borderColor: 'rgba(187,222,251,1)',
-                            px: 1,
-                            py: 0.5
-                        }}
-                    />
-                }
-            />
+                    }
+                />
+            </Stack>
 
             {/* Content: optionally show tests and recommended lists */}
             <CardContent sx={{ pt: 1 }}>
@@ -98,62 +103,62 @@ const ExpandableButton = ({
                     <CalendarMonthIcon fontSize="small" sx={{ mr: 1 }} />
                 </Box>
 
-                {expanded && (
-                    <Box>
-                        <Typography variant="subtitle2" color="primary.dark" gutterBottom>
-                            Included Tests
-                        </Typography>
-                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
-                            {tests?.map((tests, idx) => (
-                                <Box
-                                    component="li"
-                                    key={idx}
-                                    display="flex"
-                                    alignItems="center"
-                                    mb={0.5}
-                                >
-                                    <CheckIcon
-                                        fontSize="small"
-                                        color="success"
-                                        sx={{ mr: 1, mt: '2px' }}
-                                    />
-                                    <Typography variant="body2" color="text.primary">
-                                        {tests}
-                                    </Typography>
-                                </Box>
-                            ))}
-                        </Box>
 
-                        <Typography
-                            variant="subtitle2"
-                            color="primary.dark"
-                            gutterBottom
-                            mt={2}
-                        >
-                            Recommended For
-                        </Typography>
-                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
-                            {recommended?.map((item, idx) => (
-                                <Box
-                                    component="li"
-                                    key={idx}
-                                    display="flex"
-                                    alignItems="center"
-                                    mb={0.5}
-                                >
-                                    <CheckIcon
-                                        fontSize="small"
-                                        color="success"
-                                        sx={{ mr: 1, mt: '2px' }}
-                                    />
-                                    <Typography variant="body2" color="text.primary">
-                                        {item}
-                                    </Typography>
-                                </Box>
-                            ))}
-                        </Box>
+                <Box>
+                    <Typography variant="subtitle2" color="primary.dark" gutterBottom>
+                        Included Tests
+                    </Typography>
+                    <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
+                        {tests?.map((tests, idx) => (
+                            <Box
+                                component="li"
+                                key={idx}
+                                display="flex"
+                                alignItems="center"
+                                mb={0.5}
+                            >
+                                <CheckIcon
+                                    fontSize="small"
+                                    color="success"
+                                    sx={{ mr: 1, mt: '2px' }}
+                                />
+                                <Typography variant="body2" color="text.primary">
+                                    {tests}
+                                </Typography>
+                            </Box>
+                        ))}
                     </Box>
-                )}
+
+                    <Typography
+                        variant="subtitle2"
+                        color="primary.dark"
+                        gutterBottom
+                        mt={2}
+                    >
+                        Recommended For
+                    </Typography>
+                    <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
+                        {recommended?.map((item, idx) => (
+                            <Box
+                                component="li"
+                                key={idx}
+                                display="flex"
+                                alignItems="center"
+                                mb={0.5}
+                            >
+                                <CheckIcon
+                                    fontSize="small"
+                                    color="success"
+                                    sx={{ mr: 1, mt: '2px' }}
+                                />
+                                <Typography variant="body2" color="text.primary">
+                                    {item}
+                                </Typography>
+                            </Box>
+                        ))}
+                    </Box>
+                </Box>
+
             </CardContent>
 
             {/* Actions: expand/collapse and any other buttons */}
@@ -161,14 +166,12 @@ const ExpandableButton = ({
                 <Button
                     variant="outlined"
                     fullWidth
-                    startIcon={expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                    onClick={() => setExpanded((prev) => !prev)}
                 >
-                    {expanded ? 'Show Less' : 'Show More'}
+                    See full details
                 </Button>
 
                 <Button variant="contained" color="primary" fullWidth>
-                    See Full Details
+                    Schedule Appointment
                 </Button>
             </CardActions>
         </Card>
@@ -184,12 +187,12 @@ ExpandableButton.propTypes = {
 };
 
 const ExpandableButton2 = ({
-                              title,
-                              description,
-                              price,
-                              tests,
-                              recommended
-                          }) => {
+                               title,
+                               description,
+                               price,
+                               tests,
+                               recommended
+                           }) => {
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -326,7 +329,7 @@ ExpandableButton2.propTypes = {
 
 
 
-function StandardEyeExam(){
+function ExecPlusEyeExam(){
 
     const [value, setValue] = useState(0);
 
@@ -343,23 +346,6 @@ function StandardEyeExam(){
 
 
     const [serviceList, ] = useState([
-        {
-            title: 'Standard Eye Examination',
-            description:
-                'A comprehensive suite of procedures meticulously curated to ensure a thorough assessment of your eye health.',
-            price: 'Php 999.00',
-            tests: [
-                'Visual Acuity Test',
-                'Color Vision Test',
-                'Eye Pressure Test',
-                'Refraction Assessment'
-            ],
-            recommended: [
-                'Annual check-ups',
-                'Vision prescription updates',
-                'General eye health monitoring'
-            ]
-        },
         {
             title: 'Premium Eye Examination',
             description:
@@ -411,6 +397,18 @@ function StandardEyeExam(){
             ]
         },
         {
+            title: 'Corporate Eye Care Program',
+            description:
+                'A Comprehensive eye examination package for your company or organizations.',
+            price: '',
+
+        },
+    ]);
+
+
+    const [serviceList1, ] = useState([
+
+        {
             title: 'Executive Eye Examination',
             description:
                 'Unparalleled precision and comprehensive insights into their eye health, A pinnacle of advanced diagnostics and personalized care',
@@ -441,52 +439,9 @@ function StandardEyeExam(){
                 'People seeking proactive health management',
             ]
         },
-        {
-            title: 'Corporate Eye Care Program',
-            description:
-                'A Comprehensive eye examination package for your company or organizations.',
-            price: '',
 
-        },
+        // … this code can push more services here dynamically
     ]);
-
-
-        const [serviceList1, ] = useState([
-
-            {
-                title: 'Executive Eye Examination',
-                description:
-                    'Unparalleled precision and comprehensive insights into their eye health, A pinnacle of advanced diagnostics and personalized care',
-                price: 'Php 4,999.00',
-                tests: [
-                    'Blood Pressure Test',
-                    'Eye Motility Assessment',
-                    'Comprehensive Dry Eye Assessment', //
-                ],
-                recommended: [
-                    'Diabetes Management',
-                    'Family History of Eye Conditions',
-                    'Vision Changes'
-                ]
-            },
-            {
-                title: 'Executive Plus Eye Examination',
-                description:
-                    'Tailored for those seeking not only precision in diagnostics but also a thorough understanding of their visual health.',
-                price: 'Php 5,999.00',
-                tests: [
-                    'Blood Pressure Test',
-                    'Visual Acuity Assessment',
-                    'Comprehensive Ishihara Color Vision Test', //
-                ],
-                recommended: [
-                    'Older adults - As the risk for eye diseases increases with age, a detailed exam is crucial.',
-                    'People seeking proactive health management',
-                ]
-            },
-
-            // … this code can push more services here dynamically
-        ]);
 
 
     return(
@@ -494,7 +449,7 @@ function StandardEyeExam(){
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
 
-                      {/*<Grid item xs={12}>
+                    {/*<Grid item xs={12}>
                          <Stack
                             direction="row"
                             spacing ={2}
@@ -561,7 +516,7 @@ function StandardEyeExam(){
                                     onChange={handleChange}
                                     aria-label="interactive tabs" sx={{color: '#FFF'}}>
 
-                                    {['Eye Examination', 'Vision Correction', 'Eye Conditions', 'Eyewear'].map(
+                                    {['1. Eye Examination', '2. Vision Correction', '3. Eye Conditions', '4.Eyewear'].map(
                                         (label, idx) => (
                                             <Tab
                                                 key={idx}
@@ -622,27 +577,28 @@ function StandardEyeExam(){
                 <Grid container spacing={2}>
 
                     <Grid item xs={12} md={8}>
-                      <Box
+                        <Box
                             sx={{
                                 width: '100%',
                                 paddingTop: '15px'
                             }}>
 
 
-                        <Stack >
+                            <Stack >
 
-                          <Typography variant="h4">Standard Eye Examination</Typography>
-                          <Typography>&nbsp;</Typography>
-                          <Typography variant="h6">Our Standard Eye Examination Package is a comprehensive suite of procedures medically curated to ensure a thorough assessment of your eye health. This all-encompassing package is designed to provide a complete understanding of your visual well-being.</Typography>
+                                <Typography variant="h4">Executive Eye Examination with Perimetry</Typography>
+                                <Typography>&nbsp;</Typography>
+                                <Typography variant="h6">Experience the epitome of advanced eye care at Nakpil Eye Clinic with our Executive Plus Eye Examination Package, now enhanced with Perimetry. This comprehensive package is tailored for
+                                    those seeking not only precision in diagnostics but also a thorough understanding of their visual health, ensuring a meticulous assessment from every perspective.</Typography>
 
-                          <Typography>&nbsp;</Typography>
-                          <Typography>&nbsp;</Typography>
-                          <Typography>&nbsp;</Typography>
+                                <Typography>&nbsp;</Typography>
+                                <Typography>&nbsp;</Typography>
+                                <Typography>&nbsp;</Typography>
 
-                          <Typography variant="h5">Inclusions of the Standard Eye Examination Package</Typography>
-                          <Typography>&nbsp;</Typography>
-                        </Stack>
-                      </Box>
+                                <Typography variant="h5">Inclusions of the Executive Eye Examination with Perimetry Package</Typography>
+                                <Typography>&nbsp;</Typography>
+                            </Stack>
+                        </Box>
 
 
 
@@ -656,7 +612,7 @@ function StandardEyeExam(){
                                     sx={{justifyContent: 'space-between', alignItems: 'center'}}
                                 >
                                     <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', color:'#698bd1'  }}>
-                                        Standard Eye Examination
+                                        Executive Eye Examination with Perimetry
                                     </Typography>
                                     <Box
                                         sx={{
@@ -667,81 +623,106 @@ function StandardEyeExam(){
                                         }}
                                     >
 
-                                        <Typography sx={{ color: '#fe8d0e', fontWeight: 'bold' }}>Php 999.00</Typography>
+                                        <Typography sx={{ color: '#fe8d0e', fontWeight: 'bold' }}>Php 5,999.00</Typography>
                                     </Box>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Visual Acuity Assessment
+                                        1. Blood Pressure Test
                                     </Typography>
                                     <Typography variant="body1">
-                                        Evaluate the sharpness and clarity of your childs vision, identifying any potential refractive errors that may affect visual acuity.
+                                        Commence your examination with a comprehensive assessment of your general health, acknowledging the crucial link between systemic well-being and ocular health.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        2. Eye Motility Assessment
+                                        2. Visual Acuity Assessment
                                     </Typography>
                                     <Typography variant="body1">
-                                        Examine the coordination and movement of your childs eye muscles, ensuring optimal functionality and identifying any issues.
+                                        Evaluate the sharpness and clarity of your vision, addressing any refractive errors that may impact visual acuity.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        3. Color Vision Assessment
+                                        3. Eye Motility Assessment
                                     </Typography>
                                     <Typography variant="body1">
-                                        Explore your childs ability to perceive and differentiate colors accurately, assessing the health of their color vision.
+                                        Examine the coordination and movement of your eye muscles, ensuring optimal functionality and identifying potential issues
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        4. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
+                                        4. Comprehensive Ishihara Color Vision Test
                                     </Typography>
                                     <Typography variant="body1">
-                                        Delve into the intricate details of your childs eye structures through advanced tools, allowing for a comprehensive physical examination.
+                                        Explore your ability to perceive and differentiate colors accurately, providing detailed insights into the health of your color vision.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        5. Standard Dry Eye Assessment
+                                        5. D-15 Color Vision Test (As Necessary)
                                     </Typography>
                                     <Typography variant="body1">
-                                        Identify and address any symptoms of dry eye syndrome your child may be experiencing, ensuring their eyes remain comfortable and well-lubricated.
+                                        Employ the D-15 test as necessary to further assess color vision and identify subtle variations in color perception.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        6. Binocular Vision Assessment
+                                        6. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
                                     </Typography>
                                     <Typography variant="body1">
-                                        Assess your childs ability to use both eyes together effectively, crucial for activities like reading and sports.
+                                        Delve into the intricate details of your eye's structures through advanced tools, allowing for a comprehensive physical examination.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        7. Suppression Test
+                                        7. Comprehensive Dry Eye Assessment
                                     </Typography>
                                     <Typography variant="body1">
-                                        Evaluate the suppression of one eye in binocular vision, identifying any issues that may affect depth perception.
+                                        Identify and address any symptoms of dry eye syndrome, ensuring your eyes remain comfortable and well-lubricated.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        8. Vision Examination & Correction (Objective / Subjective)
+                                        8. Cataract Screening
                                     </Typography>
                                     <Typography variant="body1">
-                                        Tailor your childs vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
+                                        Screen for early signs of cataracts, facilitating timely intervention and preserving your visual clarity.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
 
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        9. Automated Keratometry (As Necessary)
+                                        9. Glaucoma Screening (Tonometry-IOP Test)
                                     </Typography>
                                     <Typography variant="body1">
-                                        Utilize advanced keratometry, as necessary, to assess the curvature of the cornea and gather additional data for comprehensive diagnostics.
+                                        Detects potential indicators of glaucoma through an in-depth screening, including Tonometry-IOP testing for precise intraocular pressure measurement.
                                     </Typography>
                                     <Typography>&nbsp;</Typography>
+
+                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                        10. Fundus Imaging with Interpretation
+                                    </Typography>
+                                    <Typography variant="body1">
+                                        Utilize advanced imaging to capture detailed images of the retina, allowing for a comprehensive analysis of the eye's structural layers.
+                                    </Typography>
+                                    <Typography>&nbsp;</Typography>
+
+                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                        11. Vision Examination & Correction (Objective / Subjective)
+                                    </Typography>
+                                    <Typography variant="body1">
+                                        Tailor your vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
+                                    </Typography>
+                                    <Typography>&nbsp;</Typography>
+
+                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                        12. Perimetry
+                                    </Typography>
+                                    <Typography variant="body1">
+                                        Enhance your examination with Perimetry, a visual field test that assesses your peripheral vision and aids in the early detection of certain eye conditions.
+                                    </Typography>
+                                    <Typography>&nbsp;</Typography>
+
 
 
 
@@ -754,79 +735,7 @@ function StandardEyeExam(){
                                 </AccordionDetails>
                             </Accordion>
 
-                            <Accordion expanded={expanded === 'panel2'} onChange={handleChange2('panel2')}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel2bh-content"
-                                    id="panel2bh-header"
-                                >
-                                    <Typography sx={{ width: '33%', flexShrink: 0 }}>Premium Eye Examination</Typography>
-                                    <Box sx={{display: 'flex',
-                                        alignItems: 'center',
-                                        ml: 'auto',
-                                        gap: 1}}>
-                                        <Typography sx={{ color: 'text.secondary' }}>Php 1,499.00</Typography>
-                                    </Box>
-                                </AccordionSummary>
-                                <AccordionDetails>
 
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Blood Pressure Test
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Blood Pressure Test
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        3. Eye Motility Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        4. Basic Color Vision Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        5. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        6. Comprehensive Dry Eye Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        7. Cataract Screening
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        8. Glaucoma Screening VH Test with Tonometry IOP Test
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        9. Vision Examination & Correction (Objective / Subjective)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        10. Automated Keratometry (As Necessary)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Button variant="contained"
-                                            sx={{backgroundColor: '#2563eb', color: 'white', fontWeight: 'bold'}}>
-                                        View More
-                                    </Button>
-
-                                </AccordionDetails>
-                            </Accordion>
                         </Container>
 
 
@@ -844,12 +753,12 @@ function StandardEyeExam(){
                                     p: 2,
                                     mb: '15px',
                                     justifyContent: 'space-between' }}>
-                                <Typography variant="body`" sx={{  marginBottom: '15px' }}>Embark on a journey to optimal eye health with the Standard Eye Examination Package at
-                                    Nakpil Eye Clinic. Let us guide you towards clarity, ensuring your eyes receive the meticulous care they deserve.</Typography>
+                                <Typography variant="body`" sx={{  marginBottom: '15px' }}>Opt for the Executive Plus Eye Examination Package including Perimetry at Nakpil Eye Clinic. Let us guide you towards a future with clear,
+                                    healthy, and optimized vision.</Typography>
 
                                 <Stack direction = "row" spacing ={2}  sx={{justifyContent: 'space-between', p: 1, alignItems: 'center', }}>
-                                    <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#312e81' }}>Php 999.00</Typography>
-                                    <Button variant="contained" color="primary">Book an Appointment</Button>
+                                    <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#312e81' }}>Php 5,999.00</Typography>
+                                    <Button variant="contained" color="primary" sx={{backgroundColor: '#1976d2'}}>Book an Appointment</Button>
                                 </Stack>
                                 <Typography variant="body1" sx={{ fontSize: '10px', color: 'gray' }} >Note: Price is subject to change without prior notice.</Typography>
 
@@ -861,8 +770,8 @@ function StandardEyeExam(){
                                 {serviceList1?.map((svc, idx) => (
                                     <Grid item xs={12}  md={6} key={idx}>
                                         <ExpandableButton2 {...svc}
-                                                          tests={svc.tests || []}
-                                                          recommended={svc.recommended || []}
+                                                           tests={svc.tests || []}
+                                                           recommended={svc.recommended || []}
                                         />
                                     </Grid>
                                 ))}
@@ -888,16 +797,16 @@ function StandardEyeExam(){
 
                             {/* inner box grows to fill all remaining space */}
 
-                                <Grid container spacing={2}>
-                                    {serviceList?.map((svc, idx) => (
-                                        <Grid item xs={12}  key={idx}>
-                                            <ExpandableButton {...svc}
-                                                              tests={svc.tests || []}
-                                                              recommended={svc.recommended || []}
-                                            />
-                                        </Grid>
-                                    ))}
-                                </Grid>
+                            <Grid container spacing={2}>
+                                {serviceList?.map((svc, idx) => (
+                                    <Grid item xs={12}  key={idx}>
+                                        <ExpandableButton {...svc}
+                                                          tests={svc.tests || []}
+                                                          recommended={svc.recommended || []}
+                                        />
+                                    </Grid>
+                                ))}
+                            </Grid>
 
 
 
@@ -953,6 +862,6 @@ function StandardEyeExam(){
     )
 }
 
-export default StandardEyeExam;
+export default ExecPlusEyeExam;
 
 
