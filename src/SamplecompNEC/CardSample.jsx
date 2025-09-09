@@ -193,7 +193,7 @@ function CardSample(){
                             <Stack sx={{ justifyContent: 'space-between' }}>
                                 <CardHeader
                                     sx={{
-                                        bgcolor: 'rgba(227,242,253,1)',
+                                        bgcolor: '#e3f2fd',
                                         pb: 2
                                     }}
                                     title="Standard Eye Examination"
@@ -202,9 +202,9 @@ function CardSample(){
                                             label="Php 999.00"
                                             variant="outlined"
                                             sx={{
-                                                bgcolor: 'rgba(227,242,253,1)',
+                                                bgcolor: '#e3f2fd',
                                                 color: 'primary.dark',
-                                                borderColor: 'rgba(187,222,251,1)',
+                                                borderColor: '#bbdefb',
                                                 px: 1,
                                                 py: 0.5
                                             }}

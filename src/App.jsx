@@ -19,6 +19,7 @@ import FollowupEyeExam from "./NECPages/FollowupEyeExam.jsx";
 import ExecutiveEyeExam from "./NECPages/ExecutiveEyeExam.jsx";
 import ExecPlusEyeExam from "./NECPages/ExecPlusEyeExam.jsx";
 import CardSample from "./SamplecompNEC/CardSample.jsx";
+import CorpEyeCareProg from "./NECPages/CorpEyeCareProg.jsx";
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
 
             <StandardEyeExam/>
         <CardSample/>
+
+        <CorpEyeCareProg/>
 
     </>
   )
