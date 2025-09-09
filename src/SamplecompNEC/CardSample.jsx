@@ -1,12 +1,15 @@
-import { Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Chip, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Chip, Container, Grid, Stack, Typography, TextField,
+    Checkbox, FormControlLabel, Link
+} from '@mui/material';
 import {CalendarMonth as CalendarMonthIcon, Check as CheckIcon} from "@mui/icons-material";
 import * as React from "react";
-import  { useState } from 'react';
+import  { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
     ExpandMore as ExpandMoreIcon,
     ExpandLess as ExpandLessIcon,
 } from '@mui/icons-material';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
 
 const ExpandableButton = ({
@@ -171,6 +174,54 @@ function CardSample(){
         },
     ]);
 
+    const formRef = useRef(null)
+
+    // scroll handler
+    const handleScrollToForm = () => {
+        formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+
+
+    const [values, setValues] = useState({
+        name: '',
+        company: '',
+        position: '',
+        email: '',
+        contact: '',
+        message: '',
+        captcha: false
+    });
+    const [errors, setErrors] = useState({ name: false, company: false });
+    const [touched, setTouched] = useState({ name: false, company: false });
+
+    const handleChange3 = (field) => (e) => {
+        const newVal = field === 'captcha' ? e.target.checked : e.target.value;
+        setValues(prev => ({ ...prev, [field]: newVal }));
+        if ((field === 'name' || field === 'company') && touched[field]) {
+            setErrors(prev => ({ ...prev, [field]: !newVal }));
+        }
+    };
+
+    const handleBlur = (field) => () => {
+        setTouched(prev => ({ ...prev, [field]: true }));
+        setErrors(prev => ({ ...prev, [field]: !values[field] }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newErr = {
+            name: !values.name,
+            company: !values.company
+        };
+        setErrors(newErr);
+        setTouched({ name: true, company: true });
+
+        if (!newErr.name && !newErr.company) {
+            // TODO: Integrate your submission logic here
+            console.log('Form submitted:', values);
+        }
+    };
+
 
     return(
         <Box>
@@ -310,6 +361,119 @@ function CardSample(){
                                 ))}
                             </Grid>
                         </Grid>
+
+                        <Box textAlign="center" my={4}>
+                            <Button
+                                variant="contained"
+                                endIcon={<KeyboardArrowRightIcon />}
+                                sx={{
+                                    color: 'white',
+                                    fontWeight: 'bold'
+                                }}
+                                onClick={handleScrollToForm}
+                            >
+                                Send us a Message
+                            </Button>
+                        </Box>
+
+                        {/* Quotation Form */}
+                        <Box
+                            ref={formRef}
+                            sx={{
+                                mw: '100%',
+                                mh: '100%',
+                                mx: 'auto',
+                                backgroundColor: '#FFF',
+                                p: 3,
+                                boxShadow: 1,
+                                borderRadius: '10px'
+                            }}
+                        >
+                            <Typography variant="h6" gutterBottom>
+                                Send us a message to get your quotation
+                            </Typography>
+
+                            <Box component="form" noValidate onSubmit={handleSubmit}>
+                                <Stack spacing={2}>
+                                    <TextField
+                                        required
+                                        fullWidth
+                                        label="Your Name"
+                                        value={values.name}
+                                        onChange={handleChange3('name')}
+                                        onBlur={handleBlur('name')}
+                                        error={errors.name}
+                                        helperText={errors.name && 'Name is required!'}
+                                    />
+
+                                    <TextField
+                                        required
+                                        fullWidth
+                                        label="Company"
+                                        value={values.company}
+                                        onChange={handleChange3('company')}
+                                        onBlur={handleBlur('company')}
+                                        error={errors.company}
+                                        helperText={errors.company && 'Name is required!'}
+                                    />
+
+                                    <TextField
+                                        fullWidth
+                                        label="Position"
+                                        value={values.position}
+                                        onChange={handleChange3('position')}
+                                    />
+
+                                    <TextField
+                                        fullWidth
+                                        label="Enter email"
+                                        type="email"
+                                        value={values.email}
+                                        onChange={handleChange3('email')}
+                                    />
+
+                                    <TextField
+                                        fullWidth
+                                        label="Enter contact number"
+                                        value={values.contact}
+                                        onChange={handleChange3('contact')}
+                                    />
+
+                                    <TextField
+                                        fullWidth
+                                        label="Message"
+                                        multiline
+                                        rows={4}
+                                        value={values.message}
+                                        onChange={handleChange3('message')}
+                                    />
+
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                checked={values.captcha}
+                                                onChange={handleChange3('captcha')}
+                                                color="primary"
+                                            />
+                                        }
+                                        label={
+                                            <Typography variant="body2">
+                                                I am not a robot{' '}
+                                                <Link href="#" underline="hover">
+                                                    Privacy - Terms
+                                                </Link>
+                                            </Typography>
+                                        }
+                                    />
+
+                                    <Button variant="contained" color="primary" type="submit">
+                                        Submit
+                                    </Button>
+                                </Stack>
+                            </Box>
+                        </Box>
+
+
 
                     </Grid>
                 </Grid>

@@ -28,8 +28,7 @@ function App() {
     <>
 
 
-            <StandardEyeExam/>
-        <CardSample/>
+
 
         <CorpEyeCareProg/>
 
