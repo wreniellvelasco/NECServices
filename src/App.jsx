@@ -21,13 +21,19 @@ import ExecPlusEyeExam from "./NECPages/ExecPlusEyeExam.jsx";
 import CardSample from "./SamplecompNEC/CardSample.jsx";
 import CorpEyeCareProg from "./NECPages/CorpEyeCareProg.jsx";
 
+//Other Packages
+import VisPerfAssessment from "./NECPages/Other Packages/VisPerfAssessment.jsx";
+import Biometry from "./NECPages/Other Packages/Biometry.jsx";
+
 function App() {
 
 
-  return (
+    return (
     <>
 
         <CorpEyeCareProg/>
+        <VisPerfAssessment/>
+        <Biometry/>
 
     </>
   )
