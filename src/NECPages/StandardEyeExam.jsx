@@ -307,7 +307,7 @@ const ExpandableButton2 = ({
                 </Button>
 
                 <Button variant="contained" color="primary" fullWidth>
-                    Schedule Appointment
+                    See Full Details
                 </Button>
             </CardActions>
         </Card>
@@ -561,7 +561,7 @@ function StandardEyeExam(){
                                     onChange={handleChange}
                                     aria-label="interactive tabs" sx={{color: '#FFF'}}>
 
-                                    {['Eye Examination', 'Vision Correction', 'Eye Conditions', 'Eyewear'].map(
+                                    {['1. Eye Examination', '2. Vision Correction', '3. Eye Conditions', '4. Eyewear'].map(
                                         (label, idx) => (
                                             <Tab
                                                 key={idx}
@@ -902,44 +902,6 @@ function StandardEyeExam(){
 
 
                         </Box>
-                    </Grid>
-
-
-
-                    <Grid item xs={12}>
-                        <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={2}
-                            sx={{
-                                flexBasis: { md: '20%' },
-                                maxWidth: { md: '20%' },
-                            }}>
-
-                            <Box border={2} borderColor="grey.300" borderRadius={1} >
-                                <Stack
-                                    direction="row"
-                                    alignItems="center"
-                                    justifyContent="space-between"
-                                    sx={{ p: 2, height: '100%', }}>
-
-                                    <Stack direction="column" justifyContent="space-between" sx={{ width: '100%' }}>
-                                        {/* Content for box 1 */}
-                                        <Typography variant="span" sx={{ fontSize : "24px", color : "grey" }}>Follow-Up Eye Examination</Typography>
-                                        <Stack direction="row" sx={{justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
-                                            <Typography variant="span" sx={{ }}>Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.</Typography>
-                                            <Typography>Php 500.00 </Typography>
-                                        </Stack>
-                                        <Stack direction="row" spacing={1}>
-                                            <Typography variant="span" sx={{fontSize : "11", color : "green"}}>2%</Typography>
-                                            <Typography variant="span" sx={{fontSize : "11", color : "grey"}}>vs last month</Typography>
-                                        </Stack>
-
-                                    </Stack>
-                                </Stack>
-                            </Box>
-                        </Grid>
                     </Grid>
 
                 </Grid>

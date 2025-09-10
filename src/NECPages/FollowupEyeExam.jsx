@@ -47,152 +47,11 @@ function a11yProps(index) {
 const ExpandableButton = ({
                               title,
                               description,
+                              vat,
                               price,
                               tests,
                               recommended
                           }) => {
-
-
-    return (
-        <Card
-            sx={{
-                borderRadius: '10px',
-                width: '100%',
-                bgcolor: 'common.white',
-                boxShadow: 1,
-                '&:hover': { boxShadow: 4 },
-                overflow: 'hidden'
-            }}
-        >
-            {/* Header with title/description and price badge */}
-            <Stack sx={{justifyContent: 'space-between'}}>
-                <CardHeader
-                    sx={{
-                        bgcolor: 'rgba(227,242,253,1)',
-                        pb: 2
-                    }}
-                    title={title}
-                    action={
-                        <Chip
-                            label={price}
-                            variant="outlined"
-                            sx={{
-                                bgcolor: 'rgba(227,242,253,1)',
-                                color: 'primary.dark',
-                                borderColor: 'rgba(187,222,251,1)',
-                                px: 1,
-                                py: 0.5
-                            }}
-                        />
-                    }
-                    subheader={
-                        <Typography
-                            variant="body2"
-                            color="text.secondary"
-                            sx={{ mt: 1 }}   // space it down from the title row
-                        >
-                            {description}
-                        </Typography>
-                    }
-                />
-            </Stack>
-
-            {/* Content: optionally show tests and recommended lists */}
-            <CardContent sx={{ pt: 1 }}>
-                <Box display="flex" alignItems="center" color="text.secondary" mb={2}>
-                    <CalendarMonthIcon fontSize="small" sx={{ mr: 1 }} />
-                </Box>
-
-
-                <Box>
-                    <Typography variant="subtitle2" color="primary.dark" gutterBottom>
-                        Included Tests
-                    </Typography>
-                    <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
-                        {tests?.map((tests, idx) => (
-                            <Box
-                                component="li"
-                                key={idx}
-                                display="flex"
-                                alignItems="center"
-                                mb={0.5}
-                            >
-                                <CheckIcon
-                                    fontSize="small"
-                                    color="success"
-                                    sx={{ mr: 1, mt: '2px' }}
-                                />
-                                <Typography variant="body2" color="text.primary">
-                                    {tests}
-                                </Typography>
-                            </Box>
-                        ))}
-                    </Box>
-
-                    <Typography
-                        variant="subtitle2"
-                        color="primary.dark"
-                        gutterBottom
-                        mt={2}
-                    >
-                        Recommended For
-                    </Typography>
-                    <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
-                        {recommended?.map((item, idx) => (
-                            <Box
-                                component="li"
-                                key={idx}
-                                display="flex"
-                                alignItems="center"
-                                mb={0.5}
-                            >
-                                <CheckIcon
-                                    fontSize="small"
-                                    color="success"
-                                    sx={{ mr: 1, mt: '2px' }}
-                                />
-                                <Typography variant="body2" color="text.primary">
-                                    {item}
-                                </Typography>
-                            </Box>
-                        ))}
-                    </Box>
-                </Box>
-
-            </CardContent>
-
-            {/* Actions: expand/collapse and any other buttons */}
-            <CardActions sx={{ flexDirection: 'column', gap: 1, p: 2, pt: 0 }}>
-                <Button
-                    variant="outlined"
-                    fullWidth
-                >
-                    See full details
-                </Button>
-
-                <Button variant="contained" color="primary" fullWidth>
-                    Schedule Appointment
-                </Button>
-            </CardActions>
-        </Card>
-    );
-};
-
-ExpandableButton.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    tests: PropTypes.arrayOf(PropTypes.string).isRequired,
-    recommended: PropTypes.arrayOf(PropTypes.string).isRequired
-};
-
-const ExpandableButton2 = ({
-                               title,
-                               description,
-                               price,
-                               tests,
-                               recommended
-                           }) => {
     const [expanded, setExpanded] = useState(false);
 
     return (
@@ -204,35 +63,33 @@ const ExpandableButton2 = ({
                 boxShadow: 1,
                 '&:hover': { boxShadow: 4 },
                 overflow: 'hidden'
-            }}
-        >
+            }}>
+
             {/* Header with title/description and price badge */}
-            <CardHeader
-                sx={{ bgcolor: 'rgba(227,242,253,1)', pb: 2 }}
-                title={
-                    <Box sx={{height: {   lg: 160 }}}>
-                        <Typography variant="h6" color="primary.dark">
-                            {title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" mt={1}>
-                            {description}
-                        </Typography>
-                    </Box>
-                }
-                action={
-                    <Chip
-                        label={price}
-                        variant="outlined"
-                        sx={{
-                            bgcolor: 'rgba(227,242,253,1)',
-                            color: 'primary.dark',
-                            borderColor: 'rgba(187,222,251,1)',
-                            px: 1,
-                            py: 0.5
-                        }}
-                    />
-                }
-            />
+            <Box sx={{ backgroundColor: "#e3f2fd", width: "500", objectFit: 'contain',
+
+                p: 1,}}>
+                <Stack direction="row" sx={{ justifyContent: "space-between" }}>
+                    <Typography variant="h5" sx={{ color: '#1565c0' }}>{title}</Typography>
+                    <Stack direction="column" sx={{ textAlign: "flex-end" }}>
+                        <Chip
+                            label={price}
+                            variant="outlined"
+                            sx={{
+                                bgcolor: 'rgba(227,242,253,1)',
+                                color: 'primary.dark',
+                                borderColor: 'rgba(187,222,251,1)',
+                            }}
+                        />
+                        <Typography variant="span" sx={{fontSize: "10px", pt:"1px"}}>{vat}</Typography>
+                    </Stack>
+                </Stack>
+                <Stack direction="row" >
+                    <Typography fontSize="12px" color="text.secondary">
+                        {description}
+                    </Typography>
+                </Stack>
+            </Box>
 
             {/* Content: optionally show tests and recommended lists */}
             <CardContent sx={{ pt: 1 }}>
@@ -310,7 +167,114 @@ const ExpandableButton2 = ({
                 </Button>
 
                 <Button variant="contained" color="primary" fullWidth>
-                    Schedule Appointment
+                    See Full Details
+                </Button>
+            </CardActions>
+        </Card>
+    );
+};
+
+ExpandableButton.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    vat: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    tests: PropTypes.arrayOf(PropTypes.string).isRequired,
+    recommended: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
+const ExpandableButton2 = ({
+                               title,
+                               description,
+                               keyfeatures,
+                           }) => {
+    const [expanded, setExpanded] = useState(false);
+
+    return (
+        <Card
+            sx={{
+                borderRadius: '10px',
+                width: '100%',
+                bgcolor: 'common.white',
+                boxShadow: 1,
+                '&:hover': { boxShadow: 4 },
+                overflow: 'hidden'
+            }}
+        >
+            {/* Header with title/description and price badge */}
+            <Box sx={{ backgroundColor: "#e3f2fd", width: "500", objectFit: 'contain',
+                height: 112,
+
+                p: 1,}}>
+
+                <Typography variant="h5" sx={{ color: '#1565c0' }}>{title}</Typography>
+
+
+                <Stack direction="row" >
+                    <Typography fontSize="12px" color="text.secondary">
+                        {description}
+                    </Typography>
+                </Stack>
+            </Box>
+
+            {/* Content: optionally show tests and recommended lists */}
+            <CardContent sx={{ pt: 1 }}>
+                <Box display="flex" alignItems="center" color="text.secondary" mb={2}>
+                    <CalendarMonthIcon fontSize="small" sx={{ mr: 1 }} />
+                </Box>
+
+                {expanded && (
+                    <Box>
+                        <Typography variant="subtitle2" color="primary.dark" gutterBottom>
+                            Key Features
+                        </Typography>
+                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
+                            {keyfeatures?.map((keyfeatures, idx) => (
+                                <Box
+                                    component="li"
+                                    key={idx}
+                                    display="flex"
+                                    alignItems="center"
+                                    mb={0.5}
+                                >
+                                    <CheckIcon
+                                        fontSize="small"
+                                        color="success"
+                                        sx={{ mr: 1, mt: '2px' }}
+                                    />
+                                    <Typography variant="body2" color="text.primary">
+                                        {keyfeatures}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
+
+                        <Typography
+                            variant="subtitle2"
+                            color="primary.dark"
+                            gutterBottom
+                            mt={2}
+                        >
+
+                        </Typography>
+
+                    </Box>
+                )}
+            </CardContent>
+
+            {/* Actions: expand/collapse and any other buttons */}
+            <CardActions sx={{ flexDirection: 'column', gap: 1, p: 2, pt: 0 }}>
+                <Button
+                    variant="outlined"
+                    fullWidth
+                    startIcon={expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                    onClick={() => setExpanded((prev) => !prev)}
+                >
+                    {expanded ? 'Show Less' : 'Show More'}
+                </Button>
+
+                <Button variant="contained" color="primary" fullWidth>
+                    See Full Details
                 </Button>
             </CardActions>
         </Card>
@@ -320,12 +284,8 @@ const ExpandableButton2 = ({
 ExpandableButton2.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
-    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    tests: PropTypes.arrayOf(PropTypes.string).isRequired,
-    recommended: PropTypes.arrayOf(PropTypes.string).isRequired
+    keyfeatures: PropTypes.arrayOf(PropTypes.string).isRequired
 };
-
-
 
 
 
@@ -347,9 +307,28 @@ function FollowupEyeExam(){
 
     const [serviceList, ] = useState([
         {
+            title: 'Standard Eye Examination',
+            description:
+                'A comprehensive suite of procedures meticulously curated to ensure a thorough assessment of your eye health.',
+            vat: 'inclusive of VAT',
+            price: 'Php 999.00',
+            tests: [
+                'Visual Acuity Test',
+                'Color Vision Test',
+                'Eye Pressure Test',
+                'Refraction Assessment'
+            ],
+            recommended: [
+                'Annual check-ups',
+                'Vision prescription updates',
+                'General eye health monitoring'
+            ]
+        },
+        {
             title: 'Premium Eye Examination',
             description:
                 'Elevate your eye care experience with this all-inclusive package, ensuring a thorough understanding of your visual well-being.',
+            vat: 'inclusive of VAT',
             price: 'Php 1,499.00',
             tests: [
                 'Blood Pressure Test',
@@ -366,6 +345,7 @@ function FollowupEyeExam(){
             title: 'Pediatric Eye Examination',
             description:
                 'The gentle care and precision required for pediatric eye health, providing a thorough understanding of your child\'s visual well-being.',
+            vat: 'inclusive of VAT',
             price: 'Php 1,499.00',
             tests: [
                 'All Comprehensive Exam Tests',
@@ -386,6 +366,7 @@ function FollowupEyeExam(){
             title: 'Follow-Up Eye Examination',
             description:
                 'Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.',
+            vat: 'inclusive of VAT',
             price: 'Php 500.00',
             tests: [
                 //
@@ -397,21 +378,10 @@ function FollowupEyeExam(){
             ]
         },
         {
-            title: 'Corporate Eye Care Program',
-            description:
-                'A Comprehensive eye examination package for your company or organizations.',
-            price: '',
-
-        },
-    ]);
-
-
-    const [serviceList1, ] = useState([
-
-        {
             title: 'Executive Eye Examination',
             description:
                 'Unparalleled precision and comprehensive insights into their eye health, A pinnacle of advanced diagnostics and personalized care',
+            vat: 'inclusive of VAT',
             price: 'Php 4,999.00',
             tests: [
                 'Blood Pressure Test',
@@ -428,6 +398,7 @@ function FollowupEyeExam(){
             title: 'Executive Plus Eye Examination',
             description:
                 'Tailored for those seeking not only precision in diagnostics but also a thorough understanding of their visual health.',
+            vat: 'inclusive of VAT',
             price: 'Php 5,999.00',
             tests: [
                 'Blood Pressure Test',
@@ -438,6 +409,179 @@ function FollowupEyeExam(){
                 'Older adults - As the risk for eye diseases increases with age, a detailed exam is crucial.',
                 'People seeking proactive health management',
             ]
+        },
+        {
+            title: 'Corporate Eye Care Program',
+            description:
+                'A Comprehensive eye examination package for your company or organizations.',
+            price: '',
+
+        },
+    ]);
+
+
+    const [serviceList1, ] = useState([
+
+        {
+            title: 'Visual Performance Assessment',
+            description:
+                'Unlock your full visual potential with our cutting-edge performance assessment.',
+            keyfeatures: [
+                'Visual Acuity Test',
+                'Color Vision Test',
+                'Eye Pressure Test',
+                'Refraction Assessment'
+            ],
+
+
+        },
+        {
+            title: 'Biometry',
+            description:
+                'Our advanced biometry techniques unlock personalized IOL solutions for crystal-clear eyesight.',
+            keyfeatures: [
+                'Accurate Measurements',
+                'Cataract Surgery Planning',
+                'IOL Implantation',
+                'Customized Treatment'
+            ],
+
+        },
+        {
+            title: 'Fundus Scan with AirDoc',
+            description:
+                'Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.',
+            keyfeatures: [
+                'AI-Enhanced Analysis',
+                'Precision Diagnostics',
+                'Efficient Screening',
+                'Personalized Care'
+            ],
+
+        },
+        {
+            title: 'Fundus Scan with Kanghua',
+            description:
+                'Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.',
+
+        },
+        {
+            title: 'Foreign Bodies Removal',
+            description:
+                'Designed to provide swift relief, ensuring your eyes stay clear, comfortable, and healthy.',
+            keyfeatures: [
+                'Prompt Intervention',
+                'Specialized Tools and Techniques',
+                'Comprehensive Eye Examination',
+                'Patient Education'
+            ],
+
+        },
+        {
+            title: 'Ishihara Color Vision Test',
+            description:
+                'Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes!',
+            keyfeatures: [
+                'Identifying Color Deficiencies',
+                'Quick and Painless',
+                'Diagnostic Accuracy',
+                'Treatment Planning',
+            ],
+
+        },
+        {
+            title: 'Ishihara with Farnsworth',
+            description:
+                'Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes!',
+            keyfeatures: [
+                'Precise Color Deficiency Identification',
+                'Quick and Efficient',
+                'Tailored Recommendations',
+                'Comprehensive Vision Wellness',
+            ],
+
+        },
+        {
+            title: 'Perimetry / Visual Field Test',
+            description:
+                'Our advanced visual field tests reveal hidden insights, guiding personalized eye care for a brighter outlook.',
+            keyfeatures: [
+                'Early Detection of Eye Conditions',
+                'Mapping Visual Sensitivity',
+                'Customized Treatment Plans',
+                'Monitoring Progression'
+            ],
+
+        },
+        {
+            title: 'Intra Ocular Pressure Assessment',
+            description:
+                'Personalized eye care, ensuring a healthy optic nerve and clear vision.',
+            keyfeatures: [
+                'Early Glaucoma Detection',
+                'Quick and Painless',
+                'Individualized Eye Care',
+                'Preventive Eye Wellness'
+            ],
+
+        },
+        {
+            title: 'OrthoKeratology Lens',
+            description:
+                'Our advanced orthokeratology lenses reshape your cornea while you sleep, leaving you glasses-free during the day!',
+            keyfeatures: [
+                'Vision Correction Without Surgery: Ortho-K provides a non-invasive option for vision correction, eliminating the need for surgical procedures like LASIK.',
+                'Myopia Control: Orthokeratology has been proven effective in slowing down the progression of myopia (nearsightedness) in children and young adults.',
+            ],
+
+        },
+        {
+            title: 'OrthoKeratology Lens Fitting',
+            description:
+                'Our advanced orthokeratology lenses reshape your cornea while you sleep, leaving you glasses-free during the day!',
+            keyfeatures: [
+                'Comprehensive Eye Examination',
+                'Custom Lens Design',
+                'Fitting and Adjustment Sessions',
+                'Individualized Treatment Plan'
+            ],
+
+        },
+        {
+            title: 'Cycloplegic Eyedrops',
+            description:
+                'Unlock clarity with Cycloplegic Eyedrops, illuminating your vision with unparalleled precision and focus.',
+            keyfeatures: [
+                'Maximum Accuracy',
+                'Ideal for All Ages',
+                'Comprehensive Eye Examination',
+                'Tailored Prescription',
+            ],
+
+        },
+        {
+            title: 'Topography',
+            description:
+                'Unveil the intricate landscapes of your eyes for unrivaled clarity and insight into your vision\'s extraordinary terrain.',
+            keyfeatures: [
+                'Customized Vision Correction',
+                'Early Detection of Conditions',
+                'Enhanced Contact Lens Fitting',
+                'Precise Refractive Surgery Planning'
+            ],
+
+        },
+        {
+            title: 'Vision Therapy',
+            description:
+                'Transform your vision into its fullest potential with the dynamic journey of Vision Therapy.',
+            keyfeatures: [
+                'Visual Rehabilitation',
+                'Sports Vision Enhancement',
+                'Reading and Learning Enhancement',
+                'Computer Vision Syndrome (CVS) Management'
+            ]
+
         },
 
         // … this code can push more services here dynamically
@@ -516,7 +660,7 @@ function FollowupEyeExam(){
                                     onChange={handleChange}
                                     aria-label="interactive tabs" sx={{color: '#FFF'}}>
 
-                                    {['1. Eye Examination', '2. Vision Correction', '3. Eye Conditions', '4.Eyewear'].map(
+                                    {['1. Eye Examination', '2. Vision Correction', '3. Eye Conditions', '4. Eyewear'].map(
                                         (label, idx) => (
                                             <Tab
                                                 key={idx}
@@ -717,33 +861,21 @@ function FollowupEyeExam(){
                             </Box>
                         </Grid>
 
-                        <Grid item xs={12} sx={{pt: '15px', bgcolor: '#FFF', borderRadius: '10px', p: 2,}}>
-                            <Grid container spacing={2}>
-                                {serviceList1?.map((svc, idx) => (
-                                    <Grid item xs={12}  md={6} key={idx}>
-                                        <ExpandableButton2 {...svc}
-                                                           tests={svc.tests || []}
-                                                           recommended={svc.recommended || []}
-                                        />
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </Grid>
-
                     </Grid>
 
                     <Grid item xs={12} md={4} sx={{mt: '15px'}}>
                         <Box
                             sx={{
                                 backgroundColor: '#FFF',
-                                borderRadius: 2,
-                                p: 2,
-                                height: '99%',
-                                display: 'flex',
-                                flexDirection: 'column' ,
+                                borderRadius: '10px',
+                                objectFit: 'contain',
+                                mr: 'auto',
+                                p: 2 ,
                             }}
                         >
-                            <Typography variant="h5" fontWeight="bold" sx={{p: 1}}>
+                            <Typography variant="h5"
+                                        sx={{  marginBottom: '15px',
+                                            fontWeight: 'bold', }}>
                                 Examination Packages
                             </Typography>
 
@@ -765,42 +897,30 @@ function FollowupEyeExam(){
                         </Box>
                     </Grid>
 
-
-
-                    <Grid item xs={12}>
-                        <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={2}
+                    <Grid item xs={12} sx={{mt: '15px'}}>
+                        <Box
                             sx={{
-                                flexBasis: { md: '20%' },
-                                maxWidth: { md: '20%' },
-                            }}>
+                                borderRadius: '10px',
+                                backgroundColor: '#FFF',
+                                objectFit: 'contain',
+                                mr: 'auto',
+                                p: 2,}}>
+                            <Typography variant="h5"
+                                        sx={{  marginBottom: '15px',
+                                            fontWeight: 'bold', }}>Other Packages</Typography>
 
-                            <Box border={2} borderColor="grey.300" borderRadius={1} >
-                                <Stack
-                                    direction="row"
-                                    alignItems="center"
-                                    justifyContent="space-between"
-                                    sx={{ p: 2, height: '100%', }}>
 
-                                    <Stack direction="column" justifyContent="space-between" sx={{ width: '100%' }}>
-                                        {/* Content for box 1 */}
-                                        <Typography variant="span" sx={{ fontSize : "24px", color : "grey" }}>Follow-Up Eye Examination</Typography>
-                                        <Stack direction="row" sx={{justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
-                                            <Typography variant="span" sx={{ }}>Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.</Typography>
-                                            <Typography>Php 500.00 </Typography>
-                                        </Stack>
-                                        <Stack direction="row" spacing={1}>
-                                            <Typography variant="span" sx={{fontSize : "11", color : "green"}}>2%</Typography>
-                                            <Typography variant="span" sx={{fontSize : "11", color : "grey"}}>vs last month</Typography>
-                                        </Stack>
 
-                                    </Stack>
-                                </Stack>
-                            </Box>
-                        </Grid>
+                            <Grid container spacing={2}>
+                                {serviceList1?.map((svc, idx) => (
+                                    <Grid item xs={12} sm={6} md={4} key={idx}>
+                                        <ExpandableButton2 {...svc}
+                                                           keyfeatures={svc.keyfeatures || []}
+                                        />
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </Box>
                     </Grid>
 
                 </Grid>

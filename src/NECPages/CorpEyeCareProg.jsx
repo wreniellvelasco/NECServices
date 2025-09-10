@@ -1,7 +1,6 @@
 import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography, Card, CardHeader, Chip, CardContent, CardActions, Accordion,
     AccordionDetails, AccordionSummary} from '@mui/material';
 {/*import logo from "../assets/logo.png";*/}
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import {useState} from "react";
@@ -47,6 +46,7 @@ function a11yProps(index) {
 const ExpandableButton = ({
                               title,
                               description,
+                              vat,
                               price,
                               tests,
                               recommended
@@ -62,35 +62,33 @@ const ExpandableButton = ({
                 boxShadow: 1,
                 '&:hover': { boxShadow: 4 },
                 overflow: 'hidden'
-            }}
-        >
+            }}>
+
             {/* Header with title/description and price badge */}
-            <CardHeader
-                sx={{ bgcolor: 'rgba(227,242,253,1)', pb: 2 }}
-                title={
-                    <Box sx={{height: {   lg: 160 }}}>
-                        <Typography variant="h6" color="primary.dark">
-                            {title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" mt={1}>
-                            {description}
-                        </Typography>
-                    </Box>
-                }
-                action={
-                    <Chip
-                        label={price}
-                        variant="outlined"
-                        sx={{
-                            bgcolor: 'rgba(227,242,253,1)',
-                            color: 'primary.dark',
-                            borderColor: 'rgba(187,222,251,1)',
-                            px: 1,
-                            py: 0.5
-                        }}
-                    />
-                }
-            />
+            <Box sx={{ backgroundColor: "#e3f2fd", width: "500", objectFit: 'contain',
+
+                p: 1,}}>
+                <Stack direction="row" sx={{ justifyContent: "space-between" }}>
+                    <Typography variant="h5" sx={{ color: '#1565c0' }}>{title}</Typography>
+                    <Stack direction="column" sx={{ textAlign: "flex-end" }}>
+                        <Chip
+                            label={price}
+                            variant="outlined"
+                            sx={{
+                                bgcolor: 'rgba(227,242,253,1)',
+                                color: 'primary.dark',
+                                borderColor: 'rgba(187,222,251,1)',
+                            }}
+                        />
+                        <Typography variant="span" sx={{fontSize: "10px", pt:"1px"}}>{vat}</Typography>
+                    </Stack>
+                </Stack>
+                <Stack direction="row" >
+                    <Typography fontSize="12px" color="text.secondary">
+                        {description}
+                    </Typography>
+                </Stack>
+            </Box>
 
             {/* Content: optionally show tests and recommended lists */}
             <CardContent sx={{ pt: 1 }}>
@@ -178,6 +176,7 @@ const ExpandableButton = ({
 ExpandableButton.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
+    vat: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     tests: PropTypes.arrayOf(PropTypes.string).isRequired,
     recommended: PropTypes.arrayOf(PropTypes.string).isRequired
@@ -202,7 +201,24 @@ const ExpandableButton2 = ({
             }}
         >
             {/* Header with title/description and price badge */}
-            <CardHeader
+            <Box sx={{ backgroundColor: "#e3f2fd", width: "500", objectFit: 'contain',
+                height: 112,
+
+                p: 1,}}>
+
+                    <Typography variant="h5" sx={{ color: '#1565c0' }}>{title}</Typography>
+
+
+                <Stack direction="row" >
+                    <Typography fontSize="12px" color="text.secondary">
+                        {description}
+                    </Typography>
+                </Stack>
+            </Box>
+            {/*
+
+
+             <CardHeader
                 sx={{ bgcolor: 'rgba(227,242,253,1)', pb: 2}}
                 title={
                     <Box sx={{height: { lg: 140 }}}>
@@ -227,6 +243,7 @@ const ExpandableButton2 = ({
                     />
                 }
             />
+            */}
 
             {/* Content: optionally show tests and recommended lists */}
             <CardContent sx={{ pt: 1 }}>
@@ -285,7 +302,7 @@ const ExpandableButton2 = ({
                 </Button>
 
                 <Button variant="contained" color="primary" fullWidth>
-                    Schedule Appointment
+                    See Full Details
                 </Button>
             </CardActions>
         </Card>
@@ -320,6 +337,7 @@ function CorpEyeCareProg(){
             title: 'Standard Eye Examination',
             description:
                 'A comprehensive suite of procedures meticulously curated to ensure a thorough assessment of your eye health.',
+            vat: 'inclusive of VAT',
             price: 'Php 999.00',
             tests: [
                 'Visual Acuity Test',
@@ -337,6 +355,7 @@ function CorpEyeCareProg(){
             title: 'Premium Eye Examination',
             description:
                 'Elevate your eye care experience with this all-inclusive package, ensuring a thorough understanding of your visual well-being.',
+            vat: 'inclusive of VAT',
             price: 'Php 1,499.00',
             tests: [
                 'Blood Pressure Test',
@@ -353,6 +372,7 @@ function CorpEyeCareProg(){
             title: 'Pediatric Eye Examination',
             description:
                 'The gentle care and precision required for pediatric eye health, providing a thorough understanding of your child\'s visual well-being.',
+            vat: 'inclusive of VAT',
             price: 'Php 1,499.00',
             tests: [
                 'All Comprehensive Exam Tests',
@@ -373,6 +393,7 @@ function CorpEyeCareProg(){
             title: 'Follow-Up Eye Examination',
             description:
                 'Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.',
+            vat: 'inclusive of VAT',
             price: 'Php 500.00',
             tests: [
                 //
@@ -387,6 +408,7 @@ function CorpEyeCareProg(){
             title: 'Executive Eye Examination',
             description:
                 'Unparalleled precision and comprehensive insights into their eye health, A pinnacle of advanced diagnostics and personalized care',
+            vat: 'inclusive of VAT',
             price: 'Php 4,999.00',
             tests: [
                 'Blood Pressure Test',
@@ -403,6 +425,7 @@ function CorpEyeCareProg(){
             title: 'Executive Plus Eye Examination',
             description:
                 'Tailored for those seeking not only precision in diagnostics but also a thorough understanding of their visual health.',
+            vat: 'inclusive of VAT',
             price: 'Php 5,999.00',
             tests: [
                 'Blood Pressure Test',
@@ -666,7 +689,7 @@ function CorpEyeCareProg(){
                                     onChange={handleChange}
                                     aria-label="interactive tabs" sx={{color: '#FFF'}}>
 
-                                    {['Eye Examination', 'Vision Correction', 'Eye Conditions', 'Eyewear'].map(
+                                    {['1. Eye Examination', '2. Vision Correction', '3. Eye Conditions', '4. Eyewear'].map(
                                         (label, idx) => (
                                             <Tab
                                                 key={idx}

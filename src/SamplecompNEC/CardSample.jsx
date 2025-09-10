@@ -14,7 +14,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
 const ExpandableButton = ({
                               title,
-                              description,
+                              description, vat,
                               price,
                               tests,
                               recommended
@@ -33,10 +33,13 @@ const ExpandableButton = ({
             }}
         >
             {/* Header with title/description and price badge */}
-            <CardHeader
-                sx={{ bgcolor: 'rgba(227,242,253,1)', pb: 2 }}
+            {/*
+
+
+             <CardHeader
+                sx={{ bgcolor: 'rgba(227,242,253,1)', pb: 2}}
                 title={
-                    <Box sx={{height: {   lg: 100 }}}>
+                    <Box sx={{height: { lg: 140 }}}>
                         <Typography variant="h6" color="primary.dark">
                             {title}
                         </Typography>
@@ -47,7 +50,6 @@ const ExpandableButton = ({
                 }
                 action={
                     <Chip
-                        label={price}
                         variant="outlined"
                         sx={{
                             bgcolor: 'rgba(227,242,253,1)',
@@ -59,6 +61,31 @@ const ExpandableButton = ({
                     />
                 }
             />
+            */}
+            <Box sx={{ backgroundColor: "#e3f2fd", width: "500",
+                objectFit: 'contain',
+                p: 2,}}>
+                <Stack direction="row" sx={{ justifyContent: "space-between" }}>
+                    <Typography variant="h5" sx={{ color: '#1565c0' }}>{title}</Typography>
+                    <Stack direction="column" sx={{ textAlign: "flex-end" }}>
+                        <Chip
+                            label={price}
+                            variant="outlined"
+                            sx={{
+                                bgcolor: 'rgba(227,242,253,1)',
+                                color: 'primary.dark',
+                                borderColor: 'rgba(187,222,251,1)',
+                            }}
+                        />
+                        <Typography variant="span" sx={{fontSize: "10px", pt:"1px"}}>{vat}</Typography>
+                    </Stack>
+                </Stack>
+                <Stack direction="row" >
+                    <Typography fontSize="12px" color="text.secondary">
+                        {description}
+                    </Typography>
+                </Stack>
+            </Box>
 
             {/* Content: optionally show tests and recommended lists */}
             <CardContent sx={{ pt: 1 }}>
@@ -146,6 +173,7 @@ const ExpandableButton = ({
 ExpandableButton.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
+    vat: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     tests: PropTypes.arrayOf(PropTypes.string).isRequired,
     recommended: PropTypes.arrayOf(PropTypes.string).isRequired
@@ -159,6 +187,7 @@ function CardSample(){
             title: 'Standard Eye Examination',
             description:
                 'A comprehensive suite of procedures meticulously curated to ensure a thorough assessment of your eye health.',
+            vat: 'inclusive of VAT',
             price: 'Php 999.00',
             tests: [
                 'Visual Acuity Test',
