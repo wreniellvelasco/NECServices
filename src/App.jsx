@@ -1,10 +1,4 @@
 
-
-
-
-
-
-
 //nakpileyeclinic.com pages
 import NECServicesPage from "./NECPages/NECServicesPage.jsx"
 import ExpandableButton from "./SamplecompNEC/ExpandableButton.jsx"
@@ -32,8 +26,7 @@ function App() {
     <>
 
         <CorpEyeCareProg/>
-        <VisPerfAssessment/>
-        <Biometry/>
+        <NECServicesPage/>
 
     </>
   )
