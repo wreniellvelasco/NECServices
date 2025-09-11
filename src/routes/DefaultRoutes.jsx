@@ -12,6 +12,7 @@ const PremiumEyeExamUI = Loadable(lazy(() => import('../NECPages/PremiumEyeExam.
 const PediatricEyeExamUI = Loadable(lazy(() => import('../NECPages/PediatricEyeExam.jsx')));
 const FollowUpEyeExamUI = Loadable(lazy(() => import('../NECPages/FollowUpEyeExam.jsx')));
 const ExecutiveEyeExamUI = Loadable(lazy(() => import('../NECPages/ExecutiveEyeExam.jsx')));
+const Biometry = Loadable(lazy(() => import('../NECPages/Other Packages/Biometry.jsx')));
 
 
 const DefaultRoutes = {
@@ -33,7 +34,11 @@ const DefaultRoutes = {
         {
             path: '/standardeyeexam',
             element: <StandardEyeExamUI />
-        }
+        },
+        {
+          path: '/biometry',
+          element: <Biometry />
+        },
 
 
 
