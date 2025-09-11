@@ -9,6 +9,7 @@ import {ExpandMore as ExpandMoreIcon,
     Check as CheckIcon,
     CalendarMonth as CalendarMonthIcon
 } from '@mui/icons-material';
+import ExamPackageNav from "./ExamPackageNav.jsx";
 {/* import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'; */}
 {/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
 {/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
@@ -640,34 +641,7 @@ function CorpEyeCareProg(){
                     </Grid>
 
                     <Grid item xs={12} md={4} sx={{mt: '15px'}}>
-                        <Box
-                            sx={{
-                                backgroundColor: '#FFF',
-                                borderRadius: '10px',
-                                objectFit: 'contain',
-                                mr: 'auto',
-                                p: 2 ,
-                            }}
-                        >
-                            <Typography variant="h5"
-                                        sx={{  marginBottom: '15px',
-                                            fontWeight: 'bold', }}>
-                                Examination Packages
-                            </Typography>
-
-                            {/* inner box grows to fill all remaining space */}
-
-                            <Grid container spacing={2}>
-                                {serviceList?.map((svc, idx) => (
-                                    <Grid item xs={12}  key={idx}>
-                                        <ExpandableButton {...svc}/>
-                                    </Grid>
-                                ))}
-                            </Grid>
-
-
-
-                        </Box>
+                        <ExamPackageNav />
                     </Grid>
 
                     <Grid item xs={12} sx={{mt: '15px'}}>

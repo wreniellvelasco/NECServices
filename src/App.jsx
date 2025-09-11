@@ -19,16 +19,16 @@ import CorpEyeCareProg from "./NECPages/CorpEyeCareProg.jsx";
 import VisPerfAssessment from "./NECPages/Other Packages/VisPerfAssessment.jsx";
 import Biometry from "./NECPages/Other Packages/Biometry.jsx";
 
+import './App.css'
+import Routes from "../src/routes"
+
 function App() {
 
 
     return (
-    <>
-
-        <CorpEyeCareProg/>
-        <NECServicesPage/>
-
-    </>
+        <div className="app">
+            <Routes/>
+        </div>
   )
 }
 
