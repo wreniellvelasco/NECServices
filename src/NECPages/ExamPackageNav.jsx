@@ -68,109 +68,7 @@ const ExamPackageNav = (props) => {
 
 		},
 	]);
-	//const [serviceList, ] = useState([
 
-	const [otherPackages] = useState([
-		{
-			title: 'Visual Performance Assessment',
-			description:
-				'Unlock your full visual potential with our cutting-edge performance assessment.',
-
-
-
-		},
-		{
-			title: 'Biometry',
-			description:
-				'Our advanced biometry techniques unlock personalized IOL solutions for crystal-clear eyesight.',
-			link : "/biometry"
-
-
-		},
-		{
-			title: 'Fundus Scan with AirDoc',
-			description:
-				'Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.',
-
-
-		},
-		{
-			title: 'Fundus Scan with Kanghua',
-			description:
-				'Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.',
-
-		},
-		{
-			title: 'Foreign Bodies Removal',
-			description:
-				'Designed to provide swift relief, ensuring your eyes stay clear, comfortable, and healthy.',
-
-
-		},
-		{
-			title: 'Ishihara Color Vision Test',
-			description:
-				'Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes!',
-
-
-		},
-		{
-			title: 'Ishihara with Farnsworth',
-			description:
-				'Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes!',
-
-
-		},
-		{
-			title: 'Perimetry / Visual Field Test',
-			description:
-				'Our advanced visual field tests reveal hidden insights, guiding personalized eye care for a brighter outlook.',
-
-
-		},
-		{
-			title: 'Intra Ocular Pressure Assessment',
-			description:
-				'Personalized eye care, ensuring a healthy optic nerve and clear vision.',
-
-
-		},
-		{
-			title: 'OrthoKeratology Lens',
-			description:
-				'Our advanced orthokeratology lenses reshape your cornea while you sleep, leaving you glasses-free during the day!',
-
-
-		},
-		{
-			title: 'OrthoKeratology Lens Fitting',
-			description:
-				'Our advanced orthokeratology lenses reshape your cornea while you sleep, leaving you glasses-free during the day!',
-
-
-		},
-		{
-			title: 'Cycloplegic Eyedrops',
-			description:
-				'Unlock clarity with Cycloplegic Eyedrops, illuminating your vision with unparalleled precision and focus.',
-
-
-		},
-		{
-			title: 'Topography',
-			description:
-				'Unveil the intricate landscapes of your eyes for unrivaled clarity and insight into your vision\'s extraordinary terrain.',
-
-
-		},
-		{
-			title: 'Vision Therapy',
-			description:
-				'Transform your vision into its fullest potential with the dynamic journey of Vision Therapy.',
-
-
-		},
-	])
 
 
 	const handleClick = (service) => {
@@ -179,7 +77,7 @@ const ExamPackageNav = (props) => {
 	}
 
 	const handleOtherPackage = ()=>{
-		navigate("/OtherPackages");
+		navigate("/visperfassessment");
 	}
 
 	return (
@@ -213,7 +111,8 @@ const ExamPackageNav = (props) => {
 
 							<Stack direction="row" sx={{ justifyContent: "space-between" }}>
 								<Typography variant="h5" sx={{ color: '#1565c0' }}>{service?.title}</Typography>
-								<Stack direction="column" sx={{ textAlign: "flex-end" }}>
+								{service?.price === "" ? null :
+									<Stack direction="column" sx={{ textAlign: "flex-end" }}>
 										<Chip
 											label={service?.price}
 											variant="outlined"
@@ -223,8 +122,10 @@ const ExamPackageNav = (props) => {
 												borderColor: 'rgba(187,222,251,1)',
 											}}
 										/>
-									<Typography variant="span" sx={{fontSize: "10px", pt:"1px"}}>{service?.vat}</Typography>
-								</Stack>
+										<Typography variant="span" sx={{fontSize: "10px", pt:"1px"}}>{service?.vat}</Typography>
+									</Stack>
+								}
+
 							</Stack>
 							<Stack direction="column" >
 								<Typography fontSize="12px" color="text.secondary">
@@ -239,56 +140,6 @@ const ExamPackageNav = (props) => {
 			<Box sx={{ pt: '10px' }}>
 				<Button variant="contained" onClick={handleOtherPackage} >Other Packages</Button>
 			</Box>
-
-
-			<Stack direction="column" spacing={2} sx={{width : "100%", }}>
-				<Typography variant="h5"
-							sx={{  marginBottom: '15px',
-								fontWeight: 'bold', }}>Other Packages</Typography>
-				{otherPackages.map((service, idx) => (
-					<Box
-						sx={{
-							borderRadius: '10px',
-							width: '100%',
-							bgcolor: 'common.white',
-							boxShadow: 1,
-							'&:hover': { boxShadow: 4 },
-							overflow: 'hidden'
-						}}>
-						<Box
-							key={service?.title}
-							sx={{
-								backgroundColor: "#e3f2fd",
-								width: "500",
-								objectFit: 'contain',
-								p: 1,
-							}}
-							onClick={()=>{handleClick(service)}}>
-
-							<Stack direction="row" sx={{ justifyContent: "space-between" }}>
-								<Typography variant="h5" sx={{ color: '#1565c0' }}>{service?.title}</Typography>
-								<Stack direction="column" sx={{ textAlign: "flex-end" }}>
-									<Chip
-										label={service?.price}
-										variant="outlined"
-										sx={{
-											bgcolor: 'rgba(227,242,253,1)',
-											color: 'primary.dark',
-											borderColor: 'rgba(187,222,251,1)',
-										}}
-									/>
-									<Typography variant="span" sx={{fontSize: "10px", pt:"1px"}}>{service?.vat}</Typography>
-								</Stack>
-							</Stack>
-							<Stack direction="column" >
-								<Typography fontSize="12px" color="text.secondary">
-									{service?.description}
-								</Typography>
-							</Stack>
-						</Box>
-					</Box>
-				))}
-			</Stack>
 
 		</Panel>
 	)

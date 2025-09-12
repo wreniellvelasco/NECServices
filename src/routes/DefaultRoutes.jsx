@@ -12,7 +12,24 @@ const PremiumEyeExamUI = Loadable(lazy(() => import('../NECPages/PremiumEyeExam.
 const PediatricEyeExamUI = Loadable(lazy(() => import('../NECPages/PediatricEyeExam.jsx')));
 const FollowUpEyeExamUI = Loadable(lazy(() => import('../NECPages/FollowUpEyeExam.jsx')));
 const ExecutiveEyeExamUI = Loadable(lazy(() => import('../NECPages/ExecutiveEyeExam.jsx')));
+//Other Packages import
 const Biometry = Loadable(lazy(() => import('../NECPages/Other Packages/Biometry.jsx')));
+const CycloplegicEyedrops = Loadable(lazy(() => import('../NECPages/Other Packages/CycloplegicEyedrops.jsx')));
+const ForeignBodiesRemoval = Loadable(lazy(() => import('../NECPages/Other Packages/ForeignBodiesRemoval.jsx')));
+const FSAirDoc = Loadable(lazy(() => import('../NECPages/Other Packages/FSAirDoc.jsx')));
+const FSKanghua = Loadable(lazy(() => import('../NECPages/Other Packages/FSKanghua.jsx')));
+const IntraOcularPressureAssessment = Loadable(lazy(() => import('../NECPages/Other Packages/IntraOcularPressureAssessment.jsx')));
+const IshiharaColVisTest = Loadable(lazy(() => import('../NECPages/Other Packages/IshiharaColVisTest.jsx')));
+const IshiharaWFarnsworth = Loadable(lazy(() => import('../NECPages/Other Packages/IshiharaWFarnsworth.jsx')));
+const OrthoKeratologyLens = Loadable(lazy(() => import('../NECPages/Other Packages/OrthoKeratologyLens.jsx')));
+const OrthoKeratologyLensFitting = Loadable(lazy(() => import('../NECPages/Other Packages/OrthoKeratologyLensFitting.jsx')));
+const PerimetryVisFieldTest = Loadable(lazy(() => import('../NECPages/Other Packages/PerimetryVisFieldTest.jsx')));
+const Topography = Loadable(lazy(() => import('../NECPages/Other Packages/Topography.jsx')));
+const VisionTherapy = Loadable(lazy(() => import('../NECPages/Other Packages/VisionTherapy.jsx')));
+const VisPerfAssessment = Loadable(lazy(() => import('../NECPages/Other Packages/VisPerfAssessment.jsx')));
+
+//ServicePageui
+const ServicePageUI = Loadable(lazy(() => import('../NECPages/Components/ServicePageUI.jsx')));
 
 
 const DefaultRoutes = {
@@ -39,6 +56,63 @@ const DefaultRoutes = {
           path: '/biometry',
           element: <Biometry />
         },
+        {
+            path: '/cycloplegiceyedrops',
+            element: <CycloplegicEyedrops />
+        },
+        {
+            path: '/foreignbodiesremoval',
+            element: <ForeignBodiesRemoval />
+        },
+        {
+            path: '/fsairdoc',
+            element: <FSAirDoc />
+        },
+        {
+            path: '/fskanghua',
+            element: <FSKanghua />
+        },
+        {
+            path: '/intraocularpressureassessment',
+            element: <IntraOcularPressureAssessment />
+        },
+        {
+            path: '/ishiharacolvistest',
+            element: <IshiharaColVisTest />
+        },
+        {
+            path: '/ishiharawfarnsworth',
+            element: <IshiharaWFarnsworth />
+        },
+        {
+            path: '/orthokeratologylens',
+            element: <OrthoKeratologyLens />
+        },
+        {
+            path: '/orthokeratologylensfitting',
+            element: <OrthoKeratologyLensFitting />
+        },
+        {
+            path: '/perimetryvisfieldtest',
+            element: <PerimetryVisFieldTest />
+        },
+        {
+            path: '/topography',
+            element: <Topography />
+        },
+        {
+            path: '/visiontherapy',
+            element: <VisionTherapy />
+        },
+        {
+            path: '/visperfassessment',
+            element: <VisPerfAssessment />
+        },
+        {
+            path: "/servicepageui",
+            element: <ServicePageUI />
+        }
+
 
 
 

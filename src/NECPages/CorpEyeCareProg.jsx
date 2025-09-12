@@ -10,6 +10,7 @@ import {ExpandMore as ExpandMoreIcon,
     CalendarMonth as CalendarMonthIcon
 } from '@mui/icons-material';
 import ExamPackageNav from "./ExamPackageNav.jsx";
+import OtherPackageNav from "./OtherPackageNav.jsx";
 {/* import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'; */}
 {/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
 {/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
@@ -343,6 +344,7 @@ function CorpEyeCareProg(){
 
                     <Grid item xs={12} md={4} sx={{mt: '15px'}}>
                         <ExamPackageNav />
+
                     </Grid>
 
 
