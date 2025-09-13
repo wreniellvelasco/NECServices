@@ -25,6 +25,7 @@ const ExamPackageNav = (props) => {
 				'Elevate your eye care experience with this all-inclusive package, ensuring a thorough understanding of your visual well-being.',
 			vat: 'inclusive of VAT',
 			price: 'Php 1,499.00',
+			link: "/premiumeyeexam"
 
 		},
 		{
@@ -33,6 +34,7 @@ const ExamPackageNav = (props) => {
 				'The gentle care and precision required for pediatric eye health, providing a thorough understanding of your child\'s visual well-being.',
 			vat: 'inclusive of VAT',
 			price: 'Php 1,499.00',
+			link: "/pediatriceyeexam"
 
 		},
 		{
@@ -41,6 +43,7 @@ const ExamPackageNav = (props) => {
 				'Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.',
 			vat: 'inclusive of VAT',
 			price: 'Php 500.00',
+			link: "/followupeyeexam"
 
 		},
 		{
@@ -49,6 +52,7 @@ const ExamPackageNav = (props) => {
 				'Unparalleled precision and comprehensive insights into their eye health, A pinnacle of advanced diagnostics and personalized care',
 			vat: 'inclusive of VAT',
 			price: 'Php 4,999.00',
+			link: "/executiveeyeexam"
 
 		},
 		{
@@ -57,6 +61,7 @@ const ExamPackageNav = (props) => {
 				'Tailored for those seeking not only precision in diagnostics but also a thorough understanding of their visual health.',
 			vat: 'inclusive of VAT',
 			price: 'Php 5,999.00',
+			link: "/execpluseyeexam"
 
 		},
 		{
@@ -81,7 +86,7 @@ const ExamPackageNav = (props) => {
 	}
 
 	return (
-		<Panel>
+		<Box sx={{backgroundColor: "#FFF" , p: 2, borderRadius: '10px'}}>
 
 			<Stack direction="column" spacing={2} sx={{width : "100%", }}>
 				<Typography variant="h5"
@@ -90,7 +95,7 @@ const ExamPackageNav = (props) => {
 					Examination Packages
 				</Typography>
 				{serviceList.map((service, idx) => (
-					<Box
+					<Card
 						sx={{
 							borderRadius: '10px',
 							width: '100%',
@@ -133,7 +138,7 @@ const ExamPackageNav = (props) => {
 								</Typography>
 							</Stack>
 						</Box>
-					</Box>
+					</Card>
 				))}
 			</Stack>
 
@@ -141,7 +146,7 @@ const ExamPackageNav = (props) => {
 				<Button variant="contained" onClick={handleOtherPackage} >Other Packages</Button>
 			</Box>
 
-		</Panel>
+		</Box>
 	)
 }
 

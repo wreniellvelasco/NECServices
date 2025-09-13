@@ -1,18 +1,8 @@
-import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography, Card, CardHeader, Chip, CardContent, CardActions, Accordion, AccordionDetails, AccordionSummary
-} from '@mui/material';
-{/*import logo from "../assets/logo.png";*/}
-
+import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography} from '@mui/material';
 import * as React from "react";
 import PropTypes from "prop-types";
 import {useState} from "react";
-import {ExpandMore as ExpandMoreIcon,
-    ExpandLess as ExpandLessIcon,
-    Check as CheckIcon,
-    CalendarMonth as CalendarMonthIcon
-} from '@mui/icons-material';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
+import ExamPackageNav from "./ExamPackageNav.jsx";
 
 
 function CustomTabPanel(props) {
@@ -44,250 +34,6 @@ function a11yProps(index) {
     };
 }
 
-const ExpandableButton = ({
-                              title,
-                              description,
-                              vat,
-                              price,
-                              tests,
-                              recommended
-                          }) => {
-    const [expanded, setExpanded] = useState(false);
-
-    return (
-        <Card
-            sx={{
-                borderRadius: '10px',
-                width: '100%',
-                bgcolor: 'common.white',
-                boxShadow: 1,
-                '&:hover': { boxShadow: 4 },
-                overflow: 'hidden'
-            }}>
-
-            {/* Header with title/description and price badge */}
-            <Box sx={{ backgroundColor: "#e3f2fd", width: "500", objectFit: 'contain',
-
-                p: 1,}}>
-                <Stack direction="row" sx={{ justifyContent: "space-between" }}>
-                    <Typography variant="h5" sx={{ color: '#1565c0' }}>{title}</Typography>
-                    <Stack direction="column" sx={{ textAlign: "flex-end" }}>
-                        <Chip
-                            label={price}
-                            variant="outlined"
-                            sx={{
-                                bgcolor: 'rgba(227,242,253,1)',
-                                color: 'primary.dark',
-                                borderColor: 'rgba(187,222,251,1)',
-                            }}
-                        />
-                        <Typography variant="span" sx={{fontSize: "10px", pt:"1px"}}>{vat}</Typography>
-                    </Stack>
-                </Stack>
-                <Stack direction="row" >
-                    <Typography fontSize="12px" color="text.secondary">
-                        {description}
-                    </Typography>
-                </Stack>
-            </Box>
-
-            {/* Content: optionally show tests and recommended lists */}
-            <CardContent sx={{ pt: 1 }}>
-                <Box display="flex" alignItems="center" color="text.secondary" mb={2}>
-                    <CalendarMonthIcon fontSize="small" sx={{ mr: 1 }} />
-                </Box>
-
-                {expanded && (
-                    <Box>
-                        <Typography variant="subtitle2" color="primary.dark" gutterBottom>
-                            Included Tests
-                        </Typography>
-                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
-                            {tests?.map((tests, idx) => (
-                                <Box
-                                    component="li"
-                                    key={idx}
-                                    display="flex"
-                                    alignItems="center"
-                                    mb={0.5}
-                                >
-                                    <CheckIcon
-                                        fontSize="small"
-                                        color="success"
-                                        sx={{ mr: 1, mt: '2px' }}
-                                    />
-                                    <Typography variant="body2" color="text.primary">
-                                        {tests}
-                                    </Typography>
-                                </Box>
-                            ))}
-                        </Box>
-
-                        <Typography
-                            variant="subtitle2"
-                            color="primary.dark"
-                            gutterBottom
-                            mt={2}
-                        >
-                            Recommended For
-                        </Typography>
-                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
-                            {recommended?.map((item, idx) => (
-                                <Box
-                                    component="li"
-                                    key={idx}
-                                    display="flex"
-                                    alignItems="center"
-                                    mb={0.5}
-                                >
-                                    <CheckIcon
-                                        fontSize="small"
-                                        color="success"
-                                        sx={{ mr: 1, mt: '2px' }}
-                                    />
-                                    <Typography variant="body2" color="text.primary">
-                                        {item}
-                                    </Typography>
-                                </Box>
-                            ))}
-                        </Box>
-                    </Box>
-                )}
-            </CardContent>
-
-            {/* Actions: expand/collapse and any other buttons */}
-            <CardActions sx={{ flexDirection: 'column', gap: 1, p: 2, pt: 0 }}>
-                <Button
-                    variant="outlined"
-                    fullWidth
-                    startIcon={expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                    onClick={() => setExpanded((prev) => !prev)}
-                >
-                    {expanded ? 'Show Less' : 'Show More'}
-                </Button>
-
-                <Button variant="contained" color="primary" fullWidth>
-                    See Full Details
-                </Button>
-            </CardActions>
-        </Card>
-    );
-};
-
-ExpandableButton.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    vat: PropTypes.string,
-    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    tests: PropTypes.arrayOf(PropTypes.string).isRequired,
-    recommended: PropTypes.arrayOf(PropTypes.string).isRequired
-};
-
-const ExpandableButton2 = ({
-                               title,
-                               description,
-                               keyfeatures,
-                           }) => {
-    const [expanded, setExpanded] = useState(false);
-
-    return (
-        <Card
-            sx={{
-                borderRadius: '10px',
-                width: '100%',
-                bgcolor: 'common.white',
-                boxShadow: 1,
-                '&:hover': { boxShadow: 4 },
-                overflow: 'hidden'
-            }}
-        >
-            {/* Header with title/description and price badge */}
-            <Box sx={{ backgroundColor: "#e3f2fd", width: "500", objectFit: 'contain',
-                height: 112,
-
-                p: 1,}}>
-
-                <Typography variant="h5" sx={{ color: '#1565c0' }}>{title}</Typography>
-
-
-                <Stack direction="row" >
-                    <Typography fontSize="12px" color="text.secondary">
-                        {description}
-                    </Typography>
-                </Stack>
-            </Box>
-
-            {/* Content: optionally show tests and recommended lists */}
-            <CardContent sx={{ pt: 1 }}>
-                <Box display="flex" alignItems="center" color="text.secondary" mb={2}>
-                    <CalendarMonthIcon fontSize="small" sx={{ mr: 1 }} />
-                </Box>
-
-                {expanded && (
-                    <Box>
-                        <Typography variant="subtitle2" color="primary.dark" gutterBottom>
-                            Key Features
-                        </Typography>
-                        <Box component="ul" sx={{ pl: 2, m: 0, listStyle: 'none' }}>
-                            {keyfeatures?.map((keyfeatures, idx) => (
-                                <Box
-                                    component="li"
-                                    key={idx}
-                                    display="flex"
-                                    alignItems="center"
-                                    mb={0.5}
-                                >
-                                    <CheckIcon
-                                        fontSize="small"
-                                        color="success"
-                                        sx={{ mr: 1, mt: '2px' }}
-                                    />
-                                    <Typography variant="body2" color="text.primary">
-                                        {keyfeatures}
-                                    </Typography>
-                                </Box>
-                            ))}
-                        </Box>
-
-                        <Typography
-                            variant="subtitle2"
-                            color="primary.dark"
-                            gutterBottom
-                            mt={2}
-                        >
-
-                        </Typography>
-
-                    </Box>
-                )}
-            </CardContent>
-
-            {/* Actions: expand/collapse and any other buttons */}
-            <CardActions sx={{ flexDirection: 'column', gap: 1, p: 2, pt: 0 }}>
-                <Button
-                    variant="outlined"
-                    fullWidth
-                    startIcon={expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                    onClick={() => setExpanded((prev) => !prev)}
-                >
-                    {expanded ? 'Show Less' : 'Show More'}
-                </Button>
-
-                <Button variant="contained" color="primary" fullWidth>
-                    See Full Details
-                </Button>
-            </CardActions>
-        </Card>
-    );
-};
-
-ExpandableButton2.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    keyfeatures: PropTypes.arrayOf(PropTypes.string).isRequired
-};
-
-
 function ExecutiveEyeExam(){
 
     const [value, setValue] = useState(0);
@@ -296,346 +42,10 @@ function ExecutiveEyeExam(){
         setValue(newValue);
     };
 
-
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleChange2 = (panel) => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
-
-
-    const [serviceList, ] = useState([
-        {
-            title: 'Standard Eye Examination',
-            description:
-                'A comprehensive suite of procedures meticulously curated to ensure a thorough assessment of your eye health.',
-            vat: 'inclusive of VAT',
-            price: 'Php 999.00',
-            tests: [
-                'Visual Acuity Test',
-                'Color Vision Test',
-                'Eye Pressure Test',
-                'Refraction Assessment'
-            ],
-            recommended: [
-                'Annual check-ups',
-                'Vision prescription updates',
-                'General eye health monitoring'
-            ]
-        },
-        {
-            title: 'Premium Eye Examination',
-            description:
-                'Elevate your eye care experience with this all-inclusive package, ensuring a thorough understanding of your visual well-being.',
-            vat: 'inclusive of VAT',
-            price: 'Php 1,499.00',
-            tests: [
-                'Blood Pressure Test',
-                'Visual Acuity Test',
-            ],
-            recommended: [
-                'Patients over 40',
-                'Family history of eye disease',
-                'Existing eye conditions',
-                'Diabetes or hypertension patients'
-            ]
-        },
-        {
-            title: 'Pediatric Eye Examination',
-            description:
-                'The gentle care and precision required for pediatric eye health, providing a thorough understanding of your child\'s visual well-being.',
-            vat: 'inclusive of VAT',
-            price: 'Php 1,499.00',
-            tests: [
-                'All Comprehensive Exam Tests',
-                'Glaucoma Screening',
-                'Macular Degeneration Assessment',
-                'Diabetic Retinopathy Evaluation',
-                'Dry Eye Analysis' //
-            ],
-            recommended: [
-                'Glaucoma patients or suspects',
-                'Macular degeneration patients',
-                'Chronic dry eye sufferers',
-                'Diabetes or hypertension patients',
-                'Post-surgical follow-ups'
-            ]
-        },
-        {
-            title: 'Follow-Up Eye Examination',
-            description:
-                'Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.',
-            vat: 'inclusive of VAT',
-            price: 'Php 500.00',
-            tests: [
-                //
-            ],
-            recommended: [
-                'Eye Management',
-                'Treatment Planning'
-
-            ]
-        },
-        {
-            title: 'Executive Eye Examination',
-            description:
-                'Unparalleled precision and comprehensive insights into their eye health, A pinnacle of advanced diagnostics and personalized care',
-            vat: 'inclusive of VAT',
-            price: 'Php 4,999.00',
-            tests: [
-                'Blood Pressure Test',
-                'Eye Motility Assessment',
-                'Comprehensive Dry Eye Assessment', //
-            ],
-            recommended: [
-                'Diabetes Management',
-                'Family History of Eye Conditions',
-                'Vision Changes'
-            ]
-        },
-        {
-            title: 'Executive Plus Eye Examination',
-            description:
-                'Tailored for those seeking not only precision in diagnostics but also a thorough understanding of their visual health.',
-            vat: 'inclusive of VAT',
-            price: 'Php 5,999.00',
-            tests: [
-                'Blood Pressure Test',
-                'Visual Acuity Assessment',
-                'Comprehensive Ishihara Color Vision Test', //
-            ],
-            recommended: [
-                'Older adults - As the risk for eye diseases increases with age, a detailed exam is crucial.',
-                'People seeking proactive health management',
-            ]
-        },
-        {
-            title: 'Corporate Eye Care Program',
-            description:
-                'A Comprehensive eye examination package for your company or organizations.',
-            price: '',
-
-        },
-    ]);
-
-
-    const [serviceList1, ] = useState([
-
-        {
-            title: 'Visual Performance Assessment',
-            description:
-                'Unlock your full visual potential with our cutting-edge performance assessment.',
-            keyfeatures: [
-                'Visual Acuity Test',
-                'Color Vision Test',
-                'Eye Pressure Test',
-                'Refraction Assessment'
-            ],
-
-
-        },
-        {
-            title: 'Biometry',
-            description:
-                'Our advanced biometry techniques unlock personalized IOL solutions for crystal-clear eyesight.',
-            keyfeatures: [
-                'Accurate Measurements',
-                'Cataract Surgery Planning',
-                'IOL Implantation',
-                'Customized Treatment'
-            ],
-
-        },
-        {
-            title: 'Fundus Scan with AirDoc',
-            description:
-                'Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.',
-            keyfeatures: [
-                'AI-Enhanced Analysis',
-                'Precision Diagnostics',
-                'Efficient Screening',
-                'Personalized Care'
-            ],
-
-        },
-        {
-            title: 'Fundus Scan with Kanghua',
-            description:
-                'Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.',
-
-        },
-        {
-            title: 'Foreign Bodies Removal',
-            description:
-                'Designed to provide swift relief, ensuring your eyes stay clear, comfortable, and healthy.',
-            keyfeatures: [
-                'Prompt Intervention',
-                'Specialized Tools and Techniques',
-                'Comprehensive Eye Examination',
-                'Patient Education'
-            ],
-
-        },
-        {
-            title: 'Ishihara Color Vision Test',
-            description:
-                'Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes!',
-            keyfeatures: [
-                'Identifying Color Deficiencies',
-                'Quick and Painless',
-                'Diagnostic Accuracy',
-                'Treatment Planning',
-            ],
-
-        },
-        {
-            title: 'Ishihara with Farnsworth',
-            description:
-                'Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes!',
-            keyfeatures: [
-                'Precise Color Deficiency Identification',
-                'Quick and Efficient',
-                'Tailored Recommendations',
-                'Comprehensive Vision Wellness',
-            ],
-
-        },
-        {
-            title: 'Perimetry / Visual Field Test',
-            description:
-                'Our advanced visual field tests reveal hidden insights, guiding personalized eye care for a brighter outlook.',
-            keyfeatures: [
-                'Early Detection of Eye Conditions',
-                'Mapping Visual Sensitivity',
-                'Customized Treatment Plans',
-                'Monitoring Progression'
-            ],
-
-        },
-        {
-            title: 'Intra Ocular Pressure Assessment',
-            description:
-                'Personalized eye care, ensuring a healthy optic nerve and clear vision.',
-            keyfeatures: [
-                'Early Glaucoma Detection',
-                'Quick and Painless',
-                'Individualized Eye Care',
-                'Preventive Eye Wellness'
-            ],
-
-        },
-        {
-            title: 'OrthoKeratology Lens',
-            description:
-                'Our advanced orthokeratology lenses reshape your cornea while you sleep, leaving you glasses-free during the day!',
-            keyfeatures: [
-                'Vision Correction Without Surgery: Ortho-K provides a non-invasive option for vision correction, eliminating the need for surgical procedures like LASIK.',
-                'Myopia Control: Orthokeratology has been proven effective in slowing down the progression of myopia (nearsightedness) in children and young adults.',
-            ],
-
-        },
-        {
-            title: 'OrthoKeratology Lens Fitting',
-            description:
-                'Our advanced orthokeratology lenses reshape your cornea while you sleep, leaving you glasses-free during the day!',
-            keyfeatures: [
-                'Comprehensive Eye Examination',
-                'Custom Lens Design',
-                'Fitting and Adjustment Sessions',
-                'Individualized Treatment Plan'
-            ],
-
-        },
-        {
-            title: 'Cycloplegic Eyedrops',
-            description:
-                'Unlock clarity with Cycloplegic Eyedrops, illuminating your vision with unparalleled precision and focus.',
-            keyfeatures: [
-                'Maximum Accuracy',
-                'Ideal for All Ages',
-                'Comprehensive Eye Examination',
-                'Tailored Prescription',
-            ],
-
-        },
-        {
-            title: 'Topography',
-            description:
-                'Unveil the intricate landscapes of your eyes for unrivaled clarity and insight into your vision\'s extraordinary terrain.',
-            keyfeatures: [
-                'Customized Vision Correction',
-                'Early Detection of Conditions',
-                'Enhanced Contact Lens Fitting',
-                'Precise Refractive Surgery Planning'
-            ],
-
-        },
-        {
-            title: 'Vision Therapy',
-            description:
-                'Transform your vision into its fullest potential with the dynamic journey of Vision Therapy.',
-            keyfeatures: [
-                'Visual Rehabilitation',
-                'Sports Vision Enhancement',
-                'Reading and Learning Enhancement',
-                'Computer Vision Syndrome (CVS) Management'
-            ]
-
-        },
-
-        // … this code can push more services here dynamically
-    ]);
-
-
     return(
         <Box>
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
-
-                    {/*<Grid item xs={12}>
-                         <Stack
-                            direction="row"
-                            spacing ={2}
-                            sx={{
-
-                                justifyContent: 'space-between',
-                                p: 1,
-                                alignItems: 'center',
-                                backgroundColor: '#FFF',
-                                boxShadow: 1,
-                                borderRadius: '10px'
-                            }}>
-
-
-                            <Box
-                                component="img"
-                                src={logo}
-                                alt="My Logo"
-                                sx={{
-                                    width: 100,
-                                    height: 100,
-                                }}
-                            />
-
-
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'left',
-                                    space: 6,
-                                    gap: 2, p:1              // space between icons
-                                }}
-                            >
-                                <Button>Home</Button>
-                                <Button>Booking</Button>
-                                <Button>Services</Button>
-                                <Button>Eye & Vision Care</Button>
-                                <Button>About Us</Button>
-
-
-                            </Box>
-                        </Stack>
-                    </Grid>*/}
 
                     <Grid item xs={12}>
                         <Box
@@ -743,113 +153,71 @@ function ExecutiveEyeExam(){
                             </Stack>
                         </Box>
 
+                        <Box sx={{backgroundColor: '#FFF', p: 2}}>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                1. Blood Pressure Test
+                            </Typography>
+                            <Typography variant="body1">
+                                Initiate your examination with a thorough assessment of your general health, recognizing the intrinsic link between systemic well-being and ocular health.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                2. Visual Acuity Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Evaluate the sharpness and clarity of your vision, addressing any refractive errors that may impact visual acuity.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                3. Eye Motility Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Examine the coordination and movement of your eye muscles, ensuring optimal functionality and identifying potential issues
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                        <Container maxWidth={false} sx={{maxWidth: '750px'}}>
-                            <Accordion expanded={expanded === 'panel1'} onChange={handleChange2('panel1')}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1bh-content"
-                                    id="panel1bh-header"
-                                    sx={{justifyContent: 'space-between', alignItems: 'center'}}
-                                >
-                                    <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', color:'#698bd1'  }}>
-                                        Executive Eye Examination
-                                    </Typography>
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            ml: 'auto',        // push to the right
-                                            gap: 1,            // small gap between text & icon
-                                        }}
-                                    >
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                4. Comprehensive Dry Eye Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Explore your ability to perceive and differentiate colors accurately, providing detailed insights into the health of your color vision.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                        <Typography sx={{ color: '#fe8d0e', fontWeight: 'bold' }}>Php 4,999.00</Typography>
-                                    </Box>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Blood Pressure Test
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Initiate your examination with a thorough assessment of your general health, recognizing the intrinsic link between systemic well-being and ocular health.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                5. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
+                            </Typography>
+                            <Typography variant="body1">
+                                Dive into the intricate details of your eye's structures through advanced tools, allowing for a comprehensive physical examination.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        2. Visual Acuity Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Evaluate the sharpness and clarity of your vision, addressing any refractive errors that may impact visual acuity.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                6. Comprehensive Dry Eye Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Identify and address any symptoms of dry eye syndrome, ensuring your eyes remain comfortable and well-lubricated.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        3. Eye Motility Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Examine the coordination and movement of your eye muscles, ensuring optimal functionality and identifying potential issues
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                7. Vision Examination & Correction (Objective / Subjective)
+                            </Typography>
+                            <Typography variant="body1">
+                                Tailor your vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        4. Comprehensive Dry Eye Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Explore your ability to perceive and differentiate colors accurately, providing detailed insights into the health of your color vision.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        5. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Dive into the intricate details of your eye's structures through advanced tools, allowing for a comprehensive physical examination.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        6. Comprehensive Dry Eye Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Identify and address any symptoms of dry eye syndrome, ensuring your eyes remain comfortable and well-lubricated.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        7. Vision Examination & Correction (Objective / Subjective)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Tailor your vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        8. Digital Sensorimotor Binocular Vision Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Assess your ability to use both eyes together effectively, crucial for activities such as reading and sports.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-
-
-
-                                    <Button variant="contained"
-                                            endIcon={<KeyboardArrowRightIcon/>}
-                                            sx={{backgroundColor: '#698bd1', color: 'white', fontWeight: 'bold'}}>
-                                        Book This Service
-                                    </Button>
-
-                                </AccordionDetails>
-                            </Accordion>
-
-
-                        </Container>
-
-
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                8. Digital Sensorimotor Binocular Vision Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Assess your ability to use both eyes together effectively, crucial for activities such as reading and sports.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
+                        </Box>
 
                         <Grid item xs={12} sx={{pt: '15px'}}>
                             <Box
@@ -879,63 +247,7 @@ function ExecutiveEyeExam(){
                     </Grid>
 
                     <Grid item xs={12} md={4} sx={{mt: '15px'}}>
-                        <Box
-                            sx={{
-                                backgroundColor: '#FFF',
-                                borderRadius: '10px',
-                                objectFit: 'contain',
-                                mr: 'auto',
-                                p: 2 ,
-                            }}
-                        >
-                            <Typography variant="h5"
-                                        sx={{  marginBottom: '15px',
-                                            fontWeight: 'bold', }}>
-                                Examination Packages
-                            </Typography>
-
-                            {/* inner box grows to fill all remaining space */}
-
-                            <Grid container spacing={2}>
-                                {serviceList?.map((svc, idx) => (
-                                    <Grid item xs={12}  key={idx}>
-                                        <ExpandableButton {...svc}
-                                                          tests={svc.tests || []}
-                                                          recommended={svc.recommended || []}
-                                        />
-                                    </Grid>
-                                ))}
-                            </Grid>
-
-
-
-                        </Box>
-                    </Grid>
-
-                    <Grid item xs={12} sx={{mt: '15px'}}>
-                        <Box
-                            sx={{
-                                borderRadius: '10px',
-                                backgroundColor: '#FFF',
-                                objectFit: 'contain',
-                                mr: 'auto',
-                                p: 2,}}>
-                            <Typography variant="h5"
-                                        sx={{  marginBottom: '15px',
-                                            fontWeight: 'bold', }}>Other Packages</Typography>
-
-
-
-                            <Grid container spacing={2}>
-                                {serviceList1?.map((svc, idx) => (
-                                    <Grid item xs={12} sm={6} md={4} key={idx}>
-                                        <ExpandableButton2 {...svc}
-                                                           keyfeatures={svc.keyfeatures || []}
-                                        />
-                                    </Grid>
-                                ))}
-                            </Grid>
-                        </Box>
+                        <ExamPackageNav />
                     </Grid>
 
                 </Grid>

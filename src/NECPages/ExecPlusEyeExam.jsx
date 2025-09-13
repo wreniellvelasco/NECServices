@@ -1,6 +1,4 @@
-import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography, Card, CardHeader, Chip, CardContent, CardActions, Accordion, AccordionDetails, AccordionSummary
-} from '@mui/material';
-{/*import logo from "../assets/logo.png";*/}
+import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography, Card, Chip, CardContent, CardActions } from '@mui/material';
 import * as React from "react";
 import PropTypes from "prop-types";
 import {useState} from "react";
@@ -9,9 +7,6 @@ import {ExpandMore as ExpandMoreIcon,
     Check as CheckIcon,
     CalendarMonth as CalendarMonthIcon
 } from '@mui/icons-material';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
 
 
 function CustomTabPanel(props) {
@@ -591,51 +586,6 @@ function ExecPlusEyeExam(){
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
 
-                    {/*<Grid item xs={12}>
-                         <Stack
-                            direction="row"
-                            spacing ={2}
-                            sx={{
-
-                                justifyContent: 'space-between',
-                                p: 1,
-                                alignItems: 'center',
-                                backgroundColor: '#FFF',
-                                boxShadow: 1,
-                                borderRadius: '10px'
-                            }}>
-
-
-                            <Box
-                                component="img"
-                                src={logo}
-                                alt="My Logo"
-                                sx={{
-                                    width: 100,
-                                    height: 100,
-                                }}
-                            />
-
-
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'left',
-                                    space: 6,
-                                    gap: 2, p:1              // space between icons
-                                }}
-                            >
-                                <Button>Home</Button>
-                                <Button>Booking</Button>
-                                <Button>Services</Button>
-                                <Button>Eye & Vision Care</Button>
-                                <Button>About Us</Button>
-
-
-                            </Box>
-                        </Stack>
-                    </Grid>*/}
-
                     <Grid item xs={12}>
                         <Box
                             sx={{
@@ -742,145 +692,103 @@ function ExecPlusEyeExam(){
                             </Stack>
                         </Box>
 
+                        <Box sx={{backgroundColor: '#FFF', p: 2}}>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                1. Blood Pressure Test
+                            </Typography>
+                            <Typography variant="body1">
+                                Commence your examination with a comprehensive assessment of your general health, acknowledging the crucial link between systemic well-being and ocular health.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                2. Visual Acuity Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Evaluate the sharpness and clarity of your vision, addressing any refractive errors that may impact visual acuity.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                3. Eye Motility Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Examine the coordination and movement of your eye muscles, ensuring optimal functionality and identifying potential issues
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                        <Container maxWidth={false} sx={{maxWidth: '750px'}}>
-                            <Accordion expanded={expanded === 'panel1'} onChange={handleChange2('panel1')}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1bh-content"
-                                    id="panel1bh-header"
-                                    sx={{justifyContent: 'space-between', alignItems: 'center'}}
-                                >
-                                    <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', color:'#698bd1'  }}>
-                                        Executive Eye Examination with Perimetry
-                                    </Typography>
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            ml: 'auto',        // push to the right
-                                            gap: 1,            // small gap between text & icon
-                                        }}
-                                    >
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                4. Comprehensive Ishihara Color Vision Test
+                            </Typography>
+                            <Typography variant="body1">
+                                Explore your ability to perceive and differentiate colors accurately, providing detailed insights into the health of your color vision.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                        <Typography sx={{ color: '#fe8d0e', fontWeight: 'bold' }}>Php 5,999.00</Typography>
-                                    </Box>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Blood Pressure Test
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Commence your examination with a comprehensive assessment of your general health, acknowledging the crucial link between systemic well-being and ocular health.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                5. D-15 Color Vision Test (As Necessary)
+                            </Typography>
+                            <Typography variant="body1">
+                                Employ the D-15 test as necessary to further assess color vision and identify subtle variations in color perception.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        2. Visual Acuity Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Evaluate the sharpness and clarity of your vision, addressing any refractive errors that may impact visual acuity.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                6. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
+                            </Typography>
+                            <Typography variant="body1">
+                                Delve into the intricate details of your eye's structures through advanced tools, allowing for a comprehensive physical examination.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        3. Eye Motility Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Examine the coordination and movement of your eye muscles, ensuring optimal functionality and identifying potential issues
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                7. Comprehensive Dry Eye Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Identify and address any symptoms of dry eye syndrome, ensuring your eyes remain comfortable and well-lubricated.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        4. Comprehensive Ishihara Color Vision Test
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Explore your ability to perceive and differentiate colors accurately, providing detailed insights into the health of your color vision.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                8. Cataract Screening
+                            </Typography>
+                            <Typography variant="body1">
+                                Screen for early signs of cataracts, facilitating timely intervention and preserving your visual clarity.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        5. D-15 Color Vision Test (As Necessary)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Employ the D-15 test as necessary to further assess color vision and identify subtle variations in color perception.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                9. Glaucoma Screening (Tonometry-IOP Test)
+                            </Typography>
+                            <Typography variant="body1">
+                                Detects potential indicators of glaucoma through an in-depth screening, including Tonometry-IOP testing for precise intraocular pressure measurement.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        6. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Delve into the intricate details of your eye's structures through advanced tools, allowing for a comprehensive physical examination.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                10. Fundus Imaging with Interpretation
+                            </Typography>
+                            <Typography variant="body1">
+                                Utilize advanced imaging to capture detailed images of the retina, allowing for a comprehensive analysis of the eye's structural layers.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        7. Comprehensive Dry Eye Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Identify and address any symptoms of dry eye syndrome, ensuring your eyes remain comfortable and well-lubricated.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                11. Vision Examination & Correction (Objective / Subjective)
+                            </Typography>
+                            <Typography variant="body1">
+                                Tailor your vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        8. Cataract Screening
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Screen for early signs of cataracts, facilitating timely intervention and preserving your visual clarity.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        9. Glaucoma Screening (Tonometry-IOP Test)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Detects potential indicators of glaucoma through an in-depth screening, including Tonometry-IOP testing for precise intraocular pressure measurement.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        10. Fundus Imaging with Interpretation
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Utilize advanced imaging to capture detailed images of the retina, allowing for a comprehensive analysis of the eye's structural layers.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        11. Vision Examination & Correction (Objective / Subjective)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Tailor your vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        12. Perimetry
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Enhance your examination with Perimetry, a visual field test that assesses your peripheral vision and aids in the early detection of certain eye conditions.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-
-
-
-                                    <Button variant="contained"
-                                            endIcon={<KeyboardArrowRightIcon/>}
-                                            sx={{backgroundColor: '#698bd1', color: 'white', fontWeight: 'bold'}}>
-                                        Book This Service
-                                    </Button>
-
-                                </AccordionDetails>
-                            </Accordion>
-
-
-                        </Container>
-
-
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                12. Perimetry
+                            </Typography>
+                            <Typography variant="body1">
+                                Enhance your examination with Perimetry, a visual field test that assesses your peripheral vision and aids in the early detection of certain eye conditions.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
+                        </Box>
 
                         <Grid item xs={12} sx={{pt: '15px'}}>
                             <Box

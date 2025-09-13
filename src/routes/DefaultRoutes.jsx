@@ -12,6 +12,7 @@ const PremiumEyeExamUI = Loadable(lazy(() => import('../NECPages/PremiumEyeExam.
 const PediatricEyeExamUI = Loadable(lazy(() => import('../NECPages/PediatricEyeExam.jsx')));
 const FollowUpEyeExamUI = Loadable(lazy(() => import('../NECPages/FollowUpEyeExam.jsx')));
 const ExecutiveEyeExamUI = Loadable(lazy(() => import('../NECPages/ExecutiveEyeExam.jsx')));
+const ExecPlusEyeExamUI = Loadable(lazy(() => import('../NECPages/ExecPlusEyeExam.jsx')));
 //Other Packages import
 const Biometry = Loadable(lazy(() => import('../NECPages/Other Packages/Biometry.jsx')));
 const CycloplegicEyedrops = Loadable(lazy(() => import('../NECPages/Other Packages/CycloplegicEyedrops.jsx')));
@@ -51,6 +52,26 @@ const DefaultRoutes = {
         {
             path: '/standardeyeexam',
             element: <StandardEyeExamUI />
+        },
+        {
+            path: '/premiumeyeexam',
+            element: <PremiumEyeExamUI />
+        },
+        {
+            path: '/pediatriceyeexam',
+            element: <PediatricEyeExamUI />
+        },
+        {
+            path: '/followupeyeexam',
+            element: <FollowUpEyeExamUI/>
+        },
+        {
+          path: '/executiveeyeexam',
+          element: <ExecutiveEyeExamUI />
+        },
+        {
+            path: '/execpluseyeexam',
+            element: <ExecPlusEyeExamUI />
         },
         {
           path: '/biometry',

@@ -1,19 +1,8 @@
-import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography, Card, CardHeader, Chip, CardContent, CardActions, Accordion, AccordionDetails, AccordionSummary
-} from '@mui/material';
-{/*import logo from "../assets/logo.png";*/}
-
+import { Box, Container, Grid, Stack, Button, Tabs, Tab, Typography } from '@mui/material';
 import * as React from "react";
 import PropTypes from "prop-types";
 import {useState} from "react";
-import {ExpandMore as ExpandMoreIcon,
-        ExpandLess as ExpandLessIcon,
-        Check as CheckIcon,
-        CalendarMonth as CalendarMonthIcon
-} from '@mui/icons-material';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import ExamPackageNav from "./ExamPackageNav.jsx";
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
 
 
 function CustomTabPanel(props) {
@@ -58,66 +47,12 @@ function StandardEyeExam(){
     };
 
 
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleChange2 = (panel) => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
-
-
-
-
     return(
         <Box>
             <Container maxWidth="lg">
                 <Grid container spacing={2}>
 
-                      {/*<Grid item xs={12}>
-                         <Stack
-                            direction="row"
-                            spacing ={2}
-                            sx={{
-
-                                justifyContent: 'space-between',
-                                p: 1,
-                                alignItems: 'center',
-                                backgroundColor: '#FFF',
-                                boxShadow: 1,
-                                borderRadius: '10px'
-                            }}>
-
-
-                            <Box
-                                component="img"
-                                src={logo}
-                                alt="My Logo"
-                                sx={{
-                                    width: 100,
-                                    height: 100,
-                                }}
-                            />
-
-
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'left',
-                                    space: 6,
-                                    gap: 2, p:1              // space between icons
-                                }}
-                            >
-                                <Button>Home</Button>
-                                <Button>Booking</Button>
-                                <Button>Services</Button>
-                                <Button>Eye & Vision Care</Button>
-                                <Button>About Us</Button>
-
-
-                            </Box>
-                        </Stack>
-                    </Grid>*/}
-
-                    <Grid item xs={12}>
+                      <Grid item xs={12}>
                         <Box
                             sx={{
                                 width: '100%',
@@ -223,189 +158,80 @@ function StandardEyeExam(){
                       </Box>
 
 
+                        <Box sx={{ backgroundColor: '#FFF' , p: 2 }}>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                1. Blood Pressure Test
+                            </Typography>
+                            <Typography variant="body1">
+                                Begin with a foundational assessment of your general health through a blood pressure test, recognizing the interconnectedness of systemic health and ocular well-being.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                2. Visual Acuity Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Measure the sharpness and clarity of your vision, identifying any refractive errors that may affect your visual acuity.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                        <Container maxWidth={false} sx={{maxWidth: '750px'}}>
-                            <Accordion expanded={expanded === 'panel1'} onChange={handleChange2('panel1')}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1bh-content"
-                                    id="panel1bh-header"
-                                    sx={{justifyContent: 'space-between', alignItems: 'center'}}
-                                >
-                                    <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', color:'#698bd1'  }}>
-                                        Standard Eye Examination
-                                    </Typography>
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            ml: 'auto',        // push to the right
-                                            gap: 1,            // small gap between text & icon
-                                        }}
-                                    >
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                3. Eye Motility Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Evaluate the coordination and movement of your eye muscles, ensuring optimal functionality and identifying potential issues.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                        <Typography sx={{ color: '#fe8d0e', fontWeight: 'bold' }}>Php 999.00</Typography>
-                                    </Box>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Visual Acuity Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Evaluate the sharpness and clarity of your childs vision, identifying any potential refractive errors that may affect visual acuity.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                4. Basic Color Vision Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Explore your ability to perceive and differentiate colors accurately, assessing the health of your color vision.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        2. Eye Motility Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Examine the coordination and movement of your childs eye muscles, ensuring optimal functionality and identifying any issues.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                5. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
+                            </Typography>
+                            <Typography variant="body1">
+                                Delve into the intricate details of your eye's structures through advanced tools, allowing for a comprehensive physical examination.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        3. Color Vision Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Explore your childs ability to perceive and differentiate colors accurately, assessing the health of their color vision.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                6. Standard Dry Eye Assessment
+                            </Typography>
+                            <Typography variant="body1">
+                                Identify and address symptoms of dry eye syndrome, ensuring your eyes remain comfortable and well-lubricated.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        4. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Delve into the intricate details of your childs eye structures through advanced tools, allowing for a comprehensive physical examination.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                7. Cataract Screening
+                            </Typography>
+                            <Typography variant="body1">
+                                Screen for early signs of cataracts, facilitating timely intervention and preserving your visual clarity.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        5. Standard Dry Eye Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Identify and address any symptoms of dry eye syndrome your child may be experiencing, ensuring their eyes remain comfortable and well-lubricated.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                8. Glaucoma Screening VH Test
+                            </Typography>
+                            <Typography variant="body1">
+                                Detects potential indicators of glaucoma through a comprehensive screening, emphasizing the importance of early diagnosis and management.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        6. Binocular Vision Assessment
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Assess your childs ability to use both eyes together effectively, crucial for activities like reading and sports.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
+                                9. Vision Examination & Correction (Objective / Subjective)
+                            </Typography>
+                            <Typography variant="body1">
+                                Tailor your vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
+                            </Typography>
+                            <Typography>&nbsp;</Typography>
+                        </Box>
 
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        7. Suppression Test
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Evaluate the suppression of one eye in binocular vision, identifying any issues that may affect depth perception.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        8. Vision Examination & Correction (Objective / Subjective)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Tailor your childs vision correction needs through both objective and subjective assessments, ensuring personalized and accurate prescriptions.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        9. Automated Keratometry (As Necessary)
-                                    </Typography>
-                                    <Typography variant="body1">
-                                        Utilize advanced keratometry, as necessary, to assess the curvature of the cornea and gather additional data for comprehensive diagnostics.
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-
-
-                                    <Button variant="contained"
-                                            endIcon={<KeyboardArrowRightIcon/>}
-                                            sx={{backgroundColor: '#698bd1', color: 'white', fontWeight: 'bold'}}>
-                                        Book This Service
-                                    </Button>
-
-                                </AccordionDetails>
-                            </Accordion>
-
-                            <Accordion expanded={expanded === 'panel2'} onChange={handleChange2('panel2')}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel2bh-content"
-                                    id="panel2bh-header"
-                                >
-                                    <Typography sx={{ width: '33%', flexShrink: 0 }}>Premium Eye Examination</Typography>
-                                    <Box sx={{display: 'flex',
-                                        alignItems: 'center',
-                                        ml: 'auto',
-                                        gap: 1}}>
-                                        <Typography sx={{ color: 'text.secondary' }}>Php 1,499.00</Typography>
-                                    </Box>
-                                </AccordionSummary>
-                                <AccordionDetails>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Blood Pressure Test
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        1. Blood Pressure Test
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        3. Eye Motility Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        4. Basic Color Vision Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        5. Physical Eye Examination (Bio-microscopy / Ophthalmoscopy)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        6. Comprehensive Dry Eye Assessment
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        7. Cataract Screening
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        8. Glaucoma Screening VH Test with Tonometry IOP Test
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        9. Vision Examination & Correction (Objective / Subjective)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold', color:'#698bd1' }}>
-                                        10. Automated Keratometry (As Necessary)
-                                    </Typography>
-                                    <Typography>&nbsp;</Typography>
-
-                                    <Button variant="contained"
-                                            sx={{backgroundColor: '#2563eb', color: 'white', fontWeight: 'bold'}}>
-                                        View More
-                                    </Button>
-
-                                </AccordionDetails>
-                            </Accordion>
-                        </Container>
 
 
 

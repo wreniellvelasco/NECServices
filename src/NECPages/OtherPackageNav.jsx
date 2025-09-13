@@ -197,7 +197,7 @@ const ExamPackageNav = (props) => {
 	}
 
 	return (
-		<Panel>
+		<Box sx={{backgroundColor: "#FFF" , p: 2}}>
 
 
 
@@ -255,7 +255,7 @@ const ExamPackageNav = (props) => {
 			<Box sx={{ pt: '10px' }}>
 				<Button variant="contained" onClick={handleOtherPackage} >Exam Packages</Button>
 			</Box>
-		</Panel>
+		</Box>
 	)
 }
 
