@@ -130,7 +130,7 @@ const DefaultRoutes = {
             element: <VisPerfAssessment />
         },
         {
-            path: "/servicepageui",
+            path: "/services",
             element: <ServicePageUI />
         }
 
