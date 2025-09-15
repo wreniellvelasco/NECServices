@@ -1,74 +1,14 @@
-import {Box, Container, Grid, Stack, Button, Tabs, Tab, Typography, Card, CardHeader, Chip, CardContent, CardActions, Accordion,
-    AccordionDetails, AccordionSummary} from '@mui/material';
-{/*import logo from "../assets/logo.png";*/}
+import {Box, Container, Grid, Stack, Typography, } from '@mui/material';
 import * as React from "react";
-import PropTypes from "prop-types";
-import {useState} from "react";
-import {ExpandMore as ExpandMoreIcon,
-    ExpandLess as ExpandLessIcon,
-    Check as CheckIcon,
-    CalendarMonth as CalendarMonthIcon
-} from '@mui/icons-material';
-import ExamPackageNav from "../ExamPackageNav.jsx";
 import OtherPackageNav from "../OtherPackageNav.jsx";
-{/* import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'; */}
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
-{/*import AttachMoneyIcon from "@mui/icons-material/AttachMoney.js"; */}
-
-
-function CustomTabPanel(props) {
-    const { children, value, index, ...other } = props;
-
-    return (
-        <div
-            role="tabpanel"
-            hidden={value !== index}
-            id={`simple-tabpanel-${index}`}
-            aria-labelledby={`simple-tab-${index}`}
-            {...other}
-        >
-            {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-        </div>
-    );
-}
-
-CustomTabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-    return {
-        id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
-    };
-}
 
 
 function VisPerfAssessment(){
 
-    const [value, setValue] = useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
-
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleChange2 = (panel) => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
-
-
     return(
         <Box>
             <Container maxWidth="lg">
-
-
                 <Grid container spacing={2}>
-
                      <Grid item xs={12} md={8}>
                         <Box
                             sx={{
@@ -76,9 +16,7 @@ function VisPerfAssessment(){
                                 paddingTop: '15px'
                             }}>
 
-
                             <Stack >
-
                                 <Typography variant="h4">Visual Performance Assessment (VPA)</Typography>
                                 <Typography>&nbsp;</Typography>
                                 <Typography>At Nakpil Eye Clinic, we believe that optimal visual performance is the cornerstone of a vibrant and successful life. Our Visual Performance Assessment (VPA) is meticulously designed to evaluate and enhance the
@@ -149,9 +87,6 @@ function VisPerfAssessment(){
                             </Typography>
                             <Typography>&nbsp;</Typography>
 
-
-
-
                             <Typography variant="h5" sx={{  flexShrink: 0, color: '#1f2278', fontWeight: 'bold' }}>
                                 Why Choose Nakpil Eye Clinic for Visual Performance Assessment?
                             </Typography>
@@ -185,38 +120,13 @@ function VisPerfAssessment(){
                             <Typography>&nbsp;</Typography>
                         </Box>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <Grid item xs={12} sx={{pt: '15px'}}>
-
-                        </Grid>
-
-
-
                     </Grid>
 
                     <Grid item xs={12} md={4} sx={{mt: '15px'}}>
                         <OtherPackageNav />
                     </Grid>
-
                 </Grid>
-
-
-
-
             </Container>
-
         </Box>
     )
 }
