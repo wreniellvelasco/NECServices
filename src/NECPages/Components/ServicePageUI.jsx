@@ -107,8 +107,6 @@ const ServicePageUI = () => {
                                 &nbsp;
                             </Stack>
                         })}
-
-
                     </Box>
                     <Box sx={{ backgroundColor: '#FFF' , p: 2 }}>
 

@@ -8,44 +8,46 @@ import * as PropTypes from "prop-types";
 
 const ExamPackageNav = (props) => {
 
+	ExamPackageNav.propTypes = {
+		onClick : PropTypes.func.isRequired,
+	}
+
 	const {
 		onClick
 	} = props;
 
 	ExamPackageNav.propTypes = {
-		onClick : PropTypes.func.isRequired,
-	}
 
+	}
 
 	const navigate = useNavigate();
 
 	const [serviceList, ] = useState([
 		{
 			id : 1,
-			title : "Orthokeratology Lens Fitting",
-			description : "Your journey to clear, lens-free vision begins with our expert Orthokeratology (Ortho-K) Lens Fitting service begins here. Rediscover the freedom of crisp vision without " +
-				"the constraints of glasses or daytime contact lenses through our tailored fitting process, designed to ensure optimal comfort and effectiveness.",
-			subtitle : "What to Expect?",
-			subdesc : "Our Ortho-K Lens Fitting is a personalized and meticulous process aimed at crafting lenses that precisely reshape your cornea overnight. This non-surgical approach allows " +
-				"you to enjoy clear vision throughout the day without the need for traditional corrective eyewear.",
-			subtitle1 : "Key Aspects of Orthokeratology Lens Fitting",
+			title : "Biometry",
+			summary: "Our advanced biometry techniques unlock personalized IOL solutions for crystal-clear eyesight",
+			description : "Our Biometry service is a cutting-edge diagnostic procedure designed to obtain accurate measurements of your eye's structures, ensuring optimal outcomes for various eye surgeries and interventions.",
+			subdesc : "Biometry is a non-invasive and painless diagnostic tool that captures detailed measurements of key structures within the eye, such as the length of the eyeball and the curvature of the cornea. These" +
+				" measurements are crucial for planning and performing procedures like cataract surgery and implanting intraocular lenses (IOLs).",
+			subtitle1 : "Key Features",
 			keyaspects : [
 				{
-					title : "1. Comprehensive Eye Examination",
-					description : "Our experienced optometrists conduct a thorough eye examination to assess your current prescription, corneal shape, and overall eye health.",
+					title : "1. Accurate Measurements",
+					description : "Biometry provides precise measurements of the eye's dimensions, enabling personalized treatment plans for surgeries and interventions.",
 				},
 				{
-					title : "2. Custom Lens Design",
-					description: "Using advanced technology, we design Ortho-K lenses tailored to your unique eye anatomy and prescription, ensuring a comfortable and effective fit.",
+					title : "2. Cataract Surgery Planning",
+					description: "For individuals undergoing cataract surgery, Biometry is essential for selecting the appropriate intraocular lens power and ensuring optimal visual outcomes.",
 				},
 				{
-					title : "3. Fitting and Adjustment Sessions",
-					description : "During fitting sessions, we ensure the lenses provide the optimal corneal reshaping. We also guide you on lens insertion, removal, and care.",
+					title : "3. IOL Implantation",
+					description : "Biometry aids in the calculation of intraocular lens power for patients receiving artificial lenses, supporting better vision correction after surgery.",
 				},
 				{
-					title : "4. Individualized Treatment Plan",
-					description : "Your Ortho-K lens fitting is part of a personalized treatment plan, addressing your specific vision correction needs and lifestyle preferences.",
-					subdescription : "Discover the joy of clear vision without constraints at Nakpil Eye Clinic - Your Eye and Vision Specialist."
+					title : "4. Customized Treatment",
+					description : "The data obtained through Biometry allows our expert eye care professionals to tailor interventions to each patient's unique eye anatomy.",
+					subdescription : "Experience the precision of Biometry at Nakpil Eye Clinic. Let us guide you towards optimal vision outcomes with personalized and accurate measurements."
 				}
 			],
 			recommended : [
@@ -57,35 +59,35 @@ const ExamPackageNav = (props) => {
 				"https://placehold.it/1200x600",
 				"https://placehold.it/1200x600"
 			],
-			price : 3000,
-			link : "..//OrthokeratologyLensFitting"
+			price : "",
+			link : "..//foreignbodiesremoval"
 
 		},
 		{
 			id : 2,
-			title : "Ishihara Color Vision Test",
-			description : "Explore the richness of color vision with our Ishihara Color Vision Test, a quick and effective diagnostic tool designed to evaluate your ability to discern various colors accurately.",
-			subtitle : "What to Expect?",
-			subdesc : "The Ishihara Color Vision Test is a widely recognized and trusted method for assessing color blindness and deficiencies. During this painless and non-invasive test, you will be presented " +
-				"with a series of plates containing colored dots forming numbers or patterns. Your responses to these plates help us understand the nuances of your color perception.",
-			subtitle1 : "Key Aspects of the Ishihara Color Vision Test",
+			title : "Cycloplegic Refraction",
+			summary : "Unlock clarity with Cycloplegic Eyedrops, illuminating your vision with unparalleled precision and focus.",
+			description : "Our Cycloplegic Refraction service is designed to provide a comprehensive and precise assessment of your refractive error, ensuring that your prescription is determined with the utmost accuracy.",
+			subdesc : "Cycloplegic Refraction is an advanced eye examination technique that involves using specialized eye drops to temporarily paralyze the muscles within the eye, particularly the ciliary muscle. " +
+				"By doing so, we achieve maximum relaxation of the eye's focusing mechanism, allowing for a more accurate measurement of your refractive error.",
+			subtitle1 : "Key Features of Cycloplegic Refraction",
 			keyaspects : [
 				{
-					title : "1. Identifying Color Deficiencies",
-					description : "The test is designed to identify red-green color deficiencies, the most common form of color blindness. It can also detect other types of color vision impairments.",
+					title : "1. Maximum Accuracy",
+					description : "By temporarily suspending the eye's natural focusing ability, Cycloplegic Refraction provides an accurate and reliable measurement of your refractive error.",
 				},
 				{
-					title : "2. Quick and Painless",
-					description: "The Ishihara Test is a swift and straightforward procedure, making it convenient for both adults and children.",
+					title : "2. Ideal for All Ages",
+					description: "Particularly beneficial for children and young adults, Cycloplegic Refraction ensures accurate prescription determination, crucial for eye development and addressing potential vision issues.",
 				},
 				{
-					title : "3. Diagnostic Accuracy",
-					description : "Our experienced eye care professionals interpret your responses to provide accurate insights into your color vision abilities.",
+					title : "3. Comprehensive Eye Examination",
+					description : "Beyond refractive error assessment, Cycloplegic Refraction allows for a thorough examination of the overall health of the eyes, aiding in the early detection of potential eye conditions.",
 				},
 				{
-					title : "4. Treatment Planning",
-					description : "Based on the test results, we can offer tailored advice and recommendations for managing color vision deficiencies, enhancing your overall visual experience.",
-					subdescription : "Discover the true spectrum of your color vision with the Ishihara Color Vision Test at Nakpil Eye Clinic. Let us guide you towards a vibrant and accurate perception of the world around you."
+					title : "4. Tailored Prescription",
+					description : "The precise measurements obtained through this technique enable us to craft a customized prescription, optimizing your visual clarity.",
+					subdescription : "Experience the precision of Cycloplegic Refraction at Nakpil Eye Clinic. Let us guide you towards clear and accurate vision, ensuring your eyes receive the meticulous care they deserve."
 				}
 			],
 			recommended : [
@@ -97,12 +99,14 @@ const ExamPackageNav = (props) => {
 				"https://placehold.it/1200x600",
 				"https://placehold.it/1200x600"
 			],
-			price : 3000,
-			link : "..//IshiharaColorVisionTest"
+			price : "",
+			link : "..//foreignbodiesremoval"
+
 		},
 		{
 			id : 3,
 			title : "Foreign Bodies Removal",
+			summary: "Designed to provide swift relief, ensuring your eyes stay clear, comfortable, and healthy." ,
 			description : "Accidents happen, and when a foreign body finds its way into your eye, prompt and expert removal is essential. Our Foreign Body Removal service is designed to provide swift " +
 				"relief, ensuring your eyes stay clear, comfortable, and healthy.",
 			subtitle : "What to Expect?",
@@ -137,58 +141,20 @@ const ExamPackageNav = (props) => {
 				"https://placehold.it/1200x600",
 				"https://placehold.it/1200x600"
 			],
-			price : 3000,
-			link : "..//foreignbodiesremoval"
-
-		},
-		{
-			id : 4,
-			title : "Biometry",
-			description : "Our Biometry service is a cutting-edge diagnostic procedure designed to obtain accurate measurements of your eye's structures, ensuring optimal outcomes for various eye surgeries and interventions.",
-			subdesc : "Biometry is a non-invasive and painless diagnostic tool that captures detailed measurements of key structures within the eye, such as the length of the eyeball and the curvature of the cornea. These" +
-				" measurements are crucial for planning and performing procedures like cataract surgery and implanting intraocular lenses (IOLs).",
-			subtitle1 : "Key Features",
-			keyfeatures : [
-				{
-					title : "1. Accurate Measurements",
-					description : "Biometry provides precise measurements of the eye's dimensions, enabling personalized treatment plans for surgeries and interventions.",
-				},
-				{
-					title : "2. Cataract Surgery Planning",
-					description: "For individuals undergoing cataract surgery, Biometry is essential for selecting the appropriate intraocular lens power and ensuring optimal visual outcomes.",
-				},
-				{
-					title : "3. IOL Implantation",
-					description : "Biometry aids in the calculation of intraocular lens power for patients receiving artificial lenses, supporting better vision correction after surgery.",
-				},
-				{
-					title : "4. Customized Treatment",
-					description : "The data obtained through Biometry allows our expert eye care professionals to tailor interventions to each patient's unique eye anatomy.",
-					subdescription : "Experience the precision of Biometry at Nakpil Eye Clinic. Let us guide you towards optimal vision outcomes with personalized and accurate measurements."
-				}
-			],
-			recommended : [
-				"Test 1",
-				"Test 2",
-			],
-			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
-			images : [
-				"https://placehold.it/1200x600",
-				"https://placehold.it/1200x600"
-			],
-			price : 3000,
+			price : "",
 			link : "..//foreignbodiesremoval"
 
 		},
 		{
 			id : 4,
 			title : "Fundus Scan with AirDoc",
+			summary : "Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.",
 			description : "Immerse yourself in the future of ocular diagnostics with our state-of-the-art Fundus Scan, driven by innovative AirDoc empowered by Artificial Intelligence (AI). This revolutionary combination " +
 				"provides a detailed and intelligent examination of your retina, setting new standards in precision eye care.",
 			subdesc : "Our Fundus Scan, utilizing AirDoc with AI integration, is a groundbreaking diagnostic tool that goes beyond traditional imaging. This non-invasive procedure captures highly detailed images of the " +
 				"retina, harnessing the power of AI for intelligent analysis and early detection of eye conditions.",
 			subtitle1 : "Key Aspects of AI-Powered Fundus Scan",
-			keyfeatures : [
+			keyaspects : [
 				{
 					title : "1. AI-Enhanced Analysis",
 					description : "The advanced algorithms of our AirDoc intelligently analyze retinal images, aiding in the early identification of subtle abnormalities and potential eye diseases.",
@@ -217,19 +183,124 @@ const ExamPackageNav = (props) => {
 				"https://placehold.it/1200x600",
 				"https://placehold.it/1200x600"
 			],
-			price : 3000,
+			price : "",
 			link : "..//foreignbodiesremoval"
 
 		},
 		{
 			id : 5,
+			title : "Fundus Scan with Kanghua",
+			summary : "Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.",
+			description : "Elevate your understanding of ocular health with our cutting-edge Fundus Scan, powered by Kanghua. This diagnostic procedure provides an intricate view of the retina, allowing for early " +
+				"detection and precise management of various eye conditions.",
+			subdesc : "Our Fundus Scan, conducted with the latest Kanghua Fundus Imaging equipment, is a non-invasive and high-resolution imaging process that captures detailed images of the back of your eye, " +
+				"including the retina and optic nerve. This technology-rich procedure is instrumental in diagnosing and monitoring conditions such as diabetic retinopathy, macular degeneration, and glaucoma.",
+			subtitle1 : "Experience the precision of ocular imaging with the Fundus Scan powered by Kanghua at Nakpil Eye Clinic. Let us guide you towards a clearer and healthier vision.",
+
+			recommended : [
+				"Test 1",
+				"Test 2",
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "",
+			link : "..//foreignbodiesremoval"
+
+		},
+		{
+			id : 6,
+			title : "Intraocular Pressure (IOP) Assessment",
+			summary : "Personalized eye care, ensuring a healthy optic nerve and clear vision.",
+			description : "Uncover the crucial insights into your eye pressure with our Intraocular Pressure (IOP) Assessment. This diagnostic procedure plays a pivotal role in detecting and managing conditions such as " +
+				"glaucoma, ensuring the longevity of your visual clarity.",
+			subdesc : "The Intraocular Pressure Assessment, commonly known as tonometry, is a non-invasive and painless test that measures the pressure within your eyes. This key metric is essential for evaluating the" +
+				"risk of glaucoma, a condition characterized by elevated intraocular pressure that can lead to optic nerve damage.",
+			subtitle1 : "Key Aspects of Intraocular Pressure Assessment",
+			keyaspects : [
+				{
+					title : "1. Early Glaucoma Detection",
+					description : "Elevated intraocular pressure is a significant risk factor for glaucoma. Regular assessments allow for the early detection and management of this sight-threatening condition.",
+				},
+				{
+					title : "2. Quick and Painless",
+					description: "The assessment is quick, typically taking just a few minutes, and involves minimal discomfort for the patient.",
+				},
+				{
+					title : "3. Individualized Eye Care",
+					description : "Intraocular pressure readings contribute to a personalized eye care plan, enabling our expert team to tailor interventions based on your unique eye health needs.",
+				},
+				{
+					title : "4. Preventive Eye Wellness",
+					description : "Regular IOP assessments are a proactive measure to monitor and maintain eye health, preventing potential complications associated with elevated pressure.",
+					subdescription : "Prioritize the longevity of your vision with the Intraocular Pressure Assessment at Nakpil Eye Clinic. Let us be your partners in preserving the health and clarity of your eyes."
+				}
+			],
+			recommended : [
+				"Test 1",
+				"Test 2",
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "",
+			link : "..//foreignbodiesremoval"
+
+		},
+		{
+			id : 7,
+			title : "Ishihara Color Vision Test",
+			summary: "Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes! " ,
+			description : "Explore the richness of color vision with our Ishihara Color Vision Test, a quick and effective diagnostic tool designed to evaluate your ability to discern various colors accurately.",
+			subtitle : "What to Expect?",
+			subdesc : "The Ishihara Color Vision Test is a widely recognized and trusted method for assessing color blindness and deficiencies. During this painless and non-invasive test, you will be presented " +
+				"with a series of plates containing colored dots forming numbers or patterns. Your responses to these plates help us understand the nuances of your color perception.",
+			subtitle1 : "Key Aspects of the Ishihara Color Vision Test",
+			keyaspects : [
+				{
+					title : "1. Identifying Color Deficiencies",
+					description : "The test is designed to identify red-green color deficiencies, the most common form of color blindness. It can also detect other types of color vision impairments.",
+				},
+				{
+					title : "2. Quick and Painless",
+					description: "The Ishihara Test is a swift and straightforward procedure, making it convenient for both adults and children.",
+				},
+				{
+					title : "3. Diagnostic Accuracy",
+					description : "Our experienced eye care professionals interpret your responses to provide accurate insights into your color vision abilities.",
+				},
+				{
+					title : "4. Treatment Planning",
+					description : "Based on the test results, we can offer tailored advice and recommendations for managing color vision deficiencies, enhancing your overall visual experience.",
+					subdescription : "Discover the true spectrum of your color vision with the Ishihara Color Vision Test at Nakpil Eye Clinic. Let us guide you towards a vibrant and accurate perception of the world around you."
+				}
+			],
+			recommended : [
+				"Test 1",
+				"Test 2",
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "",
+			link : "..//IshiharaColorVisionTest"
+		},
+		{
+			id : 8,
 			title : "Ishihara Color Vision Test with Farnsworth (D-15)",
+			summary : "Discover your color vision with the Ishihara Test. Uncover hidden hues and see the world through new eyes!",
 			description : "Elevate your understanding of color vision with our combined Ishihara Color Vision and Farnsworth Test. This dual assessment provides a nuanced evaluation of your color perception, ensuring a " +
 				"thorough understanding of your visual capabilities.",
 			subdesc : "Our combined approach involves the Ishihara Color Vision Test, which focuses on identifying red-green color deficiencies, paired with the Farnsworth Test, a more detailed examination of color " +
 				"discrimination and arrangement. Together, these tests offer a holistic evaluation of your color vision.",
 			subtitle1 : "Key Aspects of the Combined Test",
-			keyfeatures : [
+			keyaspects : [
 				{
 					title : "1. Precise Color Deficiency Identification",
 					description : "The Ishihara Test pinpoints red-green color deficiencies, while the Farnsworth Test provides a detailed analysis of color discrimination across the spectrum.",
@@ -258,35 +329,82 @@ const ExamPackageNav = (props) => {
 				"https://placehold.it/1200x600",
 				"https://placehold.it/1200x600"
 			],
-			price : 3000,
+			price : "",
 			link : "..//foreignbodiesremoval"
 
 		},
 		{
-			id : 6,
-			title : "Intraocular Pressure (IOP) Assessment",
-			description : "Uncover the crucial insights into your eye pressure with our Intraocular Pressure (IOP) Assessment. This diagnostic procedure plays a pivotal role in detecting and managing conditions such as " +
-				"glaucoma, ensuring the longevity of your visual clarity.",
-			subdesc : "The Intraocular Pressure Assessment, commonly known as tonometry, is a non-invasive and painless test that measures the pressure within your eyes. This key metric is essential for evaluating the" +
-				"risk of glaucoma, a condition characterized by elevated intraocular pressure that can lead to optic nerve damage.",
-			subtitle1 : "Key Aspects of Intraocular Pressure Assessment",
-			keyfeatures : [
+			id : 9,
+			title : "Orthokeratology Lens", //
+			summary : "Our advanced orthokeratology lenses reshape your cornea while you sleep, leaving you glasses-free during the day!",
+			description : "Experience the freedom of clear vision without the constraints of glasses or daytime contact lenses through our Orthokeratology Lens services. Commonly known as Ortho-K, this innovative " +
+				"approach corrects your vision while you sleep, offering a lens-free daytime experience tailored to your unique visual needs.",
+			subtitle : "Key Aspects of Perimetry",
+			subdesc : "Orthokeratology involves the use of specially designed contact lenses that reshape the cornea overnight, allowing for improved focusing power during the day. This non-surgical, reversible " +
+				"process offers a vision correction alternative for those seeking freedom from glasses and daytime contacts.",
+			subtitle1 : "Key Features of Orthokeratology Lens:",
+			keyaspects : [
+
+				"Vision Correction Without Surgery: Ortho-K provides a non-invasive option for vision correction, eliminating the need for surgical procedures like LASIK.",
+				"Myopia Control: Orthokeratology has been proven effective in slowing down the progression of myopia (nearsightedness) in children and young adults.",
+				"Lens-Free Daytime Experience: Enjoy clear vision throughout the day without the hassle of glasses or traditional contact lenses.",
+				"Reversible and Customizable: The effects of Ortho-K are reversible, and the lenses can be customized to suit your individual prescription and lifestyle."
+
+			],
+			whychoose : [
+				"Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.	," +
+				"Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
+				"Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
+				"Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
+
 				{
-					title : "1. Early Glaucoma Detection",
-					description : "Elevated intraocular pressure is a significant risk factor for glaucoma. Regular assessments allow for the early detection and management of this sight-threatening condition.",
+					description : "Invest in Your Lens-Free Clarity. Explore the liberating world of Orthokeratology at Nakpil Eye Clinic. Rediscover clear vision without " +
+						"the need for glasses or daytime contacts, and let us be your partner in achieving visual freedom."
 				},
 				{
-					title : "2. Quick and Painless",
-					description: "The assessment is quick, typically taking just a few minutes, and involves minimal discomfort for the patient.",
+					subdesc : "Experience clarity on your terms at Nakpil Eye Clinic – Your Eye and Vision Specialist."
+				},
+			],
+			recommended : [
+				"Test 1",
+				"Test 2",
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "",
+			link : "..//foreignbodiesremoval"
+
+		},
+		{
+			id : 10,
+			title : "Orthokeratology Lens Fitting",
+			summary : "Discover the joy of clear vision without constraints at Nakpil Eye Clinic - Your Eye and Vision Specialist.",
+			description : "Your journey to clear, lens-free vision begins with our expert Orthokeratology (Ortho-K) Lens Fitting service begins here. Rediscover the freedom of crisp vision without " +
+				"the constraints of glasses or daytime contact lenses through our tailored fitting process, designed to ensure optimal comfort and effectiveness.",
+			subtitle : "What to Expect?",
+			subdesc : "Our Ortho-K Lens Fitting is a personalized and meticulous process aimed at crafting lenses that precisely reshape your cornea overnight. This non-surgical approach allows " +
+				"you to enjoy clear vision throughout the day without the need for traditional corrective eyewear.",
+			subtitle1 : "Key Aspects of Orthokeratology Lens Fitting",
+			keyaspects : [
+				{
+					title : "1. Comprehensive Eye Examination",
+					description : "Our experienced optometrists conduct a thorough eye examination to assess your current prescription, corneal shape, and overall eye health.",
 				},
 				{
-					title : "3. Individualized Eye Care",
-					description : "Intraocular pressure readings contribute to a personalized eye care plan, enabling our expert team to tailor interventions based on your unique eye health needs.",
+					title : "2. Custom Lens Design",
+					description: "Using advanced technology, we design Ortho-K lenses tailored to your unique eye anatomy and prescription, ensuring a comfortable and effective fit.",
 				},
 				{
-					title : "4. Preventive Eye Wellness",
-					description : "Regular IOP assessments are a proactive measure to monitor and maintain eye health, preventing potential complications associated with elevated pressure.",
-					subdescription : "Prioritize the longevity of your vision with the Intraocular Pressure Assessment at Nakpil Eye Clinic. Let us be your partners in preserving the health and clarity of your eyes."
+					title : "3. Fitting and Adjustment Sessions",
+					description : "During fitting sessions, we ensure the lenses provide the optimal corneal reshaping. We also guide you on lens insertion, removal, and care.",
+				},
+				{
+					title : "4. Individualized Treatment Plan",
+					description : "Your Ortho-K lens fitting is part of a personalized treatment plan, addressing your specific vision correction needs and lifestyle preferences.",
+					subdescription : "Discover the joy of clear vision without constraints at Nakpil Eye Clinic - Your Eye and Vision Specialist."
 				}
 			],
 			recommended : [
@@ -298,58 +416,20 @@ const ExamPackageNav = (props) => {
 				"https://placehold.it/1200x600",
 				"https://placehold.it/1200x600"
 			],
-			price : 3000,
-			link : "..//foreignbodiesremoval"
+			price : "",
+			link : "..//OrthokeratologyLensFitting"
 
 		},
 		{
-			id : 7,
-			title : "Cycloplegic Refraction",
-			description : "Our Cycloplegic Refraction service is designed to provide a comprehensive and precise assessment of your refractive error, ensuring that your prescription is determined with the utmost accuracy.",
-			subdesc : "Cycloplegic Refraction is an advanced eye examination technique that involves using specialized eye drops to temporarily paralyze the muscles within the eye, particularly the ciliary muscle. " +
-				"By doing so, we achieve maximum relaxation of the eye's focusing mechanism, allowing for a more accurate measurement of your refractive error.",
-			subtitle1 : "Key Features of Cycloplegic Refraction",
-			keyfeatures : [
-				{
-					title : "1. Maximum Accuracy",
-					description : "By temporarily suspending the eye's natural focusing ability, Cycloplegic Refraction provides an accurate and reliable measurement of your refractive error.",
-				},
-				{
-					title : "2. Ideal for All Ages",
-					description: "Particularly beneficial for children and young adults, Cycloplegic Refraction ensures accurate prescription determination, crucial for eye development and addressing potential vision issues.",
-				},
-				{
-					title : "3. Comprehensive Eye Examination",
-					description : "Beyond refractive error assessment, Cycloplegic Refraction allows for a thorough examination of the overall health of the eyes, aiding in the early detection of potential eye conditions.",
-				},
-				{
-					title : "4. Tailored Prescription",
-					description : "The precise measurements obtained through this technique enable us to craft a customized prescription, optimizing your visual clarity.",
-					subdescription : "Experience the precision of Cycloplegic Refraction at Nakpil Eye Clinic. Let us guide you towards clear and accurate vision, ensuring your eyes receive the meticulous care they deserve."
-				}
-			],
-			recommended : [
-				"Test 1",
-				"Test 2",
-			],
-			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
-			images : [
-				"https://placehold.it/1200x600",
-				"https://placehold.it/1200x600"
-			],
-			price : 3000,
-			link : "..//foreignbodiesremoval"
-
-		},
-		{
-			id : 8,
+			id : 11,
 			title : "Perimetry or Visual Field Test",
+			summary : "Our advanced visual field tests reveal hidden insights, guiding personalized eye care for a brighter outlook.",
 			description : "Welcome to Nakpil Eye Clinic, where we prioritize your visual health and clarity. Explore the intricacies of your visual field with our Perimetry test, also commonly referred to as the Visual Field Test. " +
 				"This advanced diagnostic tool offers invaluable insights into your field of vision, aiding in the early detection and management of various eye conditions.",
 			subdesc : "Perimetry, or the Visual Field Test, is a sophisticated diagnostic procedure that assesses your field of vision, providing a comprehensive map of how you perceive and interpret visual information in your " +
 				"surroundings. This test is instrumental in detecting abnormalities, enabling our expert eye care professionals to create tailored solutions for your visual well-being.",
 			subtitle1 : "Key Aspects of Perimetry",
-			keyfeatures : [
+			keyaspects : [
 				{
 					title : "1. Early Detection of Eye Conditions",
 					description : "Perimetry is a vital tool for identifying early signs of eye conditions such as glaucoma, retinal diseases, and neurological disorders, allowing for prompt intervention and management.",
@@ -376,10 +456,123 @@ const ExamPackageNav = (props) => {
 				"https://placehold.it/1200x600",
 				"https://placehold.it/1200x600"
 			],
-			price : 3000,
+			price : "",
 			link : "..//foreignbodiesremoval"
 
-		}
+		},
+		{
+			id : 12,
+			title : "Topography", //
+			summary : "Unveil the intricate landscapes of your eyes for unrivaled clarity and insight into your vision's extraordinary terrain.",
+			description : "Welcome to Nakpil Eye Clinic, where vision meets precision! Our commitment to providing cutting-edge eye care services continues with our advanced Topography test. Designed to map the unique landscape " +
+				"of your cornea, this procedure offers a detailed analysis of your eye's surface, enabling our expert optometrists and an ophthalmologist to tailor precise solutions for your visual needs.",
+			subtitle : "What is Topography?",
+			subdesc : "Topography is a state-of-the-art diagnostic procedure that captures a three-dimensional map of the cornea, the transparent front part of the eye. This comprehensive mapping allows us to understand the " +
+				"curvature, shape, and irregularities of the cornea, providing invaluable insights into various eye conditions.",
+			subtitle1 : "Key Benefits of Topography procedure",
+			keyaspects : [
+				{
+					title : "1. Customized Vision Correction",
+					description: "With detailed corneal maps, we can design personalized solutions for vision correction, including customized contact lenses or laser eye surgery.",
+				},
+				{
+					title : "2. Early Detection of Conditions",
+					description: "Topography aids in the early detection of conditions such as keratoconus, corneal irregularities, and astigmatism, enabling timely intervention and management.",
+				},
+				{
+					title : "3. Enhanced Contact Lens Fitting",
+					description: "Achieve optimal comfort and vision with contact lenses tailored to the unique contours of your cornea, minimizing discomfort and maximizing clarity.",
+				},
+				{
+					title : "4. Precise Refractive Surgery Planning",
+					description: "For those considering refractive surgeries like LASIK, our Topography test ensures accurate surgical planning, resulting in improved outcomes.",
+				},
+			],
+			whychoose : [
+				{
+					title : "Why Choose Nakpil Eye Clinic for Topography?",
+				},
+				"Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.	," +
+				"Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
+				"Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
+				"Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
+
+				{
+					description : "Invest in Your Visual Precision. Uncover the details of your corneal landscape with the Topography Procedure at Nakpil Eye Clinic. Experience the clarity and precision that come with personalized eye care."
+				},
+				{
+					subdesc : "See the world in sharp focus at Nakpil Eye Clinic – Your Eye and Vision Specialist."
+				},
+			],
+			recommended : [
+				"Test 1",
+				"Test 2",
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "",
+			link : "..//foreignbodiesremoval"
+
+		},
+		{
+			id : 13,
+			title : "1. Visual Rehabilitation", //
+			summary : "Addressing conditions such as amblyopia, strabismus, and other visual disorders to improve eye coordination and functionality.",
+			description : "At Nakpil Eye Clinic, we understand that clear vision is fundamental to a fulfilling and productive life. Our Vision Therapy services are designed to address a variety of visual challenges, enhance visual comfort, and optimize" +
+				" overall visual performance. Whether you're struggling with a specific visual condition, aiming to improve sports performance, or simply seeking to enhance your visual skills, our comprehensive vision therapy program is tailored " +
+				"to meet your unique needs.",
+			subdesc : "At the heart of our Vision Therapy services is a patient-centric approach that combines cutting-edge technology with personalized care. Our experienced and certified vision therapists, trained by our Medical Director, " +
+				"Dr. John Nakpil, works closely with each individual, utilizing a holistic methodology that goes beyond traditional eye care. We believe in empowering our patients to achieve their full visual potential through a combination " +
+				"of therapeutic exercises, state-of-the-art equipment, and a supportive, nurturing environment.",
+			subtitle1 : "Key Focus Areas",
+			keyaspects : [
+				{
+					title : "1. Personalized Therapy",
+					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+				},
+				{
+					title : "1. Personalized Therapy",
+					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+				},
+				{
+					title : "1. Personalized Therapy",
+					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+				},
+				{
+					title : "1. Personalized Therapy",
+					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+				}
+			],
+			whychoose : [
+				"Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.	," +
+				"Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
+				"Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
+				"Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
+
+				{
+					description : "Invest in Your Lens-Free Clarity. Explore the liberating world of Orthokeratology at Nakpil Eye Clinic. Rediscover clear vision without " +
+						"the need for glasses or daytime contacts, and let us be your partner in achieving visual freedom."
+				},
+				{
+					subdesc : "Experience clarity on your terms at Nakpil Eye Clinic – Your Eye and Vision Specialist."
+				},
+			],
+			recommended : [
+				"Test 1",
+				"Test 2",
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "",
+			link : "..//foreignbodiesremoval"
+
+		},
 	]);
 
 
@@ -441,7 +634,7 @@ const ExamPackageNav = (props) => {
 							</Stack>
 							<Stack direction="column" >
 								<Typography fontSize="12px" color="text.secondary">
-									{service?.description}
+									{service?.summary}
 								</Typography>
 							</Stack>
 						</Box>
