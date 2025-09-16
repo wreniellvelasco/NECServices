@@ -31,6 +31,7 @@ const VisPerfAssessment = Loadable(lazy(() => import('../NECPages/Other Packages
 
 //ServicePageui
 const ServicePageUI = Loadable(lazy(() => import('../NECPages/Components/ServicePageUI.jsx')));
+const OtherPageUI = Loadable(lazy(() => import('../NECPages/Components/OtherPageUI.jsx')));
 
 
 const DefaultRoutes = {
@@ -132,7 +133,11 @@ const DefaultRoutes = {
         {
             path: "/services",
             element: <ServicePageUI />
-        }
+        },
+        {
+            path: "/other",
+            element: <OtherPageUI />
+        },
 
 
 
