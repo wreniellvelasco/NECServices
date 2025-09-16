@@ -1,6 +1,5 @@
 import {useState} from "react";
 import {Stack, Typography, Box, Button, Chip, Card } from "@mui/material";
-import {Panel} from "../components/index.jsx";
 import {useNavigate} from "react-router-dom";
 import * as PropTypes from "prop-types";
 
@@ -47,12 +46,12 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Customized Treatment",
 					description : "The data obtained through Biometry allows our expert eye care professionals to tailor interventions to each patient's unique eye anatomy.",
-					subdescription : "Experience the precision of Biometry at Nakpil Eye Clinic. Let us guide you towards optimal vision outcomes with personalized and accurate measurements."
+					subdesc : "Experience the precision of Biometry at Nakpil Eye Clinic. Let us guide you towards optimal vision outcomes with personalized and accurate measurements."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -87,12 +86,12 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Tailored Prescription",
 					description : "The precise measurements obtained through this technique enable us to craft a customized prescription, optimizing your visual clarity.",
-					subdescription : "Experience the precision of Cycloplegic Refraction at Nakpil Eye Clinic. Let us guide you towards clear and accurate vision, ensuring your eyes receive the meticulous care they deserve."
+					subdesc : "Experience the precision of Cycloplegic Refraction at Nakpil Eye Clinic. Let us guide you towards clear and accurate vision, ensuring your eyes receive the meticulous care they deserve."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -129,12 +128,12 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Patient Education",
 					description : "We take the time to educate our patients on preventive measures and safety practices to minimize the risk of future foreign body incidents.",
-					subdescription : "For prompt and expert foreign body removal, trust Nakpil Eye Clinic. Let us provide the swift relief you need, ensuring your eyes remain clear, comfortable, and healthy."
+					subdesc : "For prompt and expert foreign body removal, trust Nakpil Eye Clinic. Let us provide the swift relief you need, ensuring your eyes remain clear, comfortable, and healthy."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -170,13 +169,13 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Personalized Care",
 					description : "The combination of AI and human expertise enables us to craft personalized treatment plans based on the unique characteristics of your ocular health.",
-					subdescription : "Experience the fusion of technology and expertise with the AI-Powered Fundus Scan at Nakpil Eye Clinic. Let us lead you towards an era of intelligent ocular wellness, setting new " +
+					subdesc : "Experience the fusion of technology and expertise with the AI-Powered Fundus Scan at Nakpil Eye Clinic. Let us lead you towards an era of intelligent ocular wellness, setting new " +
 						"standards in precision eye care."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -191,15 +190,14 @@ const ExamPackageNav = (props) => {
 			id : 5,
 			title : "Fundus Scan with Kanghua",
 			summary : "Our advanced fundus scans reveal intricate details of your eye’s inner landscape, guiding personalized care.",
-			description : "Elevate your understanding of ocular health with our cutting-edge Fundus Scan, powered by Kanghua. This diagnostic procedure provides an intricate view of the retina, allowing for early " +
-				"detection and precise management of various eye conditions.",
+			description :"Elevate your understanding of ocular health with our cutting-edge Fundus Scan, powered by Kanghua. This diagnostic procedure provides an intricate view of " +
+				"the retina, allowing for early detection and precise management of various eye conditions.",
 			subdesc : "Our Fundus Scan, conducted with the latest Kanghua Fundus Imaging equipment, is a non-invasive and high-resolution imaging process that captures detailed images of the back of your eye, " +
 				"including the retina and optic nerve. This technology-rich procedure is instrumental in diagnosing and monitoring conditions such as diabetic retinopathy, macular degeneration, and glaucoma.",
-			subtitle1 : "Experience the precision of ocular imaging with the Fundus Scan powered by Kanghua at Nakpil Eye Clinic. Let us guide you towards a clearer and healthier vision.",
-
+			subdesc1 : "Experience the precision of ocular imaging with the Fundus Scan powered by Kanghua at Nakpil Eye Clinic. Let us guide you towards a clearer and healthier vision.",
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -235,12 +233,12 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Preventive Eye Wellness",
 					description : "Regular IOP assessments are a proactive measure to monitor and maintain eye health, preventing potential complications associated with elevated pressure.",
-					subdescription : "Prioritize the longevity of your vision with the Intraocular Pressure Assessment at Nakpil Eye Clinic. Let us be your partners in preserving the health and clarity of your eyes."
+					subdesc : "Prioritize the longevity of your vision with the Intraocular Pressure Assessment at Nakpil Eye Clinic. Let us be your partners in preserving the health and clarity of your eyes."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -276,12 +274,12 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Treatment Planning",
 					description : "Based on the test results, we can offer tailored advice and recommendations for managing color vision deficiencies, enhancing your overall visual experience.",
-					subdescription : "Discover the true spectrum of your color vision with the Ishihara Color Vision Test at Nakpil Eye Clinic. Let us guide you towards a vibrant and accurate perception of the world around you."
+					subdesc : "Discover the true spectrum of your color vision with the Ishihara Color Vision Test at Nakpil Eye Clinic. Let us guide you towards a vibrant and accurate perception of the world around you."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -316,13 +314,13 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Comprehensive Vision Wellness",
 					description : "Beyond color vision, we consider the broader aspects of your visual health, ensuring a holistic approach to your eye care.",
-					subdescription : "Explore the depth and richness of your color vision with our combined Ishihara Color Vision and Farnsworth Test at Nakpil Eye Clinic. Let us guide you towards a comprehensive " +
+					subdesc : "Explore the depth and richness of your color vision with our combined Ishihara Color Vision and Farnsworth Test at Nakpil Eye Clinic. Let us guide you towards a comprehensive " +
 						"understanding of your visual world."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -344,21 +342,40 @@ const ExamPackageNav = (props) => {
 				"process offers a vision correction alternative for those seeking freedom from glasses and daytime contacts.",
 			subtitle1 : "Key Features of Orthokeratology Lens:",
 			keyaspects : [
+				{
+					description : "Vision Correction Without Surgery: Ortho-K provides a non-invasive option for vision correction, eliminating the need for surgical procedures like LASIK.",
+				},
+				{
+					description :"Myopia Control: Orthokeratology has been proven effective in slowing down the progression of myopia (nearsightedness) in children and young adults.",
+				},
+				{
+					description :"Lens-Free Daytime Experience: Enjoy clear vision throughout the day without the hassle of glasses or traditional contact lenses.",
+				},
+				{
+					description :"Reversible and Customizable: The effects of Ortho-K are reversible, and the lenses can be customized to suit your individual prescription and lifestyle."
+				},
 
-				"Vision Correction Without Surgery: Ortho-K provides a non-invasive option for vision correction, eliminating the need for surgical procedures like LASIK.",
-				"Myopia Control: Orthokeratology has been proven effective in slowing down the progression of myopia (nearsightedness) in children and young adults.",
-				"Lens-Free Daytime Experience: Enjoy clear vision throughout the day without the hassle of glasses or traditional contact lenses.",
-				"Reversible and Customizable: The effects of Ortho-K are reversible, and the lenses can be customized to suit your individual prescription and lifestyle."
 
 			],
 			whychoose : [
-				"Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.	," +
-				"Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
-				"Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
-				"Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
+				{
+					title : "Why Choose Nakpil Eye Clinic for Vision Therapy?",
+				},
+				{
+					description : "Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.",
+				},
+				{
+					description : "Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
+				},
+				{
+					description : "Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
+				},
+				{
+					description : "Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
+				},
 
 				{
-					description : "Invest in Your Lens-Free Clarity. Explore the liberating world of Orthokeratology at Nakpil Eye Clinic. Rediscover clear vision without " +
+					subdesc : "Invest in Your Lens-Free Clarity. Explore the liberating world of Orthokeratology at Nakpil Eye Clinic. Rediscover clear vision without " +
 						"the need for glasses or daytime contacts, and let us be your partner in achieving visual freedom."
 				},
 				{
@@ -366,8 +383,8 @@ const ExamPackageNav = (props) => {
 				},
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+				"",
+				"",
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -404,12 +421,11 @@ const ExamPackageNav = (props) => {
 				{
 					title : "4. Individualized Treatment Plan",
 					description : "Your Ortho-K lens fitting is part of a personalized treatment plan, addressing your specific vision correction needs and lifestyle preferences.",
-					subdescription : "Discover the joy of clear vision without constraints at Nakpil Eye Clinic - Your Eye and Vision Specialist."
+					subdesc : "Discover the joy of clear vision without constraints at Nakpil Eye Clinic - Your Eye and Vision Specialist."
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -448,8 +464,7 @@ const ExamPackageNav = (props) => {
 				}
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -492,21 +507,28 @@ const ExamPackageNav = (props) => {
 				{
 					title : "Why Choose Nakpil Eye Clinic for Topography?",
 				},
-				"Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.	," +
-				"Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
-				"Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
-				"Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
+				{
+					description :"Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.",
+				},
+				{
+					description :"Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
+				},
+				{
+					description :"Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
+				},
+				{
+					description :"Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
+				},
 
 				{
-					description : "Invest in Your Visual Precision. Uncover the details of your corneal landscape with the Topography Procedure at Nakpil Eye Clinic. Experience the clarity and precision that come with personalized eye care."
+					subdesc : "Invest in Your Visual Precision. Uncover the details of your corneal landscape with the Topography Procedure at Nakpil Eye Clinic. Experience the clarity and precision that come with personalized eye care."
 				},
 				{
 					subdesc : "See the world in sharp focus at Nakpil Eye Clinic – Your Eye and Vision Specialist."
 				},
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -519,7 +541,7 @@ const ExamPackageNav = (props) => {
 		},
 		{
 			id : 13,
-			title : "1. Visual Rehabilitation", //
+			title : "Vision Therapy", //
 			summary : "Addressing conditions such as amblyopia, strabismus, and other visual disorders to improve eye coordination and functionality.",
 			description : "At Nakpil Eye Clinic, we understand that clear vision is fundamental to a fulfilling and productive life. Our Vision Therapy services are designed to address a variety of visual challenges, enhance visual comfort, and optimize" +
 				" overall visual performance. Whether you're struggling with a specific visual condition, aiming to improve sports performance, or simply seeking to enhance your visual skills, our comprehensive vision therapy program is tailored " +
@@ -530,39 +552,118 @@ const ExamPackageNav = (props) => {
 			subtitle1 : "Key Focus Areas",
 			keyaspects : [
 				{
-					title : "1. Personalized Therapy",
-					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+					title : "1. Visual Rehabilitation",
+					description: "Addressing conditions such as amblyopia, strabismus, and other visual disorders to improve eye coordination and functionality.",
 				},
 				{
-					title : "1. Personalized Therapy",
-					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+					title : "2. Sports Vision Enhancement",
+					description: "Tailored programs for athletes seeking to elevate their visual skills, hand-eye coordination, and reaction time for peak performance in sports.",
 				},
 				{
-					title : "1. Personalized Therapy",
-					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+					title : "3. Reading and Learning Enhancement",
+					description: "Targeting visual processing issues to improve reading fluency, comprehension, and overall learning abilities.",
 				},
 				{
-					title : "1. Personalized Therapy",
-					description: "Our vision therapists work closely with each individual to ensure a personalized approach to their vision needs, ensuring a smooth and effective transition from the initial stages of therapy.",
+					title : "4. Computer Vision Syndrome (CVS) Management",
+					description: "Alleviating symptoms associated with prolonged computer use, such as eyestrain, headaches, and fatigue.",
 				}
 			],
 			whychoose : [
-				"Expert Ortho-K Specialists: Our team comprises experienced optometrists and specialists trained in Orthokeratology procedures.	," +
-				"Personalized Consultations: We provide thorough consultations to assess your suitability for Ortho-K, ensuring a personalized approach to your vision correction.",
-				"Cutting-Edge Technology: Nakpil Eye Clinic is equipped with the latest technology to ensure accurate measurements and precise lens customization.",
-				"Ongoing Support: Beyond the fitting process, we offer ongoing support and monitoring to ensure the continued success and comfort of your Ortho-K experience.",
-
 				{
-					description : "Invest in Your Lens-Free Clarity. Explore the liberating world of Orthokeratology at Nakpil Eye Clinic. Rediscover clear vision without " +
-						"the need for glasses or daytime contacts, and let us be your partner in achieving visual freedom."
+					title : "Why Choose Nakpil Eye Clinic for Vision Therapy?",
 				},
 				{
-					subdesc : "Experience clarity on your terms at Nakpil Eye Clinic – Your Eye and Vision Specialist."
+					description :"Experienced Team: Our dedicated team of certified vision therapists and eye care professionals brings years of experience and expertise to the field of vision therapy.",
+				},
+				{
+					description :"Cutting-Edge Technology: We invest in the latest diagnostic and therapeutic technologies to ensure the most effective and advanced vision therapy services.",
+				},
+				{
+					description :"Individualized Programs: Every patient is unique, and so is their vision therapy journey. Our programs are personalized to address specific needs, goals, and timelines.",
+				},
+				{
+					description :"Comprehensive Care: We work in collaboration with eye care specialists, educators, and other professionals to provide holistic care that considers the broader aspects of visual health and wellness.",
+				},
+
+				{
+					subdesc : "Get Started on Your Vision Journey! Embark on a transformative journey to improved vision and enhanced quality of life with Nakpil Eye Clinic’s Vision Therapy services. Schedule a " +
+						"consultation today, and let our team guide you towards a future of clearer, more comfortable vision."
+				},
+				{
+					subdesc : "See the world with new clarity at Nakpil Eye Clinic – Your Eye and Vision Specialist."
 				},
 			],
 			recommended : [
-				"Test 1",
-				"Test 2",
+
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "",
+			link : "..//foreignbodiesremoval"
+
+		},
+		{
+			id : 14,
+			title : "Visual Performance Assessment (VPA)", //
+			summary : "Unlock your full visual potential with our cutting-edge performance assessment.",
+			description : "At Nakpil Eye Clinic, we believe that optimal visual performance is the cornerstone of a vibrant and successful life. Our Visual Performance Assessment (VPA) is meticulously designed to evaluate and enhance the " +
+				"efficiency and precision of your visual system. Whether you're an athlete aiming for peak sports performance, a professional seeking to reduce eye strain, or someone wanting to unlock the full potential of your visual " +
+				"abilities, our comprehensive assessments provide valuable insights and tailored solutions.",
+			subdesc : "Our Visual Performance Assessment goes beyond routine eye exams. We utilize state-of-the-art diagnostic tools and a holistic approach to evaluate various aspects of visual function. Our team of experienced " +
+				"optometrists and visual performance specialists collaborates to provide a detailed analysis, offering personalized recommendations to optimize your visual performance.",
+			subtitle1 : "Key Assessment Areas",
+			keyaspects : [
+				{
+					title : "1. Visual Acuity and Refraction",
+					description: "Precise measurement of visual acuity and refractive error to ensure optimal clarity and focus.",
+				},
+				{
+					title : "2. Eye Tracking and Coordination",
+					description: "Evaluation of eye movement coordination, tracking, and convergence to assess overall eye teaming skills.",
+				},
+				{
+					title : "3. Depth Perception",
+					description: "Assessment of the ability to perceive depth accurately, crucial for activities such as sports and driving.",
+				},
+				{
+					title : "4. Peripheral Vision",
+					description: "Examination of peripheral vision to identify any limitations or irregularities.",
+				},
+				{
+					title : "5. Visual Processing Speed",
+					description: "Analysis of how quickly and accurately visual information is processed, a vital aspect for cognitive and academic performance.",
+				},
+			],
+			whychoose : [
+				{
+					title : "Why Choose Nakpil Eye Clinic for Visual Performance Assessment?",
+				},
+				{
+					description: "Specialized Expertise - Our team comprises skilled optometrists trained by Dr. John Nakpil, and clinical technicians with a focus on enhancing visual function." ,
+				},
+				{
+					description: "Cutting-Edge Technology - We employ advanced diagnostic tools and technology to provide accurate and comprehensive assessments.",
+				},
+				{
+					description: "Customized Recommendations - Based on the assessment results, we develop personalized recommendations and interventions to address specific visual performance needs.",
+				},
+				{
+					description: "Holistic Vision Care - We understand that visual performance is interconnected with overall well-being. Our approach considers lifestyle factors, occupational demands, and individual goals.",
+				},
+
+				{
+					subdesc : "Invest in Your Visual Excellence Today! Unleash the power of your vision with Nakpil Eye Clinic’s Visual Performance Assessment. Whether you're seeking improvements for sports, " +
+						"work, or daily activities, our assessments pave the way for a clearer and more efficient visual experience."
+				},
+				{
+					subdesc : "Elevate your visual potential with Nakpil Eye Clinic – Your Eye and Vision Specialist."
+				},
+			],
+			recommended : [
+
 			],
 			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
 			images : [
@@ -582,7 +683,7 @@ const ExamPackageNav = (props) => {
 	}
 
 	const handleOtherPackage = ()=>{
-		navigate("/visperfassessment");
+		navigate("/other");
 	}
 
 	return (
@@ -592,7 +693,7 @@ const ExamPackageNav = (props) => {
 				<Typography variant="h5"
 							sx={{  marginBottom: '15px',
 								fontWeight: 'bold', }}>
-					Examination Packages
+					Other Packages
 				</Typography>
 				{serviceList.map((service, idx) => (
 					<Card
@@ -643,7 +744,7 @@ const ExamPackageNav = (props) => {
 			</Stack>
 
 			<Box sx={{ pt: '10px' }}>
-				<Button variant="contained" onClick={handleOtherPackage} >Other Packages</Button>
+				<Button variant="contained" onClick={handleOtherPackage} >Exam Packages</Button>
 			</Box>
 
 		</Box>
