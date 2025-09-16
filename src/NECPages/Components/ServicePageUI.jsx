@@ -10,43 +10,42 @@ const ServicePageUI = () => {
 
     const [selectedService,setSelectedService] = useState({
         id : 1,
-        title : "Orthokeratology Lens Fitting",
-        description : "Your journey to clear, lens-free vision begins with our expert Orthokeratology (Ortho-K) Lens Fitting service begins here. Rediscover the freedom of crisp vision without " +
-            "the constraints of glasses or daytime contact lenses through our tailored fitting process, designed to ensure optimal comfort and effectiveness.",
-        subtitle : "What to Expect?",
-        subdesc : "Our Ortho-K Lens Fitting is a personalized and meticulous process aimed at crafting lenses that precisely reshape your cornea overnight. This non-surgical approach allows " +
-            "you to enjoy clear vision throughout the day without the need for traditional corrective eyewear.",
-        subtitle1 : "Key Aspects of Orthokeratology Lens Fitting",
+        title : "Biometry",
+        summary: "Our advanced biometry techniques unlock personalized IOL solutions for crystal-clear eyesight",
+        description : "Our Biometry service is a cutting-edge diagnostic procedure designed to obtain accurate measurements of your eye's structures, ensuring optimal outcomes for various eye surgeries and interventions.",
+        subdesc : "Biometry is a non-invasive and painless diagnostic tool that captures detailed measurements of key structures within the eye, such as the length of the eyeball and the curvature of the cornea. These" +
+            " measurements are crucial for planning and performing procedures like cataract surgery and implanting intraocular lenses (IOLs).",
+        subtitle1 : "Key Features",
         keyaspects : [
             {
-                title : "1. Comprehensive Eye Examination",
-                description : "Our experienced optometrists conduct a thorough eye examination to assess your current prescription, corneal shape, and overall eye health.",
+                title : "1. Accurate Measurements",
+                description : "Biometry provides precise measurements of the eye's dimensions, enabling personalized treatment plans for surgeries and interventions.",
             },
             {
-                title : "2. Custom Lens Design",
-                description: "Using advanced technology, we design Ortho-K lenses tailored to your unique eye anatomy and prescription, ensuring a comfortable and effective fit.",
+                title : "2. Cataract Surgery Planning",
+                description: "For individuals undergoing cataract surgery, Biometry is essential for selecting the appropriate intraocular lens power and ensuring optimal visual outcomes.",
             },
             {
-                title : "3. Fitting and Adjustment Sessions",
-                description : "During fitting sessions, we ensure the lenses provide the optimal corneal reshaping. We also guide you on lens insertion, removal, and care.",
+                title : "3. IOL Implantation",
+                description : "Biometry aids in the calculation of intraocular lens power for patients receiving artificial lenses, supporting better vision correction after surgery.",
             },
             {
-                title : "4. Individualized Treatment Plan",
-                description : "Your Ortho-K lens fitting is part of a personalized treatment plan, addressing your specific vision correction needs and lifestyle preferences.",
-                subdescription : "Discover the joy of clear vision without constraints at Nakpil Eye Clinic - Your Eye and Vision Specialist."
+                title : "4. Customized Treatment",
+                description : "The data obtained through Biometry allows our expert eye care professionals to tailor interventions to each patient's unique eye anatomy.",
+                subdesc : "Experience the precision of Biometry at Nakpil Eye Clinic. Let us guide you towards optimal vision outcomes with personalized and accurate measurements."
             }
         ],
         recommended : [
-            "Test 1",
-            "Test 2",
+            "",
+            "",
         ],
         mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
         images : [
             "https://placehold.it/1200x600",
             "https://placehold.it/1200x600"
         ],
-        price : 3000,
-        link : "..//OrthokeratologyLensFitting"
+        price : "",
+        link : "..//foreignbodiesremoval"
     });
 
 
@@ -84,6 +83,8 @@ const ServicePageUI = () => {
 
                             <Typography variant="h5">{selectedService?.subtitle1}</Typography>
                             <Typography>&nbsp;</Typography>
+                            <Typography>{selectedService?.subdesc1}</Typography>
+                            <Typography>&nbsp;</Typography>
                         </Stack>
                     </Box>
 
@@ -99,7 +100,7 @@ const ServicePageUI = () => {
                         </Box>
                         {selectedService?.keyaspects?.map((aspects,idx) => {
                             const {title,description, subdesc} = aspects;
-                            return <Stack key={title} direction={{xs:"row",md:"column"}} sx={{width : "100%"}}>
+                            return <Stack key={title} sx={{width : "100%"}}>
                                 <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#698bd1' }}>{title}</Typography>
                                 <Typography variant="body1">{description}</Typography>
                                 &nbsp;
@@ -107,9 +108,23 @@ const ServicePageUI = () => {
                                 &nbsp;
                             </Stack>
                         })}
+                        {selectedService?.whychoose?.map((item, idx) => {
+                            const {title, description, subdesc} = item;
+                            return (
+                                <Stack key={title} direction={{xs:"row", md:"column"}} sx={{width: "100%"}}>
+                                    <Typography variant="h6" sx={{ fontWeight: 'bold', color:'#1f2278' }}>{title}</Typography>
+                                    <Typography variant="body1" sx={{fontWeight: 'bold'}} >{description}</Typography>
+                                    &nbsp;
+                                    &nbsp;
+
+                                    <Typography variant="body1">{subdesc}</Typography>
+
+                                </Stack>
+                            );
+                        })}
+
                     </Box>
                     <Box sx={{ backgroundColor: '#FFF' , p: 2 }}>
-
                         <Box
                             sx={{
                                 display: 'flex',
@@ -119,6 +134,8 @@ const ServicePageUI = () => {
                             }}
                         >
                         </Box>
+
+
                         {selectedService?.recommended?.map((recs,idx) => {
                             return <Stack key={recs} direction={{xs:"row",md:"column"}} sx={{width : "100%"}}>
                                 <Typography variant="span" sx={{ fontWeight: 'bold', color:'#698bd1' }} >{recs}</Typography>
