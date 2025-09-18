@@ -1,12 +1,13 @@
 import {Box, Container, Grid, Stack, Typography} from "@mui/material";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import * as React from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import ExamPackageNav from "../ExamPackageNav.jsx";
 
 const ServicePageUI = () => {
 
     const navigate = useNavigate();
+    const params = useParams();
 
     const [selectedService,setSelectedService] = useState({
         id : 1,
@@ -50,12 +51,23 @@ const ServicePageUI = () => {
 
 
     const [serviceDetail,setServiceDetail] = useState([]);
+    const [servicename,setServicename] = useState("");
 
     const handleNavClick = (service) => {
         //console.log(service);
         //navigate(service?.link);
         setSelectedService(service);
     }
+
+    const fetchServiceDetails = async () => {
+
+    }
+
+
+
+    useEffect(() => {
+        console.log(params.srvtitle);
+    },[])
 
 
 
