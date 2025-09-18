@@ -373,6 +373,63 @@ const OtherPackageNav = (props) => {
 		},
 		{
 			id : 6,
+			title : "Follow-up Checkup for Adults",
+			summary : "Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.",
+			description : "At Nakpil Eye Clinic, we recognize that adult eye health requires dedicated attention. Our comprehensive Follow-up Checkup for adults is meticulously tailored to monitor and address changes in eye " +
+				"health over time. This checkup is designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.",
+			subdesc : "",
+			subtitle1 : "Key Components",
+			keyaspects : [
+				{
+					title : "1. Review of Previous Records",
+					description : "A detailed examination of your prior eye health records, ensuring a comprehensive understanding of your adult eye health history.",
+				},
+				{
+					title : "2. Visual Acuity Assessment",
+					description: "Evaluation of the sharpness and clarity of your vision, addressing any changes or fluctuations since your last examination.",
+				},
+				{
+					title : "3. Eye Health Check",
+					description : "A thorough examination of the overall health of your eyes, utilizing advanced tools such as bio-microscopy and ophthalmoscopy.",
+				},
+				{
+					title : "4. Refractive Assessment",
+					description : "Evaluation of your refractive status to determine whether any adjustments to your prescription are necessary.",
+
+				},
+				{
+					title : "5. Vision Examination & Correction (Objective / Subjective)",
+					description : "Tailoring your vision correction needs through both objective and subjective assessments, ensuring accurate and personalized prescriptions for adult patients.",
+				},
+				{
+					title : "6. Discussion of Changes or Concerns",
+					description : "A personalized consultation to discuss any changes in your vision or eye health, addressing concerns specific to adult eye care and providing guidance for ongoing care.",
+				},
+			],
+			button: [
+				"Book an Appointment",
+			],
+			note: [
+				"Note: Price is subject to change without prior notice.",
+			],
+			description1 : ["Choose the comprehensive Follow-up Checkup for Adults at Nakpil Eye Clinic for ongoing care that prioritizes the health and clarity of your vision throughout adulthood. Let us guide " +
+			"you on your journey to sustained eye health."],
+			recommended : [
+				"",
+				"",
+			],
+			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+			images : [
+				"https://placehold.it/1200x600",
+				"https://placehold.it/1200x600"
+			],
+			price : "Php 500.00",
+			vat:  "inclusive of VAT",
+			link : "..//foreignbodiesremoval"
+
+		},
+		{
+			id : 7,
 			title : "Corporate Eye Care Program",
 			summary: "A Comprehensive eye examination package for your company or organizations." ,
 			description : "Nakpil Eye Clinic has been known to provide excellent eye and vision care for many years. And now through our Corporate Eye Care program we can bring the same excellent service to your company on your next " +
@@ -448,63 +505,7 @@ const OtherPackageNav = (props) => {
 			price : "",
 			link : "..//IshiharaColorVisionTest"
 		},
-		{
-			id : 7,
-			title : "Follow-up Checkup for Adults",
-			summary : "Designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.",
-			description : "At Nakpil Eye Clinic, we recognize that adult eye health requires dedicated attention. Our comprehensive Follow-up Checkup for adults is meticulously tailored to monitor and address changes in eye " +
-				"health over time. This checkup is designed to ensure continuity in care, promoting the longevity of clear vision and optimal eye health for our adult patients.",
-			subdesc : "",
-			subtitle1 : "Key Components",
-			keyaspects : [
-				{
-					title : "1. Review of Previous Records",
-					description : "A detailed examination of your prior eye health records, ensuring a comprehensive understanding of your adult eye health history.",
-				},
-				{
-					title : "2. Visual Acuity Assessment",
-					description: "Evaluation of the sharpness and clarity of your vision, addressing any changes or fluctuations since your last examination.",
-				},
-				{
-					title : "3. Eye Health Check",
-					description : "A thorough examination of the overall health of your eyes, utilizing advanced tools such as bio-microscopy and ophthalmoscopy.",
-				},
-				{
-					title : "4. Refractive Assessment",
-					description : "Evaluation of your refractive status to determine whether any adjustments to your prescription are necessary.",
 
-				},
-				{
-					title : "5. Vision Examination & Correction (Objective / Subjective)",
-					description : "Tailoring your vision correction needs through both objective and subjective assessments, ensuring accurate and personalized prescriptions for adult patients.",
-				},
-				{
-					title : "6. Discussion of Changes or Concerns",
-					description : "A personalized consultation to discuss any changes in your vision or eye health, addressing concerns specific to adult eye care and providing guidance for ongoing care.",
-				},
-			],
-			button: [
-				"Book an Appointment",
-			],
-			note: [
-				"Note: Price is subject to change without prior notice.",
-			],
-			description1 : ["Choose the comprehensive Follow-up Checkup for Adults at Nakpil Eye Clinic for ongoing care that prioritizes the health and clarity of your vision throughout adulthood. Let us guide " +
-			"you on your journey to sustained eye health."],
-			recommended : [
-				"",
-				"",
-			],
-			mainimg : "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
-			images : [
-				"https://placehold.it/1200x600",
-				"https://placehold.it/1200x600"
-			],
-			price : "Php 500.00",
-			vat:  "inclusive of VAT",
-			link : "..//foreignbodiesremoval"
-
-		},
 	]);
 
 
