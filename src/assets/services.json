@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "title": "Biometry",
+    "summary": "Our advanced biometry techniques unlock personalized IOL solutions for crystal-clear eyesight",
+    "description": "Our Biometry service is a cutting-edge diagnostic procedure designed to obtain accurate measurements of your eye's structures, ensuring optimal outcomes for various eye surgeries and interventions.",
+    "subdesc": "Biometry is a non-invasive and painless diagnostic tool that captures detailed measurements of key structures within the eye, such as the length of the eyeball and the curvature of the cornea. These measurements are crucial for planning and performing procedures like cataract surgery and implanting intraocular lenses (IOLs).",
+    "subtitle1": "Key Features",
+    "keyaspects": [
+      {
+        "title": "1. Accurate Measurements",
+        "description": "Biometry provides precise measurements of the eye's dimensions, enabling personalized treatment plans for surgeries and interventions."
+      },
+      {
+        "title": "2. Cataract Surgery Planning",
+        "description": "For individuals undergoing cataract surgery, Biometry is essential for selecting the appropriate intraocular lens power and ensuring optimal visual outcomes."
+      },
+      {
+        "title": "3. IOL Implantation",
+        "description": "Biometry aids in the calculation of intraocular lens power for patients receiving artificial lenses, supporting better vision correction after surgery."
+      },
+      {
+        "title": "4. Customized Treatment",
+        "description": "The data obtained through Biometry allows our expert eye care professionals to tailor interventions to each patient's unique eye anatomy.",
+        "subdesc": "Experience the precision of Biometry at Nakpil Eye Clinic. Let us guide you towards optimal vision outcomes with personalized and accurate measurements."
+      }
+    ],
+    "recommended": [
+      "",
+      ""
+    ],
+    "mainimg": "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+    "images": [
+      "https://placehold.it/1200x600",
+      "https://placehold.it/1200x600"
+    ],
+    "price": "",
+    "link": "..//foreignbodiesremoval"
+  },
+  {
+    "id": 2,
+    "title": "Cycloplegic Refraction",
+    "summary": "Unlock clarity with Cycloplegic Eyedrops, illuminating your vision with unparalleled precision and focus.",
+    "description": "Our Cycloplegic Refraction service is designed to provide a comprehensive and precise assessment of your refractive error, ensuring that your prescription is determined with the utmost accuracy.",
+    "subdesc": "Cycloplegic Refraction is an advanced eye examination technique that involves using specialized eye drops to temporarily paralyze the muscles within the eye, particularly the ciliary muscle. By doing so, we achieve maximum relaxation of the eye's focusing mechanism, allowing for a more accurate measurement of your refractive error.",
+    "subtitle1": "Key Features of Cycloplegic Refraction",
+    "keyaspects": [
+      {
+        "title": "1. Maximum Accuracy",
+        "description": "By temporarily suspending the eye's natural focusing ability, Cycloplegic Refraction provides an accurate and reliable measurement of your refractive error."
+      },
+      {
+        "title": "2. Ideal for All Ages",
+        "description": "Particularly beneficial for children and young adults, Cycloplegic Refraction ensures accurate prescription determination, crucial for eye development and addressing potential vision issues."
+      },
+      {
+        "title": "3. Comprehensive Eye Examination",
+        "description": "Beyond refractive error assessment, Cycloplegic Refraction allows for a thorough examination of the overall health of the eyes, aiding in the early detection of potential eye conditions."
+      },
+      {
+        "title": "4. Tailored Prescription",
+        "description": "The precise measurements obtained through this technique enable us to craft a customized prescription, optimizing your visual clarity.",
+        "subdesc": "Experience the precision of Cycloplegic Refraction at Nakpil Eye Clinic. Let us guide you towards clear and accurate vision, ensuring your eyes receive the meticulous care they deserve."
+      }
+    ],
+    "recommended": [
+      "",
+      ""
+    ],
+    "mainimg": "https://nakpileyeclinic.com/static/media/orthokeratology.44aeef8ef624d9719a29.jpg",
+    "images": [
+      "https://placehold.it/1200x600",
+      "https://placehold.it/1200x600"
+    ],
+    "price": "",
+    "link": "..//foreignbodiesremoval"
+  }
+]
