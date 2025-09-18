@@ -5,6 +5,11 @@ import DefaultLayout from '../layout/DefaultLayout.jsx';
 import PageNotFound from "./PageNotFound.jsx";
 import Loadable from "../components/Loadable.jsx";
 
+//NECServices Main Page
+const NECServicesPage = Loadable(lazy(() => import('../NECPages/NECServicesPage.jsx')));
+const CardSample = Loadable(lazy(() => import('../SamplecompNEC/CardSample.jsx')));
+
+//Exam Packages Import
 const TestUI = Loadable(lazy(() => import('../SamplecompNEC/MainBody.jsx')));
 const CorpEyeCareProgUI = Loadable(lazy(() => import('../NECPages/CorpEyeCareProg.jsx')));
 const StandardEyeExamUI = Loadable(lazy(() => import('../NECPages/StandardEyeExam.jsx')));
@@ -45,6 +50,14 @@ const DefaultRoutes = {
         {
             path: '/',
             element: <TestUI />
+        },
+        {
+            path: '/necservices',
+            element: <NECServicesPage />
+        },
+        {
+            path: '/cardsample',
+            element: <CardSample />
         },
         {
             path: '/corpeyecareprog',
@@ -131,7 +144,7 @@ const DefaultRoutes = {
             element: <VisPerfAssessment />
         },
         {
-            path: "/services",
+            path: "/services/:srvtitle",
             element: <ServicePageUI />
         },
         {
